@@ -97,11 +97,6 @@ img{
     height: 90vh;
 }
 
-
-section{
-    margin-bottom: var(--xlarge);
-}
-
 article{
     padding: var(--xxlarge) 0;
     border-bottom: 1px solid var(--gray-300);
