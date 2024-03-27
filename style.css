@@ -57,6 +57,8 @@ a{
     justify-content: space-between;
     align-items: center;
     gap: 60px;
+    background-color: white;
+    margin-top: 25px;
 }
 
 .nav-link{
@@ -176,3 +178,15 @@ article > * {
         left: 0;
     }
 }
+
+@media (min-width: 780px) {
+    article {
+      grid-column: feature;
+    }
+  
+    .article_img_container,
+    .article_text {
+      grid-column: feature;
+    }
+    /* måske lav to columns her i griddet i stedet */
+  }
