@@ -26,11 +26,14 @@ h1{
 
 h2{
     color: var(--gray-800);
+    padding-bottom: var(--step--1);
 }
 
 p{
     color: var(--gray-600);
     line-height: var(--line-large);
+    font-size: var(--step-0);
+    padding-bottom: var(--step-0);
 }
 
 li{
@@ -91,7 +94,7 @@ img{
 }
 
 .heroImg{
-    height: 100vh;
+    height: 90vh;
 }
 
 
@@ -100,8 +103,8 @@ section{
 }
 
 article{
-    padding: var(--xlarge) 0;
-    border-top: 1px solid var(--gray-400);
+    padding: var(--xxlarge) 0;
+    border-bottom: 1px solid var(--gray-300);
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(var(--gap), 1fr);
     --content: min(50ch, 100% - var(--gap) * 2);
@@ -124,12 +127,13 @@ article > * {
 } 
 
 .article_img_container{
-    grid-column: popout;
-    margin-bottom: var(--medium);
+    grid-column: feature;
+    margin-bottom: var(--xxlarge);
+    
 }
 
 .article_text{
-    grid-column: popout;
+    grid-column: feature;
 }
 
 .article_text > *{
@@ -140,6 +144,7 @@ article > * {
 .article_text a{
     color: var(--gray-700);
     text-decoration: underline;
+    font-size: var(--step-0);
 }
 
 @media(max-width:768px){
