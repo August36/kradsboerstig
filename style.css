@@ -10,14 +10,107 @@ body {
     align-items: center;
 }
 
-h1{
-    font-size: var(--step-5);
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: var(--xxlarge);
-    margin-bottom: var(--small);
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--step--1);
+    width: 100%;
 }
 
-ul{
+h1{
+    font-size: var(--step-3);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li{
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 24px;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-link{
+    transition: 0.7s ease;
+}
+
+.nav-link:hover{
+    color: #EC9A3B;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(0, 0, 0);
+}
+
+@media(max-width:768px){
+    .burger{
+        display: block;
+    }
+
+    .burger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .burger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgb(46, 3, 3);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+}
+
+
+/* ul{
     display: flex;
     justify-content: space-evenly;
     gap: var(--step--1);
@@ -32,7 +125,7 @@ nav{
 
 a{
     text-decoration: none;
-}
+} */
 
 img{
     width: 100%;
