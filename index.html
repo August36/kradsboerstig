@@ -6,42 +6,66 @@
     <title>Gallery Site</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="designsystem.css">
-
 </head>
 <body>
+    <!-- ting der skal gøres:
+    - heroimg laves til img slider
+    - evt tekst logo eller noget foran heroimg
+    - scroll funktion så article popper frem ligesom på pace
+    - responsive tablet og desktop -->
     <header>
         <h1>Kradsbørstig</h1>
-<nav class="navbar">    
-    <ul class="nav-menu">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Lore</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Player 1</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Player 2</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Player 3</a>
-        </li>
-    </ul>
-    <div class="burger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-</nav>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item"><a class="nav-link" href="#">Lore</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Player 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Player 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Player 3</a></li>
+            </ul>
+            <div class="burger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
-    <section>
+    <main>
+        <section>
             <figure class="heroImg_container">
-                <img src="imgs/heroImg.jpg" alt="Art piece">
+                <img class="heroImg" src="imgs/heroImg.jpg" alt="Art piece">
             </figure>
-    </section>
-
+        </section>
+        <article>
+            <figure class="article_img_container">
+                <img src="imgs/heroImg.jpg" alt="">
+            </figure>
+            <div class="article_text">
+                <h2>Nyt kunstværk</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur adipisci magnam neque ipsum assumenda nisi impedit maxime voluptatem. Aut labore ab odit voluptate repellat accusantium?</p>
+                <a href="/">Læs mere</a>
+            </div>
+        </article>
+        <article>
+            <figure class="article_img_container">
+                <img class="article_img" src="imgs/heroImg.jpg" alt="">
+            </figure>
+            <div class="article_text">
+                <h2>Nyt kunstværk</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur adipisci magnam neque ipsum assumenda nisi impedit maxime voluptatem. Aut labore ab odit voluptate repellat accusantium?</p>
+                <a href="/">Læs mere</a>
+            </div>
+        </article>
+        <article>
+            <figure class="article_img_container">
+                <img class="article_img" src="imgs/heroImg.jpg" alt="">
+            </figure>
+            <div class="article_text">
+                <h2>Nyt kunstværk</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur adipisci magnam neque ipsum assumenda nisi impedit maxime voluptatem. Aut labore ab odit voluptate repellat accusantium?</p>
+                <a href="/">Læs mere</a>
+            </div>
+        </article>
+    </main>
     <script src="script.js"></script>
-</body>
-</html>
-
 </body>
 </html>
