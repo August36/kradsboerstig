@@ -26,6 +26,7 @@ h1{
 li{
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 a{
@@ -71,6 +72,12 @@ a{
     background-color: rgb(0, 0, 0);
 }
 
+img{
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
 @media(max-width:768px){
     .burger{
         display: block;
@@ -107,28 +114,4 @@ a{
     .nav-menu.active{
         left: 0;
     }
-}
-
-
-/* ul{
-    display: flex;
-    justify-content: space-evenly;
-    gap: var(--step--1);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: var(--step-0);
-    margin-bottom: var(--small);
-}
-
-nav{
-    margin-bottom: var(--xlarge);
-}
-
-a{
-    text-decoration: none;
-} */
-
-img{
-    width: 100%;
-    object-fit: cover;
-    overflow: hidden;
 }
