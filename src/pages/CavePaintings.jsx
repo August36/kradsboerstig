@@ -1,5 +1,5 @@
 
-const Toon = () => {
+const CavePaintings = () => {
     return (
       <div>
         <h1>Portraits Page</h1>
@@ -8,4 +8,4 @@ const Toon = () => {
     );
   };
   
-  export default Toon;
+  export default CavePaintings;

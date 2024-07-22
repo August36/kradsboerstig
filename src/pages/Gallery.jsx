@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 const images = [
   { src: '/potraits/Jesper-Binzer-DBPM-Kell-Jarner-scaled.webp', link: '/Portraits', text: 'Portraits' },
   { src: '/faces/Ansigt9-Hvorformenneske-Kell-Jarner-2017.webp', link: '/Faces', text: 'Faces' },
-  { src: '/cave-paintings/Den-skamfødte-Kell-Jarner.webp', link: '/Cave-paintings', text: 'Cave Paintings' },
+  { src: '/cave-paintings/Den-skamfødte-Kell-Jarner.webp', link: '/CavePaintings', text: 'Cave Paintings' },
   { src: '/dogs/4-Forpotestand-Kell-Jarner.webp', link: '/Dogs', text: 'Dogs' },
   { src: '/toon/Dyrene-fra-Tramonti-Kell-Jarner-2016.webp', link: '/Toon', text: 'Toon' },
   { src: '/morbid/Herobar-3.24-Kell-Jarner.webp', link: '/Morbid', text: 'Morbid' },
-  { src: '/art-brut/Håndværkere-Kell-Jarner-2018.webp', link: '/Art-brut', text: 'Art Brut' },
+  { src: '/art-brut/Håndværkere-Kell-Jarner-2018.webp', link: '/ArtBrut', text: 'Art Brut' },
   { src: '/realistic/Vandbøffel-Kell-Jarner.webp', link: '/Realistic', text: 'Realistic' },
 ];
 

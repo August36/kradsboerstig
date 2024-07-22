@@ -6,6 +6,14 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Portraits from './pages/Portraits';
+import Faces from './pages/Faces';
+import CavePaintings from './pages/CavePaintings';
+import Dogs from './pages/Dogs';
+import Toon from './pages/Toon';
+import Morbid from './pages/Morbid';
+import ArtBrut from './pages/ArtBrut';
+import Realistic from './pages/Realistic';
 import heroImage from './assets/hero-image.jpg';
 import articleImg1 from './assets/children-toys.avif';
 import articleImg2 from './assets/article2img.jpg'; // Ensure you have this image or change it to the correct path
@@ -43,6 +51,14 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/Portraits" element={<Portraits />} />
+        <Route path="/Faces" element={<Faces />} />
+        <Route path="/CavePaintings" element={<CavePaintings />} />
+        <Route path="/Dogs" element={<Dogs />} />
+        <Route path="/Toon" element={<Toon />} />
+        <Route path="/Morbid" element={<Morbid />} />
+        <Route path="/ArtBrut" element={<ArtBrut />} />
+        <Route path="/Realistic" element={<Realistic />} />
       </Routes>
       <Footer />
     </Router>
