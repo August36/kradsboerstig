@@ -14,9 +14,9 @@ import Toon from './pages/Toon';
 import Morbid from './pages/Morbid';
 import ArtBrut from './pages/ArtBrut';
 import Realistic from './pages/Realistic';
-import heroImage from './assets/hero-image.jpg';
-import articleImg1 from './assets/children-toys.avif';
-import articleImg2 from './assets/article2img.jpg'; // Ensure you have this image or change it to the correct path
+import heroImage from '/cave-paintings/Den-skamfødte-Kell-Jarner.webp';
+import articleImg1 from '/art-brut/Partybussen-og-bykongen-Kell-Jarner-2018.webp';
+import articleImg2 from '/morbid/Mord-i-Muxia-Kell-Jarner.webp'; 
 import Footer from './components/Footer';
 
 function App() {
@@ -24,12 +24,12 @@ function App() {
     {
       image: articleImg1,
       title: 'Article 1',
-      content: 'This is the content of article 1.',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     },
     {
       image: articleImg2,
       title: 'Article 2',
-      content: 'This is the content of article 2.',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     },
     // Add more articles here
   ];
