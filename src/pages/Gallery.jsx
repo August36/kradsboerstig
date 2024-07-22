@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const images = [
-  { src: '/potraits/Jesper-Binzer-DBPM-Kell-Jarner-scaled.webp', link: '/Portraits', text: 'Portraits' },
+  { src: '/portraits/Jesper-Binzer-DBPM-Kell-Jarner-scaled.webp', link: '/Portraits', text: 'Portraits' },
   { src: '/faces/Ansigt9-Hvorformenneske-Kell-Jarner-2017.webp', link: '/Faces', text: 'Faces' },
   { src: '/cave-paintings/Den-skamfødte-Kell-Jarner.webp', link: '/CavePaintings', text: 'Cave Paintings' },
   { src: '/dogs/4-Forpotestand-Kell-Jarner.webp', link: '/Dogs', text: 'Dogs' },
