@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Posters from './pages/Posters'
 import Portraits from './pages/Portraits';
 import Faces from './pages/Faces';
 import CavePaintings from './pages/CavePaintings';
@@ -53,6 +54,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/posters" element={<Posters />} />
         <Route path="/Portraits" element={<Portraits />} />
         <Route path="/Faces" element={<Faces />} />
         <Route path="/CavePaintings" element={<CavePaintings />} />
