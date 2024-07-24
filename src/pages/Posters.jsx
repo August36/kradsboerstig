@@ -1,49 +1,56 @@
 import { useState } from 'react';
-import ImageGrid from '../components/ImageGrid'; // Import the new ImageGrid component
+import ImageGrid from '../components/ImageGrid';
+import Breadcrumbs from '../components/Breadcrumbs';
+import NavigationArrows from '../components/NavigationArrows';
 
 const images = [
-  'art-brut/Boudoir-Kell-Jarner-2017.webp',
-  'art-brut/Danse-macabre-Kell-Jarner-2017.webp',
-  'art-brut/Frelser-scaled.webp',
-  'art-brut/Fugl-og-fæ-Kell-Jarner-2019.webp',
-  'art-brut/Grumme-gerninger-pænt-tøj-Kell-Jarner-2018-1.webp',
-  'art-brut/Håndværkere-Kell-Jarner-2018.webp',
-  'art-brut/Kafisos-og-Liriope-Kell-Jarner-2018.webp',
-  'art-brut/Kongen-og-kravlenisserne-Kell-Jarner-2019.webp',
-  'art-brut/Partybussen-og-bykongen-Kell-Jarner-2018.webp',
-  'art-brut/Profeten-Kell-Jarner-2017.webp',
-  'art-brut/Skytsengel.-Kell-Jarner-2018.webp',
-  'art-brut/Smugkig-Kell-Jarner-2017.webp',
-  'art-brut/Sommer-og-Lars-Kell-Jarner-2018.webp',
+  '/portraits/Frida-portræt-Kell-Jarner.webp',
+  '/portraits/Frida2-portræt-Kell-Jarner.webp',
+  '/portraits/Henrik-Bay-portræt-Kell-Jarner.webp',
+  '/portraits/Jesper-Binzer-DBPM-Kell-Jarner-scaled.webp',
+  '/portraits/Lars-Løkke-portræt-Kell-Jarner.webp',
+  '/portraits/Mads-Mikkelsen-portræt-Kell-Jarner.webp',
+  '/portraits/Mariann-Kell-Jarner-scaled.webp',
+  '/portraits/Max-Manneche-portræt-Kell-Jarner.webp',
+  '/portraits/Selvportræt-Kell-Jarner-scaled.webp',
+  '/portraits/selvportræt1-Kell-Jarner.webp',
+  '/portraits/Sommer-og-Lars-portræt-Kell-Jarner.webp',
+  '/portraits/Vinnie-Bjerre-portræt-Kell-jarner.webp',
 ];
 
 const Posters = () => {
-  const [modalImage, setModalImage] = useState(null);
+  const [modalImageIndex, setModalImageIndex] = useState(null);
 
-  const handleOpenModal = (src) => {
-    setModalImage(src);
+  const handleOpenModal = (index) => {
+    setModalImageIndex(index);
   };
 
   const handleCloseModal = () => {
-    setModalImage(null);
+    setModalImageIndex(null);
   };
 
   return (
     <>
       <div className="container mx-auto p-4">
+        <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Posters</h1>
-        <p className="mb-8">This is the poster page</p>
+        <p className="mb-8">This is the posters page.</p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal */}
-        {modalImage && (
+        {modalImageIndex !== null && (
           <div
             className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
             onClick={handleCloseModal}
           >
+            <NavigationArrows 
+              currentIndex={modalImageIndex}
+              totalImages={images.length}
+              setModalImageIndex={setModalImageIndex}
+            />
             <img
-              src={modalImage}
-              alt="Modal"
+              src={images[modalImageIndex]}
+              alt={`Modal ${modalImageIndex + 1}`}
               className="max-w-full max-h-full object-contain"
               onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking on the image
             />
