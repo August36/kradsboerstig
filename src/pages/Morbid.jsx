@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ImageGrid from '../components/ImageGrid'; // Import the new ImageGrid component
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const images = [
   'morbid/Dansen-om-guldkalven-Kell-Jarner.webp',
@@ -27,6 +28,7 @@ const Faces = () => {
   return (
     <>
       <div className="container mx-auto p-4">
+      <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Morbid</h1>
         <p className="mb-8">This is the morbid page.</p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
