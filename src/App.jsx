@@ -18,6 +18,7 @@ import heroImage from '/cave-paintings/Den-skamfødte-Kell-Jarner.webp';
 import articleImg1 from '/art-brut/Partybussen-og-bykongen-Kell-Jarner-2018.webp';
 import articleImg2 from '/morbid/Mord-i-Muxia-Kell-Jarner.webp'; 
 import Footer from './components/Footer';
+import NewsLetter from './components/NewsLetter';
 
 function App() {
   const articles = [
@@ -46,6 +47,7 @@ function App() {
                 <NewsArticle key={index} {...article} />
               ))}
             </div>
+            <NewsLetter />
           </>
         } />
         <Route path="/about" element={<About />} />
