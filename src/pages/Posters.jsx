@@ -17,7 +17,7 @@ const images = [
   'art-brut/Sommer-og-Lars-Kell-Jarner-2018.webp',
 ];
 
-const Faces = () => {
+const Posters = () => {
   const [modalImage, setModalImage] = useState(null);
 
   const handleOpenModal = (src) => {
@@ -54,4 +54,4 @@ const Faces = () => {
   );
 };
 
-export default Faces;
+export default Posters;

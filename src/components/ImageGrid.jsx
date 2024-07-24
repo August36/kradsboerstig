@@ -6,7 +6,7 @@ const ImageGrid = ({ images, onImageClick }) => {
           <div
             key={index}
             className="relative overflow-hidden bg-gray-200 rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105"
-            onClick={() => onImageClick(src)}
+            onClick={() => onImageClick(index)}
           >
             <img
               src={src}

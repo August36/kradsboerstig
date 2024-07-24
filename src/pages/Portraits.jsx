@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import ImageGrid from '../components/ImageGrid'; // Import the new ImageGrid component
+import ImageGrid from '../components/ImageGrid';
 import Breadcrumbs from '../components/Breadcrumbs';
+import NavigationArrows from '../components/NavigationArrows';
 
 const images = [
   '/portraits/Frida-portræt-Kell-Jarner.webp',
@@ -18,33 +19,38 @@ const images = [
 ];
 
 const Portraits = () => {
-  const [modalImage, setModalImage] = useState(null);
+  const [modalImageIndex, setModalImageIndex] = useState(null);
 
-  const handleOpenModal = (src) => {
-    setModalImage(src);
+  const handleOpenModal = (index) => {
+    setModalImageIndex(index);
   };
 
   const handleCloseModal = () => {
-    setModalImage(null);
+    setModalImageIndex(null);
   };
 
   return (
     <>
       <div className="container mx-auto p-4">
-      <Breadcrumbs />
+        <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Portraits</h1>
         <p className="mb-8">This is the portraits page.</p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal */}
-        {modalImage && (
+        {modalImageIndex !== null && (
           <div
             className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
             onClick={handleCloseModal}
           >
+            <NavigationArrows 
+              currentIndex={modalImageIndex}
+              totalImages={images.length}
+              setModalImageIndex={setModalImageIndex}
+            />
             <img
-              src={modalImage}
-              alt="Modal"
+              src={images[modalImageIndex]}
+              alt={`Modal ${modalImageIndex + 1}`}
               className="max-w-full max-h-full object-contain"
               onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking on the image
             />
