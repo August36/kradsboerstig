@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ImageGrid from '../components/ImageGrid';
 import Breadcrumbs from '../components/Breadcrumbs';
-import NavigationArrows from '../components/NavigationArrows';
+import Modal from '../components/Modal'; // Import the Modal component
 
 const images = [
   {
@@ -89,6 +89,14 @@ const Toon = () => {
     setModalImageIndex(null);
   };
 
+  const handlePrevImage = () => {
+    setModalImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  const handleNextImage = () => {
+    setModalImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
   return (
     <>
       <div className="container mx-auto p-4">
@@ -97,32 +105,15 @@ const Toon = () => {
         <p className="mb-8">This is the toons page.</p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
-        {/* Modal */}
-        {modalImageIndex !== null && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-            onClick={handleCloseModal}
-          >
-            <NavigationArrows 
-              currentIndex={modalImageIndex}
-              totalImages={images.length}
-              setModalImageIndex={setModalImageIndex}
-            />
-            <div className="relative">
-              <img
-                src={images[modalImageIndex].src}  // Brug 'src' fra objektet
-                alt={images[modalImageIndex].title}  // Brug 'title' fra objektet
-                className="max-w-full max-h-full object-contain"
-                onClick={(e) => e.stopPropagation()} // Forhindre lukning af modal ved klik på billedet
-              />
-              <div className="absolute bottom-4 left-4 text-white">
-                <h2 className="text-xl font-semibold">{images[modalImageIndex].title}</h2>
-                <p>Price: {images[modalImageIndex].price}</p>
-                <p>Size: {images[modalImageIndex].size}</p>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Modal Component */}
+        <Modal
+          isOpen={modalImageIndex !== null}
+          images={images}
+          modalImageIndex={modalImageIndex}
+          onClose={handleCloseModal}
+          onPrev={handlePrevImage}
+          onNext={handleNextImage}
+        />
       </div>
     </>
   );

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Hero = ({ image }) => {
   return (
     <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${image})` }}>
@@ -7,6 +9,11 @@ const Hero = ({ image }) => {
       </div>
     </div>
   );
+};
+
+// Define PropTypes for the component
+Hero.propTypes = {
+  image: PropTypes.string.isRequired
 };
 
 export default Hero;

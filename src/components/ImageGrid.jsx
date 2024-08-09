@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ImageGrid = ({ images, onImageClick }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -24,6 +26,19 @@ const ImageGrid = ({ images, onImageClick }) => {
       ))}
     </div>
   );
+};
+
+// Define PropTypes for the component
+ImageGrid.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      size: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  onImageClick: PropTypes.func.isRequired
 };
 
 export default ImageGrid;
