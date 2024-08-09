@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import NewsArticle from './components/NewsArticle';
 import Navbar from './components/Navbar';
 import About from './pages/About';
-import Gallery from './pages/Gallery';
+import Paintings from './pages/Paintings';
 import Contact from './pages/Contact';
 import Posters from './pages/Posters'
 import Portraits from './pages/Portraits';
@@ -20,6 +20,7 @@ import articleImg1 from '/art-brut/Partybussen-og-bykongen-Kell-Jarner-2018.webp
 import articleImg2 from '/morbid/Mord-i-Muxia-Kell-Jarner.webp'; 
 import Footer from './components/Footer';
 import NewsLetter from './components/NewsLetter';
+import Exhibitions from './pages/Exhibitions';
 
 function App() {
   const articles = [
@@ -52,9 +53,10 @@ function App() {
           </>
         } />
         <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/paintings" element={<Paintings />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/posters" element={<Posters />} />
+        <Route path="/exhibitions" element={<Exhibitions />} />
         <Route path="/Portraits" element={<Portraits />} />
         <Route path="/Faces" element={<Faces />} />
         <Route path="/CavePaintings" element={<CavePaintings />} />

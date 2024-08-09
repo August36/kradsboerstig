@@ -4,18 +4,78 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import NavigationArrows from '../components/NavigationArrows';
 
 const images = [
-  '/portraits/Frida-portræt-Kell-Jarner.webp',
-  '/portraits/Frida2-portræt-Kell-Jarner.webp',
-  '/portraits/Henrik-Bay-portræt-Kell-Jarner.webp',
-  '/portraits/Jesper-Binzer-DBPM-Kell-Jarner-scaled.webp',
-  '/portraits/Lars-Løkke-portræt-Kell-Jarner.webp',
-  '/portraits/Mads-Mikkelsen-portræt-Kell-Jarner.webp',
-  '/portraits/Mariann-Kell-Jarner-scaled.webp',
-  '/portraits/Max-Manneche-portræt-Kell-Jarner.webp',
-  '/portraits/Selvportræt-Kell-Jarner-scaled.webp',
-  '/portraits/selvportræt1-Kell-Jarner.webp',
-  '/portraits/Sommer-og-Lars-portræt-Kell-Jarner.webp',
-  '/portraits/Vinnie-Bjerre-portræt-Kell-jarner.webp',
+  {
+    src: '/portraits/Frida-portræt-Kell-Jarner.webp',
+    title: 'Frida Portræt',
+    price: '800',
+    size: '50x70 cm'
+  },
+  {
+    src: '/portraits/Frida2-portræt-Kell-Jarner.webp',
+    title: 'Frida2 Portræt',
+    price: '850',
+    size: '50x70 cm'
+  },
+  {
+    src: '/portraits/Henrik-Bay-portræt-Kell-Jarner.webp',
+    title: 'Henrik Bay',
+    price: '900',
+    size: '60x80 cm'
+  },
+  {
+    src: '/portraits/Jesper-Binzer-DBPM-Kell-Jarner-scaled.webp',
+    title: 'Jesper Binzer',
+    price: '950',
+    size: '70x100 cm'
+  },
+  {
+    src: '/portraits/Lars-Løkke-portræt-Kell-Jarner.webp',
+    title: 'Lars Løkke',
+    price: '850',
+    size: '50x70 cm'
+  },
+  {
+    src: '/portraits/Mads-Mikkelsen-portræt-Kell-Jarner.webp',
+    title: 'Mads Mikkelsen',
+    price: '950',
+    size: '60x80 cm'
+  },
+  {
+    src: '/portraits/Mariann-Kell-Jarner-scaled.webp',
+    title: 'Mariann',
+    price: '800',
+    size: '50x70 cm'
+  },
+  {
+    src: '/portraits/Max-Manneche-portræt-Kell-Jarner.webp',
+    title: 'Max Manneche',
+    price: '900',
+    size: '60x80 cm'
+  },
+  {
+    src: '/portraits/Selvportræt-Kell-Jarner-scaled.webp',
+    title: 'Selvportræt',
+    price: '1000',
+    size: '70x100 cm'
+  },
+  {
+    src: '/portraits/selvportræt1-Kell-Jarner.webp',
+    title: 'Selvportræt 1',
+    price: '950',
+    size: '60x80 cm'
+  },
+  {
+    src: '/portraits/Sommer-og-Lars-portræt-Kell-Jarner.webp',
+    title: 'Sommer og Lars',
+    price: '850',
+    size: '50x70 cm'
+  },
+  {
+    src: '/portraits/Vinnie-Bjerre-portræt-Kell-jarner.webp',
+    title: 'Vinnie Bjerre',
+    price: '800',
+    size: '50x70 cm'
+  }
 ];
 
 const Posters = () => {
@@ -48,12 +108,19 @@ const Posters = () => {
               totalImages={images.length}
               setModalImageIndex={setModalImageIndex}
             />
-            <img
-              src={images[modalImageIndex]}
-              alt={`Modal ${modalImageIndex + 1}`}
-              className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking on the image
-            />
+            <div className="relative">
+              <img
+                src={images[modalImageIndex].src}  // Brug 'src' fra objektet
+                alt={images[modalImageIndex].title}  // Brug 'title' fra objektet
+                className="max-w-full max-h-full object-contain"
+                onClick={(e) => e.stopPropagation()} // Forhindre lukning af modal ved klik på billedet
+              />
+              <div className="absolute bottom-4 left-4 text-white">
+                <h2 className="text-xl font-semibold">{images[modalImageIndex].title}</h2>
+                <p>Price: {images[modalImageIndex].price}</p>
+                <p>Size: {images[modalImageIndex].size}</p>
+              </div>
+            </div>
           </div>
         )}
       </div>

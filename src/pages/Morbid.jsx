@@ -4,15 +4,60 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import NavigationArrows from '../components/NavigationArrows';
 
 const images = [
-  '/morbid/Dansen-om-guldkalven-Kell-Jarner.webp',
-  '/morbid/Helikopteren-ankommer-efter-middag-Kell-Jarner.webp',
-  '/morbid/Herobar-3.24-Kell-Jarner.webp',
-  '/morbid/Hullet-Kell-Jarner.webp',
-  '/morbid/Kamp-kat-og-klovne.webp',
-  '/morbid/Mord-i-Muxia-Kell-Jarner.webp',
-  '/morbid/Olfert-Kell-Jarner.webp',
-  '/morbid/Selvportræt-med-snublende-hunde-Kell-Jarner.webp',
-  '/morbid/Syndesvinehund-Kell-Jarner.webp',
+  {
+    src: '/morbid/Dansen-om-guldkalven-Kell-Jarner.webp',
+    title: 'Dansen om Guldkalven',
+    price: '699',
+    size: '70x100 cm'
+  },
+  {
+    src: '/morbid/Helikopteren-ankommer-efter-middag-Kell-Jarner.webp',
+    title: 'Helikopteren Ankommer Efter Middag',
+    price: '749',
+    size: '70x100 cm'
+  },
+  {
+    src: '/morbid/Herobar-3.24-Kell-Jarner.webp',
+    title: 'Herobar 3.24',
+    price: '699',
+    size: '60x80 cm'
+  },
+  {
+    src: '/morbid/Hullet-Kell-Jarner.webp',
+    title: 'Hullet',
+    price: '599',
+    size: '50x70 cm'
+  },
+  {
+    src: '/morbid/Kamp-kat-og-klovne.webp',
+    title: 'Kamp Kat og Klovne',
+    price: '799',
+    size: '70x100 cm'
+  },
+  {
+    src: '/morbid/Mord-i-Muxia-Kell-Jarner.webp',
+    title: 'Mord i Muxia',
+    price: '649',
+    size: '60x80 cm'
+  },
+  {
+    src: '/morbid/Olfert-Kell-Jarner.webp',
+    title: 'Olfert',
+    price: '599',
+    size: '50x70 cm'
+  },
+  {
+    src: '/morbid/Selvportræt-med-snublende-hunde-Kell-Jarner.webp',
+    title: 'Selvportræt med Snublende Hunde',
+    price: '749',
+    size: '70x100 cm'
+  },
+  {
+    src: '/morbid/Syndesvinehund-Kell-Jarner.webp',
+    title: 'Syndesvinehund',
+    price: '699',
+    size: '60x80 cm'
+  }
 ];
 
 const Morbid = () => {
@@ -46,10 +91,10 @@ const Morbid = () => {
               setModalImageIndex={setModalImageIndex}
             />
             <img
-              src={images[modalImageIndex]}
-              alt={`Modal ${modalImageIndex + 1}`}
+              src={images[modalImageIndex].src}  // Brug 'src' fra objektet
+              alt={images[modalImageIndex].title}  // Brug 'title' fra objektet
               className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking on the image
+              onClick={(e) => e.stopPropagation()} // Forhindre lukning af modal ved klik på billedet
             />
           </div>
         )}

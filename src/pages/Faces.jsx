@@ -4,15 +4,60 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import NavigationArrows from '../components/NavigationArrows';
 
 const images = [
-  'faces/Ansigt3-Nar-Kell-Jarner-2017.webp',
-  'faces/Ansigt4-Fingerdukke-Kell-Jarner-2017.webp',
-  'faces/Ansigt5-Kell-Jarner-2017-Løber.webp',
-  'faces/Ansigt6-Fremmed-2017.webp',
-  'faces/Ansigt7-Stenmand-små-venner-Kell-Jarner-2017.webp',
-  'faces/Ansigt8-Menneske-i-lag-Kell-Jarner-2017.webp',
-  'faces/Ansigt9-Hvorformenneske-Kell-Jarner-2017.webp',
-  'faces/MG_0161.webp',
-  'faces/MG_0162.webp',
+  {
+    src: 'faces/Ansigt3-Nar-Kell-Jarner-2017.webp',
+    title: 'Ansigt 3 - Nar',
+    price: '599',
+    size: '50x70 cm'
+  },
+  {
+    src: 'faces/Ansigt4-Fingerdukke-Kell-Jarner-2017.webp',
+    title: 'Ansigt 4 - Fingerdukke',
+    price: '649',
+    size: '60x80 cm'
+  },
+  {
+    src: 'faces/Ansigt5-Kell-Jarner-2017-Løber.webp',
+    title: 'Ansigt 5 - Løber',
+    price: '699',
+    size: '60x80 cm'
+  },
+  {
+    src: 'faces/Ansigt6-Fremmed-2017.webp',
+    title: 'Ansigt 6 - Fremmed',
+    price: '599',
+    size: '50x70 cm'
+  },
+  {
+    src: 'faces/Ansigt7-Stenmand-små-venner-Kell-Jarner-2017.webp',
+    title: 'Ansigt 7 - Stenmand og små venner',
+    price: '749',
+    size: '70x100 cm'
+  },
+  {
+    src: 'faces/Ansigt8-Menneske-i-lag-Kell-Jarner-2017.webp',
+    title: 'Ansigt 8 - Menneske i lag',
+    price: '799',
+    size: '70x100 cm'
+  },
+  {
+    src: 'faces/Ansigt9-Hvorformenneske-Kell-Jarner-2017.webp',
+    title: 'Ansigt 9 - Hvorformenneske',
+    price: '699',
+    size: '60x80 cm'
+  },
+  {
+    src: 'faces/MG_0161.webp',
+    title: 'MG 0161',
+    price: '649',
+    size: '60x80 cm'
+  },
+  {
+    src: 'faces/MG_0162.webp',
+    title: 'MG 0162',
+    price: '649',
+    size: '60x80 cm'
+  }
 ];
 
 const Faces = () => {
@@ -46,10 +91,10 @@ const Faces = () => {
               setModalImageIndex={setModalImageIndex}
             />
             <img
-              src={images[modalImageIndex]}
-              alt={`Modal ${modalImageIndex + 1}`}
+              src={images[modalImageIndex].src}  // Brug 'src' fra objektet
+              alt={images[modalImageIndex].title}  // Brug 'title' fra objektet
               className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking on the image
+              onClick={(e) => e.stopPropagation()} // Forhindre lukning af modal ved klik på billedet
             />
           </div>
         )}

@@ -4,11 +4,36 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import NavigationArrows from '../components/NavigationArrows';
 
 const images = [
-  'realistic/Den-blå-hund-Kell-Jarner.webp',
-  'realistic/Drengene-fra-Tremonti-Kell-Jarner.webp',
-  'realistic/Fisk-Kell-Jarner.webp',
-  'realistic/Vandbøffel-Kell-Jarner.webp',
-  'realistic/Victory-med-åbne-øjne-Kell-Jarner.webp',
+  {
+    src: 'realistic/Den-blå-hund-Kell-Jarner.webp',
+    title: 'Den Blå Hund',
+    price: '1200',
+    size: '80x100 cm'
+  },
+  {
+    src: 'realistic/Drengene-fra-Tremonti-Kell-Jarner.webp',
+    title: 'Drengene fra Tremonti',
+    price: '1100',
+    size: '70x90 cm'
+  },
+  {
+    src: 'realistic/Fisk-Kell-Jarner.webp',
+    title: 'Fisk',
+    price: '1000',
+    size: '60x80 cm'
+  },
+  {
+    src: 'realistic/Vandbøffel-Kell-Jarner.webp',
+    title: 'Vandbøffel',
+    price: '1300',
+    size: '90x120 cm'
+  },
+  {
+    src: 'realistic/Victory-med-åbne-øjne-Kell-Jarner.webp',
+    title: 'Victory med Åbne Øjne',
+    price: '1250',
+    size: '80x100 cm'
+  }
 ];
 
 const Realistic = () => {
@@ -41,12 +66,19 @@ const Realistic = () => {
               totalImages={images.length}
               setModalImageIndex={setModalImageIndex}
             />
-            <img
-              src={images[modalImageIndex]}
-              alt={`Modal ${modalImageIndex + 1}`}
-              className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking on the image
-            />
+            <div className="relative">
+              <img
+                src={images[modalImageIndex].src}  // Brug 'src' fra objektet
+                alt={images[modalImageIndex].title}  // Brug 'title' fra objektet
+                className="max-w-full max-h-full object-contain"
+                onClick={(e) => e.stopPropagation()} // Forhindre lukning af modal ved klik på billedet
+              />
+              <div className="absolute bottom-4 left-4 text-white">
+                <h2 className="text-xl font-semibold">{images[modalImageIndex].title}</h2>
+                <p>Price: {images[modalImageIndex].price}</p>
+                <p>Size: {images[modalImageIndex].size}</p>
+              </div>
+            </div>
           </div>
         )}
       </div>

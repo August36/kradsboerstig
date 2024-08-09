@@ -11,11 +11,11 @@ const images = [
   { src: '/realistic/Vandbøffel-Kell-Jarner.webp', link: '/Realistic', text: 'Realistic' },
 ];
 
-const Gallery = () => {
+const Paintings = () => {
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Gallery</h1>
-      <p className="mb-8">This is the Gallery page.</p>
+      <h1 className="text-3xl font-bold mb-4">Paintings</h1>
+      <p className="mb-8">This is the Paintings page. It contains eight different rooms</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {images.map((image, index) => (
           <Link to={image.link} key={index} className="relative overflow-hidden bg-gray-200 rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105">
@@ -40,4 +40,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Paintings;

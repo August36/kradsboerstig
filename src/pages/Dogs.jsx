@@ -4,15 +4,60 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import NavigationArrows from '../components/NavigationArrows';
 
 const images = [
-  '/dogs/1-Hundehovedspring-Kell-Jarner.webp',
-  '/dogs/2-Fugleperspektiv-Kell-Jarner.webp',
-  '/dogs/3-Hånden-der-fordrer.webp',
-  '/dogs/4-Forpotestand-Kell-Jarner.webp',
-  '/dogs/5-Pønsehund-Kell-Jarner.webp',
-  '/dogs/6-Under-gulvbrædderne4-Kell-Jarner.webp',
-  '/dogs/7-Bid-ej-hånden-der-fodrer-dig-Kell-Jarner.webp',
-  '/dogs/8-Frygten-for-at-miste-Kell-Jarner.webp',
-  '/dogs/9-Hundeslagsmål-Kel-Jarner.webp',
+  {
+    src: '/dogs/1-Hundehovedspring-Kell-Jarner.webp',
+    title: 'Hundehovedspring',
+    price: '599',
+    size: '50x70 cm'
+  },
+  {
+    src: '/dogs/2-Fugleperspektiv-Kell-Jarner.webp',
+    title: 'Fugleperspektiv',
+    price: '499',
+    size: '40x60 cm'
+  },
+  {
+    src: '/dogs/3-Hånden-der-fordrer.webp',
+    title: 'Hånden der fordrer',
+    price: '699',
+    size: '60x80 cm'
+  },
+  {
+    src: '/dogs/4-Forpotestand-Kell-Jarner.webp',
+    title: 'Forpotestand',
+    price: '549',
+    size: '50x70 cm'
+  },
+  {
+    src: '/dogs/5-Pønsehund-Kell-Jarner.webp',
+    title: 'Pønsehund',
+    price: '499',
+    size: '40x60 cm'
+  },
+  {
+    src: '/dogs/6-Under-gulvbrædderne4-Kell-Jarner.webp',
+    title: 'Under gulvbrædderne',
+    price: '799',
+    size: '70x100 cm'
+  },
+  {
+    src: '/dogs/7-Bid-ej-hånden-der-fodrer-dig-Kell-Jarner.webp',
+    title: 'Bid ej hånden der fodrer dig',
+    price: '599',
+    size: '50x70 cm'
+  },
+  {
+    src: '/dogs/8-Frygten-for-at-miste-Kell-Jarner.webp',
+    title: 'Frygten for at miste',
+    price: '749',
+    size: '60x80 cm'
+  },
+  {
+    src: '/dogs/9-Hundeslagsmål-Kel-Jarner.webp',
+    title: 'Hundeslagsmål',
+    price: '899',
+    size: '70x100 cm'
+  }
 ];
 
 const Dogs = () => {
@@ -48,10 +93,10 @@ const Dogs = () => {
               setModalImageIndex={setModalImageIndex}
             />
             <img
-              src={images[modalImageIndex]}
-              alt={`Modal ${modalImageIndex + 1}`}
+              src={images[modalImageIndex].src}  // Brug 'src' fra objektet
+              alt={images[modalImageIndex].title}  // Brug 'title' fra objektet
               className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking on the image
+              onClick={(e) => e.stopPropagation()} // Forhindre lukning af modal ved klik på billedet
             />
           </div>
         )}
