@@ -5,50 +5,26 @@ import Modal from "../components/Modal"; // Import the Modal component
 
 const images = [
   {
-    src: "realistic/Hane1.jpg",
-    title: "Hane",
-    price: "1200",
-    size: "80x100 cm",
+    src: "/fuglemennesker/Vejrhaner.jpg",
+    title: "Vejrhaner",
+    price: "900",
+    size: "70x90 cm",
   },
   {
-    src: "realistic/æbler_og_banan.jpg",
-    title: "Æbler og banan",
-    price: "1200",
-    size: "80x100 cm",
+    src: "/fuglemennesker/Hulahop.jpg",
+    title: "Hulahop",
+    price: "900",
+    size: "70x90 cm",
   },
-  // {
-  //   src: "realistic/Den-blå-hund-Kell-Jarner.webp",
-  //   title: "Den Blå Hund",
-  //   price: "1200",
-  //   size: "80x100 cm",
-  // },
-  // {
-  //   src: "realistic/Drengene-fra-Tremonti-Kell-Jarner.webp",
-  //   title: "Drengene fra Tremonti",
-  //   price: "1100",
-  //   size: "70x90 cm",
-  // },
-  // {
-  //   src: "realistic/Fisk-Kell-Jarner.webp",
-  //   title: "Fisk",
-  //   price: "1000",
-  //   size: "60x80 cm",
-  // },
   {
-    src: "realistic/Vandbøffel-Kell-Jarner.webp",
-    title: "Vandbøffel",
-    price: "1300",
-    size: "90x120 cm",
+    src: "/fuglemennesker/Oxymoron.jpg",
+    title: "Oxymoron",
+    price: "900",
+    size: "70x90 cm",
   },
-  // {
-  //   src: "realistic/Victory-med-åbne-øjne-Kell-Jarner.webp",
-  //   title: "Victory med Åbne Øjne",
-  //   price: "1250",
-  //   size: "80x100 cm",
-  // },
 ];
 
-const Realistic = () => {
+const Toon = () => {
   const [modalImageIndex, setModalImageIndex] = useState(null);
 
   const handleOpenModal = (index) => {
@@ -73,8 +49,8 @@ const Realistic = () => {
     <>
       <div className="container mx-auto p-4">
         <Breadcrumbs />
-        <h1 className="text-3xl font-bold mb-4">Realistisk</h1>
-        <p className="mb-8">This is the realistisk page.</p>
+        <h1 className="text-3xl font-bold mb-4">Toon art</h1>
+        <p className="mb-8">This is the toon art page.</p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal Component */}
@@ -91,4 +67,4 @@ const Realistic = () => {
   );
 };
 
-export default Realistic;
+export default Toon;

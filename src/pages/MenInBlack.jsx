@@ -5,57 +5,41 @@ import Modal from "../components/Modal"; // Import the Modal component
 
 const images = [
   {
-    src: "realistic/Hane1.jpg",
-    title: "Hane",
-    price: "1200",
-    size: "80x100 cm",
+    src: "/men-in-black/diaspora.JPG",
+    title: "Diaspora",
+    price: "2400 DKK",
+    size: "30x30 cm",
   },
   {
-    src: "realistic/æbler_og_banan.jpg",
-    title: "Æbler og banan",
-    price: "1200",
-    size: "80x100 cm",
+    src: "/men-in-black/kan_man_stå_af_denne_planet.JPG",
+    title: "Kan man stå af denne planet",
+    price: "Ikke sat",
+    size: "50x40 cm",
   },
-  // {
-  //   src: "realistic/Den-blå-hund-Kell-Jarner.webp",
-  //   title: "Den Blå Hund",
-  //   price: "1200",
-  //   size: "80x100 cm",
-  // },
-  // {
-  //   src: "realistic/Drengene-fra-Tremonti-Kell-Jarner.webp",
-  //   title: "Drengene fra Tremonti",
-  //   price: "1100",
-  //   size: "70x90 cm",
-  // },
-  // {
-  //   src: "realistic/Fisk-Kell-Jarner.webp",
-  //   title: "Fisk",
-  //   price: "1000",
-  //   size: "60x80 cm",
-  // },
   {
-    src: "realistic/Vandbøffel-Kell-Jarner.webp",
-    title: "Vandbøffel",
-    price: "1300",
-    size: "90x120 cm",
+    src: "/men-in-black/muh_taler.JPG",
+    title: "Muh taler",
+    price: "Ikke sat",
+    size: "50x40 cm",
   },
-  // {
-  //   src: "realistic/Victory-med-åbne-øjne-Kell-Jarner.webp",
-  //   title: "Victory med Åbne Øjne",
-  //   price: "1250",
-  //   size: "80x100 cm",
-  // },
+  {
+    src: "/men-in-black/the_player.JPG",
+    title: "The player",
+    price: "Ikke sat",
+    size: "50x40 cm",
+  },
 ];
 
-const Realistic = () => {
+const Dogs = () => {
   const [modalImageIndex, setModalImageIndex] = useState(null);
 
   const handleOpenModal = (index) => {
+    console.log("Opening modal with index:", index);
     setModalImageIndex(index);
   };
 
   const handleCloseModal = () => {
+    console.log("Closing modal");
     setModalImageIndex(null);
   };
 
@@ -73,8 +57,8 @@ const Realistic = () => {
     <>
       <div className="container mx-auto p-4">
         <Breadcrumbs />
-        <h1 className="text-3xl font-bold mb-4">Realistisk</h1>
-        <p className="mb-8">This is the realistisk page.</p>
+        <h1 className="text-3xl font-bold mb-4">Men in Black</h1>
+        <p className="mb-8">This is the men in black page.</p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal Component */}
@@ -91,4 +75,4 @@ const Realistic = () => {
   );
 };
 
-export default Realistic;
+export default Dogs;
