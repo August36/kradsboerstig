@@ -98,7 +98,12 @@ const Morbid = () => {
       <div className="container mx-auto p-4">
         <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Macabre</h1>
-        <p className="mb-8">This is the Macabre page.</p>
+        <p className="mb-8">
+          Kunst har mange kilder, og én af dem er mørket, døden, lidelsen,
+          grusomheden og ondskaben. Mine makabre malerier er i familie med den
+          narrative råkunst, men humøret er anderledes, og fremtillingen er ofte
+          mere gennemtænkt og realistisk.
+        </p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal Component */}

@@ -74,7 +74,13 @@ const Realistic = () => {
       <div className="container mx-auto p-4">
         <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Realistisk</h1>
-        <p className="mb-8">This is the realistisk page.</p>
+        <p className="mb-8">
+          Det hænder, at jeg sætter jeg mig ned og maler efter fotografier, som
+          jeg selv har taget eller finder på nettet. Det er hvad det er, og dog
+          kan det af og til være lidt mere end det umiddelbart ser ud til. Et
+          lille twist, fx et skjult motiv eller en farve, der ikke var på
+          fotografiet.
+        </p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal Component */}

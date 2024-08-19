@@ -86,7 +86,15 @@ const CavePaintings = () => {
       <div className="container mx-auto p-4">
         <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Hulemalerier</h1>
-        <p className="mb-8">This is the hulemalerier page.</p>
+        <p className="mb-8">
+          Igen en serie, som har fortællingen som omdrejningspunkt. På en
+          baggrund der kan minde om hvid klippesten, folder scenarier sig ud:
+          Videnskabsmænd diskuterer med et (umælende) dyr om en svævende kvinde.
+          En pandababy bliver skabt, øjensynligt af en kvinde med lang hals,
+          slør og mange bryster. En maskeret nonne med hofteholdere skal til at
+          sætte øksen i en høne med menneskehovede, mens alle kigger den anden
+          vej på Trump og Putin, Og meget andet. Crazy stuff.
+        </p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal Component */}

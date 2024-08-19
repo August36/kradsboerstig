@@ -37,9 +37,10 @@ const images = [
 const Paintings = () => {
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Paintings</h1>
+      <h1 className="text-3xl font-bold mb-4">Malerier</h1>
       <p className="mb-8">
-        This is the Paintings page. It contains eight different rooms
+        Her kan du se de malerier, jeg har til salg. Jeg har flere maleriske
+        greb, så de er inddelt i forskellige rum, som du kan besøge nedenfor.{" "}
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {images.map((image, index) => (

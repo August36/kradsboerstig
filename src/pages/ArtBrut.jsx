@@ -115,8 +115,14 @@ const ArtBrut = () => {
     <>
       <div className="container mx-auto p-4">
         <Breadcrumbs />
-        <h1 className="text-3xl font-bold mb-4">Råkunst</h1>
-        <p className="mb-8">This is the råkunst page.</p>
+        <h1 className="text-3xl font-bold mb-4">Narrativ råkunst</h1>
+        <p className="mb-8">
+          Råkunst, også kaldet ‘art brut’ og ‘outsider art’, er et af mine
+          maleriske hovedgreb. Jeg giver slip og maler løs. Grimt er godt, og
+          fejl er perfekte. Her er der hænder og fødder, der vender den forkerte
+          vej, og figurerne kæmper, falder, skriger, peger og tisser, ofte under
+          stor sindsbevægelse. Der er en fortælling i gang.
+        </p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal Component */}

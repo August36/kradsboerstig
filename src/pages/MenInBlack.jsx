@@ -57,8 +57,15 @@ const Dogs = () => {
     <>
       <div className="container mx-auto p-4">
         <Breadcrumbs />
-        <h1 className="text-3xl font-bold mb-4">Men in Black</h1>
-        <p className="mb-8">This is the men in black page.</p>
+        <h1 className="text-3xl font-bold mb-4">Men in black</h1>
+        <p className="mb-8">
+          I denne serie - som har lånt sit navn fra coronatidens oprørsbevægelse
+          - er det sorte udtryk for den isolation, vi oplever ved at være
+          adskilte fra hinanden. Figurernes ansigter træder frem som ridser, og
+          de fremstår som antihelte. En gnavpot, der brokker sig, når Tivoli
+          åbner, en strandløve, der ikke kan score og en fraskilt familiefar,
+          der reflekterer over, at han hellere vil have bilen end børnene.
+        </p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal Component */}
