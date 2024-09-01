@@ -1,13 +1,26 @@
 const NewsArticle = ({ image, title, content }) => {
   return (
-    <div className="border-b-4 mb-8 mt-8">
-    <div className="flex flex-col md:flex-row mb-8">
-      <img src={image} alt={title} className="w-full md:w-1/2 h-48 md:h-auto object-cover" />
-      <div className="p-4 md:w-1/2">
-        <h2 className="text-2xl font-bold mb-2">{title}</h2>
-        <p>{content}</p>
+    <div className="border-b-4 mt-8 flex justify-center">
+      <div className="flex flex-col md:flex-row items-start w-full max-w-5xl p-4 space-y-4 md:space-y-0 md:space-x-5">
+        {/* Image Section */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-auto object-cover rounded-lg shadow-lg"
+          />
+        </div>
+        
+        {/* Text Section */}
+        <div className="w-full md:w-1/2">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-left">
+            {title}
+          </h2>
+          <p className="text-base md:text-lg text-left text-gray-700">
+            {content}
+          </p>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

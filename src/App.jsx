@@ -27,14 +27,12 @@ function App() {
     {
       image: articleImg1,
       title: "Article 1",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       image: articleImg2,
       title: "Article 2",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     // Add more articles here
   ];
@@ -49,10 +47,13 @@ function App() {
             <>
               <Helmet>
                 <title>Kell Jarner Art</title>
-                <meta name="description" content="Welcome to the homepage of My Awesome Website. Explore our latest articles and news." />
+                <meta name="description" content="Welcome to the homepage of Kell Jarner Art." />
               </Helmet>
               <Hero image={heroImage} />
-              <div className="container mx-auto p-4">
+              <div className="container mx-auto mt-10 sm:mt-16 px-4">
+                <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center sm:text-left">
+                  Nyheder
+                </h1>
                 {articles.map((article, index) => (
                   <NewsArticle key={index} {...article} />
                 ))}
@@ -66,8 +67,8 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>About Us - My Awesome Website</title>
-                <meta name="description" content="Learn more about My Awesome Website and our mission." />
+                <title>About Us - Kell Jarner Art</title>
+                <meta name="description" content="Learn more about Kell Jarner Art and our mission." />
               </Helmet>
               <About />
             </>
@@ -78,7 +79,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Paintings - My Awesome Website</title>
+                <title>Paintings - Kell Jarner Art</title>
                 <meta name="description" content="Explore our collection of paintings." />
               </Helmet>
               <Paintings />
@@ -90,8 +91,8 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Contact Us - My Awesome Website</title>
-                <meta name="description" content="Get in touch with My Awesome Website for any inquiries." />
+                <title>Contact Us - Kell Jarner Art</title>
+                <meta name="description" content="Get in touch with Kell Jarner Art for any inquiries." />
               </Helmet>
               <Contact />
             </>
@@ -102,7 +103,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Posters - My Awesome Website</title>
+                <title>Posters - Kell Jarner Art</title>
                 <meta name="description" content="Discover our range of posters." />
               </Helmet>
               <Posters />
@@ -114,7 +115,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Exhibitions - My Awesome Website</title>
+                <title>Exhibitions - Kell Jarner Art</title>
                 <meta name="description" content="Find out about our current and past exhibitions." />
               </Helmet>
               <Exhibitions />
@@ -126,7 +127,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Cave Paintings - My Awesome Website</title>
+                <title>Cave Paintings - Kell Jarner Art</title>
                 <meta name="description" content="Explore our collection of cave paintings." />
               </Helmet>
               <CavePaintings />
@@ -138,7 +139,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Toon - My Awesome Website</title>
+                <title>Toon - Kell Jarner Art</title>
                 <meta name="description" content="Check out our Toon art collection." />
               </Helmet>
               <Toon />
@@ -150,7 +151,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Morbid - My Awesome Website</title>
+                <title>Morbid - Kell Jarner Art</title>
                 <meta name="description" content="View our Morbid art collection." />
               </Helmet>
               <Morbid />
@@ -162,7 +163,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Art Brut - My Awesome Website</title>
+                <title>Art Brut - Kell Jarner Art</title>
                 <meta name="description" content="Explore the Art Brut collection." />
               </Helmet>
               <ArtBrut />
@@ -174,7 +175,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Realistic - My Awesome Website</title>
+                <title>Realistic - Kell Jarner Art</title>
                 <meta name="description" content="Discover realistic art pieces." />
               </Helmet>
               <Realistic />
@@ -186,7 +187,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>Men In Black - My Awesome Website</title>
+                <title>Men In Black - Kell Jarner Art</title>
                 <meta name="description" content="See our Men In Black art collection." />
               </Helmet>
               <MenInBlack />
@@ -198,7 +199,7 @@ function App() {
           element={
             <>
               <Helmet>
-                <title>FugleMennesker - My Awesome Website</title>
+                <title>FugleMennesker - Kell Jarner Art</title>
                 <meta name="description" content="Explore the FugleMennesker art collection." />
               </Helmet>
               <FugleMennesker />
