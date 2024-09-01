@@ -8,7 +8,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/kelljarner/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white"
@@ -16,7 +16,7 @@ const Footer = () => {
                 Instagram
               </a>
               <a
-                href="https://www.pinterest.com"
+                href="https://dk.pinterest.com/kelljarner/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white"
@@ -24,7 +24,7 @@ const Footer = () => {
                 Pinterest
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/JarnerArt/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white"
