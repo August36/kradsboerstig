@@ -37,7 +37,7 @@ const Footer = () => {
           {/* Contact Information */}
           <div>
             <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
-            <p className="mb-2">Phone: <a href="tel:+1234567890" className="hover:underline">+1 (234) 567-890</a></p>
+            <p className="mb-2">Phone: <a href="tel:+1234567890" className="hover:underline">+45 30 31 90 91</a></p>
             <p>Email: <a href="mailto:info@example.com" className="hover:underline">info@example.com</a></p>
           </div>
         </div>
