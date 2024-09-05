@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 import "./App.css";
 import Hero from "./components/Hero";
 import NewsArticle from "./components/NewsArticle";
@@ -27,12 +27,14 @@ function App() {
     {
       image: articleImg1,
       title: "Article 1",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       image: articleImg2,
       title: "Article 2",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     // Add more articles here
   ];
@@ -47,11 +49,14 @@ function App() {
             <>
               <Helmet>
                 <title>Kell Jarner Art</title>
-                <meta name="description" content="Welcome to the homepage of Kell Jarner Art." />
+                <meta
+                  name="description"
+                  content="Welcome to the homepage of Kell Jarner Art."
+                />
               </Helmet>
               <Hero image={heroImage} />
-              <div className="container mx-auto mt-10 sm:mt-16 px-4">
-                <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center sm:text-left">
+              <div className="w-full max-w-5xl mx-auto mb-10">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-8 text-center sm:text-left">
                   Nyheder
                 </h1>
                 {articles.map((article, index) => (
@@ -68,7 +73,10 @@ function App() {
             <>
               <Helmet>
                 <title>About Us - Kell Jarner Art</title>
-                <meta name="description" content="Learn more about Kell Jarner Art and our mission." />
+                <meta
+                  name="description"
+                  content="Learn more about Kell Jarner Art and our mission."
+                />
               </Helmet>
               <About />
             </>
@@ -80,7 +88,10 @@ function App() {
             <>
               <Helmet>
                 <title>Paintings - Kell Jarner Art</title>
-                <meta name="description" content="Explore our collection of paintings." />
+                <meta
+                  name="description"
+                  content="Explore our collection of paintings."
+                />
               </Helmet>
               <Paintings />
             </>
@@ -92,7 +103,10 @@ function App() {
             <>
               <Helmet>
                 <title>Contact Us - Kell Jarner Art</title>
-                <meta name="description" content="Get in touch with Kell Jarner Art for any inquiries." />
+                <meta
+                  name="description"
+                  content="Get in touch with Kell Jarner Art for any inquiries."
+                />
               </Helmet>
               <Contact />
             </>
@@ -104,7 +118,10 @@ function App() {
             <>
               <Helmet>
                 <title>Posters - Kell Jarner Art</title>
-                <meta name="description" content="Discover our range of posters." />
+                <meta
+                  name="description"
+                  content="Discover our range of posters."
+                />
               </Helmet>
               <Posters />
             </>
@@ -116,7 +133,10 @@ function App() {
             <>
               <Helmet>
                 <title>Exhibitions - Kell Jarner Art</title>
-                <meta name="description" content="Find out about our current and past exhibitions." />
+                <meta
+                  name="description"
+                  content="Find out about our current and past exhibitions."
+                />
               </Helmet>
               <Exhibitions />
             </>
@@ -128,7 +148,10 @@ function App() {
             <>
               <Helmet>
                 <title>Cave Paintings - Kell Jarner Art</title>
-                <meta name="description" content="Explore our collection of cave paintings." />
+                <meta
+                  name="description"
+                  content="Explore our collection of cave paintings."
+                />
               </Helmet>
               <CavePaintings />
             </>
@@ -140,7 +163,10 @@ function App() {
             <>
               <Helmet>
                 <title>Toon - Kell Jarner Art</title>
-                <meta name="description" content="Check out our Toon art collection." />
+                <meta
+                  name="description"
+                  content="Check out our Toon art collection."
+                />
               </Helmet>
               <Toon />
             </>
@@ -152,7 +178,10 @@ function App() {
             <>
               <Helmet>
                 <title>Morbid - Kell Jarner Art</title>
-                <meta name="description" content="View our Morbid art collection." />
+                <meta
+                  name="description"
+                  content="View our Morbid art collection."
+                />
               </Helmet>
               <Morbid />
             </>
@@ -164,7 +193,10 @@ function App() {
             <>
               <Helmet>
                 <title>Art Brut - Kell Jarner Art</title>
-                <meta name="description" content="Explore the Art Brut collection." />
+                <meta
+                  name="description"
+                  content="Explore the Art Brut collection."
+                />
               </Helmet>
               <ArtBrut />
             </>
@@ -176,7 +208,10 @@ function App() {
             <>
               <Helmet>
                 <title>Realistic - Kell Jarner Art</title>
-                <meta name="description" content="Discover realistic art pieces." />
+                <meta
+                  name="description"
+                  content="Discover realistic art pieces."
+                />
               </Helmet>
               <Realistic />
             </>
@@ -188,7 +223,10 @@ function App() {
             <>
               <Helmet>
                 <title>Men In Black - Kell Jarner Art</title>
-                <meta name="description" content="See our Men In Black art collection." />
+                <meta
+                  name="description"
+                  content="See our Men In Black art collection."
+                />
               </Helmet>
               <MenInBlack />
             </>
@@ -200,7 +238,10 @@ function App() {
             <>
               <Helmet>
                 <title>FugleMennesker - Kell Jarner Art</title>
-                <meta name="description" content="Explore the FugleMennesker art collection." />
+                <meta
+                  name="description"
+                  content="Explore the FugleMennesker art collection."
+                />
               </Helmet>
               <FugleMennesker />
             </>
