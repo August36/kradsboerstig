@@ -4,7 +4,7 @@ const About = () => {
       <img
         src="BW_Kell-Jarner-Kunst.jpg"
         alt="Profile"
-        className="w-80 h-80"
+        className="w-80 h-30"
       />
       <div className="flex-1 max-w-3xl space-y-5 md:text-left">
         <h1 className="text-xl font-bold">Om mig</h1>

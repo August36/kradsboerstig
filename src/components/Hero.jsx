@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Hero = ({ image }) => {
   return (
     <div
-      className="relative w-full h-screen bg-center bg-no-repeat bg-cover mt-28 mb-20"  // Adjust mt-16 based on your navbar height
+      className="relative w-full h-screen bg-center bg-no-repeat bg-cover mb-20"  // Adjust mt-16 based on your navbar height
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Overlay */}
