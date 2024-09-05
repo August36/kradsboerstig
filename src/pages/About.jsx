@@ -6,7 +6,7 @@ const About = () => {
         alt="Profile"
         className="w-80 h-80"
       />
-      <div className="flex-1 space-y-5">
+      <div className="flex-1 max-w-3xl space-y-5 md:text-left">
         <h1 className="text-xl font-bold">Om mig</h1>
         <p className="text-base leading-relaxed">
           Mit navn er Kell Jarner Rasmussen. Jeg har altid malet, i mange år om

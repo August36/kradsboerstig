@@ -14,26 +14,26 @@ const Navbar = () => {
         <div className="text-white text-lg font-bold">
           <Link to="/" className="text-white hover:text-gray-300">
             <img
-              className="w-60 h-20"
+              className="w-52 h-20"
               src="Underskrift-logo_white.png"
               alt="Signature"
             />
           </Link>
         </div>
         <div className="hidden lg:flex space-x-4">
-          <Link to="/about" className="text-gray-300 hover:text-white">
+          <Link to="/about" className="text-gray-300 hover:text-white text-xl">
             About
           </Link>
-          <Link to="/paintings" className="text-gray-300 hover:text-white">
+          <Link to="/paintings" className="text-gray-300 hover:text-white text-xl">
             Paintings
           </Link>
-          <Link to="/exhibitions" className="text-gray-300 hover:text-white">
+          <Link to="/exhibitions" className="text-gray-300 hover:text-white text-xl">
             Exhibitions
           </Link>
-          <Link to="/posters" className="text-gray-300 hover:text-white">
+          <Link to="/posters" className="text-gray-300 hover:text-white text-xl">
             Posters
           </Link>
-          <Link to="/contact" className="text-gray-300 hover:text-white">
+          <Link to="/contact" className="text-gray-300 hover:text-white text-xl">
             Contact
           </Link>
         </div>

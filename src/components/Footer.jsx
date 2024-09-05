@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-6">
+    <footer className="bg-gray-800 text-white py-6 w-full">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           {/* Social Media Links */}
@@ -37,8 +37,12 @@ const Footer = () => {
           {/* Contact Information */}
           <div className="flex flex-col items-start md:items-center">
             <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
-            <p className="mb-2">Phone: <a href="tel:+1234567890" className="hover:underline">+45 30 31 90 91</a></p>
-            <p>Email: <a href="mailto:info@example.com" className="hover:underline">info@example.com</a></p>
+            <p className="mb-2">
+              Phone: <a href="tel:+1234567890" className="hover:underline">+45 30 31 90 91</a>
+            </p>
+            <p>
+              Email: <a href="mailto:info@example.com" className="hover:underline">info@example.com</a>
+            </p>
           </div>
         </div>
       </div>

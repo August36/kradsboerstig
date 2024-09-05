@@ -102,7 +102,6 @@ const Posters = () => {
   return (
     <>
       <div className="container mx-auto p-4">
-        <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Plakater</h1>
         <p className="mb-8">
           Som et alternativ til mine originale malerier kan du købe en

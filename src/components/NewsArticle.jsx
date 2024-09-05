@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const NewsArticle = ({ image, title, content }) => {
   return (
     <div className="border-b-4 pb-5 mt-5 flex justify-center">
@@ -25,4 +27,10 @@ const NewsArticle = ({ image, title, content }) => {
   );
 };
 
-export default NewsArticle
+NewsArticle.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
+
+export default NewsArticle;
