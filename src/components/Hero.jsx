@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 const Hero = ({ image }) => {
   return (
     <div
-      className="relative h-screen bg-cover bg-center"
+      className="relative w-full h-screen bg-center bg-no-repeat bg-cover mt-28 mb-20"  // Adjust mt-16 based on your navbar height
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-black opacity-40" />
       {/* Text Content */}
       <div className="relative z-10 flex items-center justify-center h-full flex-col text-center p-6">
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold drop-shadow-lg">

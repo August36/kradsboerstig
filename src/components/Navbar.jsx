@@ -9,8 +9,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full bg-gray-800 p-4 z-50 flex justify-center">
+      <div className="container flex justify-between items-center">
         <div className="text-white text-lg font-bold">
           <Link to="/" className="text-white hover:text-gray-300">
             <img
@@ -27,7 +27,7 @@ const Navbar = () => {
           <Link to="/paintings" className="text-gray-300 hover:text-white">
             Paintings
           </Link>
-          <Link to="/Exhibitions" className="text-gray-300 hover:text-white">
+          <Link to="/exhibitions" className="text-gray-300 hover:text-white">
             Exhibitions
           </Link>
           <Link to="/posters" className="text-gray-300 hover:text-white">
@@ -65,7 +65,7 @@ const Navbar = () => {
         <Link to="/paintings" className="block px-4 py-2 hover:bg-gray-700">
           Paintings
         </Link>
-        <Link to="/Exhibitions" className="block px-4 py-2 hover:bg-gray-700">
+        <Link to="/exhibitions" className="block px-4 py-2 hover:bg-gray-700">
           Exhibitions
         </Link>
         <Link to="/posters" className="block px-4 py-2 hover:bg-gray-700">
