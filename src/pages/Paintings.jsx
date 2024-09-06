@@ -36,7 +36,7 @@ const images = [
 
 const Paintings = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mb-10">
       <h1 className="text-3xl font-bold mb-4">Malerier</h1>
       <p className="mb-8">
         Her kan du se de malerier, jeg har til salg. Jeg har flere maleriske
