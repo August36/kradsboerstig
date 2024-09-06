@@ -2,13 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false); // State to control the mobile menu's visibility
+  const menuRef = useRef(null); // Reference for detecting clicks outside the menu
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(!isOpen); // Toggle the mobile menu's open/close state
   };
 
+  // Close the mobile menu when clicking outside
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setIsOpen(false);
@@ -31,29 +32,53 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-800 p-4 z-50 flex justify-center">
-      <div className="container flex justify-between items-center">
-        <div className="text-white text-lg font-bold">
-          <Link to="/" className="text-white hover:text-gray-300">
-            <img
-              className="w-52 h-20"
-              src="Underskrift-logo_white.png"
-              alt="Signature"
-            />
+    <nav className="fixed top-0 left-0 w-full bg-gray-800 p-4 z-50 flex items-center justify-between">
+      {/* Home Logo */}
+      <div className="text-white z-50	">
+        <Link to="/" className="text-white hover:text-gray-300">
+          <img
+            className="w-52 h-20"
+            src="Underskrift-logo_white.png"
+            alt="Signature"
+          />
+        </Link>
+      </div>
+
+      {/* Desktop Links */}
+      <div className="hidden lg:flex space-x-6">
+        {navLinks.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            className="text-gray-300 hover:text-white text-xl"
+          >
+            {link.label}
           </Link>
-        </div>
-        <div className="hidden lg:flex space-x-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="text-gray-300 hover:text-white text-xl"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-        <button onClick={toggleMenu} className="lg:hidden text-white">
+        ))}
+      </div>
+
+      {/* Burger Button for Mobile */}
+      <button
+        onClick={toggleMenu}
+        className="lg:hidden text-white focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        {isOpen ? (
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
           <svg
             className="w-6 h-6"
             fill="none"
@@ -68,23 +93,54 @@ const Navbar = () => {
               d="M4 6h16M4 12h16m-7 6h7"
             />
           </svg>
-        </button>
-      </div>
+        )}
+      </button>
+
+      {/* Mobile Menu */}
       <div
         ref={menuRef}
-        className={`lg:hidden mt-4 ${
-          isOpen ? "block" : "hidden"
-        } bg-gray-800 text-white`}
+        className={`lg:hidden fixed top-0 left-0 w-full h-2/5 bg-gray-800 text-white transform ${
+          isOpen ? "translate-y-0" : "-translate-y-full"
+        } transition-transform duration-300 ease-in-out z-40`}
       >
-        {navLinks.map((link) => (
-          <Link
-            key={link.to}
-            to={link.to}
-            className="block px-4 py-2 hover:bg-gray-700"
+        {/* Mobile Menu Header */}
+        <div className="relative flex justify-end items-center p-4">
+          {/* Close Button, aligned over the links */}
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none mr-4"
+            aria-label="Close menu"
           >
-            {link.label}
-          </Link>
-        ))}
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Links */}
+        <div className="flex flex-col items-end space-y-4 mt-4 pr-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="text-xl py-2 hover:bg-gray-700 text-right pr-4"
+              onClick={toggleMenu} // Close menu when link is clicked
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </nav>
   );
