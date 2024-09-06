@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start p-5 m-10 space-y-5 md:space-y-0 md:space-x-10">
+    <div className="flex flex-col md:flex-row items-center justify-center md:items-start p-5 m-10 space-y-5 md:space-y-0 md:space-x-10">
       <img
         src="BW_Kell-Jarner-Kunst.jpg"
         alt="Profile"

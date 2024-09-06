@@ -24,11 +24,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { to: "/about", label: "About" },
-    { to: "/paintings", label: "Paintings" },
-    { to: "/exhibitions", label: "Exhibitions" },
-    { to: "/posters", label: "Posters" },
-    { to: "/contact", label: "Contact" },
+    { to: "/about", label: "Om us" },
+    { to: "/paintings", label: "Malerier" },
+    { to: "/exhibitions", label: "Udstillinger" },
+    { to: "/posters", label: "Plakater" },
+    { to: "/contact", label: "Kontakt" },
   ];
 
   return (
