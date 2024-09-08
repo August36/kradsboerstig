@@ -8,25 +8,25 @@ const images = [
     src: "/men-in-black/diaspora.JPG",
     title: "Diaspora",
     price: "Spørg efter pris",
-    size: "30x30 cm",
+    size: "-",
   },
   {
     src: "/men-in-black/kan_man_stå_af_denne_planet.JPG",
     title: "Kan man stå af denne planet",
     price: "Spørg efter pris",
-    size: "50x40 cm",
+    size: "-",
   },
   {
     src: "/men-in-black/muh_taler.JPG",
     title: "Muh taler",
     price: "Spørg efter pris",
-    size: "50x40 cm",
+    size: "-",
   },
   {
     src: "/men-in-black/the_player.JPG",
     title: "The player",
     price: "Spørg efter pris",
-    size: "50x40 cm",
+    size: "-",
   },
 ];
 

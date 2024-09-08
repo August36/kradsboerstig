@@ -14,19 +14,19 @@ const images = [
     src: "/morbid/Helikopteren-ankommer-efter-middag-Kell-Jarner.webp",
     title: "Helikopteren Ankommer Efter Middag",
     price: "Spørg efter pris",
-    size: "70x100 cm",
+    size: "-",
   },
   {
     src: "/morbid/Tænkehatten.jpeg",
     title: "Tænkehatten",
     price: "Spørg efter pris",
-    size: "70x100 cm",
+    size: "-",
   },
   {
     src: "/morbid/Medusa.jpeg",
     title: "Medusa",
     price: "Spørg efter pris",
-    size: "70x100 cm",
+    size: "-",
   },
   // {
   //   src: "/morbid/Herobar-3.24-Kell-Jarner.webp",
@@ -44,7 +44,7 @@ const images = [
     src: "/morbid/Kamp-kat-og-klovne.webp",
     title: "Kat og Klovne",
     price: "Spørg efter pris",
-    size: "70x100 cm",
+    size: "-",
   },
   // {
   //   src: "/morbid/Mord-i-Muxia-Kell-Jarner.webp",
@@ -56,13 +56,13 @@ const images = [
     src: "/morbid/Olfert-Kell-Jarner.webp",
     title: "Olfert",
     price: "Spørg efter pris",
-    size: "50x70 cm",
+    size: "-",
   },
   {
     src: "/morbid/Selvportræt-med-snublende-hunde-Kell-Jarner.webp",
     title: "Selvportræt med Snublende Hunde",
     price: "Spørg efter pris",
-    size: "70x100 cm",
+    size: "-",
   },
   // {
   //   src: "/morbid/Syndesvinehund-Kell-Jarner.webp",

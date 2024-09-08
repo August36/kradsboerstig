@@ -1,7 +1,11 @@
 const Contact = () => {
   return (
     <>
-    Siden er under ombygning
+    <div className="flex justify-center bg-black	">
+          <h1 className="text-green-400 text-2xl font-extrabold">
+          Siden er under opdatering
+          </h1>
+          </div>
     {/* <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Kontakt os</h1>
       <div className="flex flex-col md:flex-row gap-8">

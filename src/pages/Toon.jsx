@@ -8,7 +8,7 @@ const images = [
     src: "/toon/Den-blå-hund-og-menneskedyret-Kell-Jarner-2017.webp",
     title: "Den Blå Hund og Menneskedyret",
     price: "Spørg efter pris",
-    size: "70x90 cm",
+    size: "-",
   },
   // {
   //   src: '/toon/Dyrene-fra-Tramonti-Kell-Jarner-2016.webp',
@@ -44,7 +44,7 @@ const images = [
     src: "/toon/Old-innocent.webp",
     title: "Old Innocent",
     price: "Spørg efter pris",
-    size: "65x85 cm",
+    size: "-",
   },
   // {
   //   src: "/toon/Ørlingerne-2014-Kell-Jarner.webp",
@@ -56,13 +56,13 @@ const images = [
     src: "/toon/Se-hvad-jeg-har-lavet-Kell-Jarner-2017.webp",
     title: "Se Hvad Jeg Har Lavet",
     price: "Spørg efter pris",
-    size: "75x95 cm",
+    size: "-",
   },
   {
     src: "/toon/Tiger2-Kell-Jarner.webp",
     title: "Tiger 2",
     price: "Spørg efter pris",
-    size: "80x100 cm",
+    size: "-",
   },
   // {
   //   src: "/toon/Trolden-fra-Tramonti.webp",

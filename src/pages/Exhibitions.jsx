@@ -4,7 +4,7 @@ const Exhibitions = () => {
               <header className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Galleri Krasbørstig</h1>
           <p className="text-lg text-gray-600">
-          Tilføj tekst
+          Info kommer snart
                       </p>
         </header>
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
@@ -14,7 +14,7 @@ const Exhibitions = () => {
           className="w-80 h-80 object-cover rounded-lg shadow-lg"
         />
         <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
-        Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst Tilføj tekst
+        Info kommer snart
         </p>
       </div>
       <div className="max-w-7xl mx-auto">
@@ -22,7 +22,7 @@ const Exhibitions = () => {
         <header className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Udstillinger</h1>
           <p className="text-lg text-gray-600">
-          Tilføj tekst
+          Info kommer snart
           </p>
         </header>
 
@@ -40,7 +40,7 @@ const Exhibitions = () => {
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">Udstillingens Titel</h3>
                 <p className="text-gray-600 mt-2">
-                Tilføj tekst
+                Info kommer snart
                 </p>
               </div>
             </div>
@@ -54,7 +54,7 @@ const Exhibitions = () => {
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">Udstillingens Titel</h3>
                 <p className="text-gray-600 mt-2">
-                Tilføj tekst
+                Info kommer snart
                 </p>
               </div>
             </div>

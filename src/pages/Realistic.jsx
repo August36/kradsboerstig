@@ -8,13 +8,13 @@ const images = [
     src: "realistic/Hane1.jpg",
     title: "Hane",
     price: "Spørg efter pris",
-    size: "80x100 cm",
+    size: "-",
   },
   {
     src: "realistic/æbler_og_banan.jpg",
     title: "Æbler og banan",
     price: "Spørg efter pris",
-    size: "80x100 cm",
+    size: "-",
   },
   // {
   //   src: "realistic/Den-blå-hund-Kell-Jarner.webp",
@@ -38,7 +38,7 @@ const images = [
     src: "realistic/Vandbøffel-Kell-Jarner.webp",
     title: "Vandbøffel",
     price: "Spørg efter pris",
-    size: "90x120 cm",
+    size: "-",
   },
   // {
   //   src: "realistic/Victory-med-åbne-øjne-Kell-Jarner.webp",

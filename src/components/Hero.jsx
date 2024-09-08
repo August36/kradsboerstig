@@ -7,6 +7,11 @@ const Hero = ({ image }) => {
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Overlay */}
+      <div className="flex justify-center bg-black	">
+          <h1 className="text-green-400 text-2xl font-extrabold">
+          Hjemmesiden er i øjeblikket under opdatering, så nogle oplysninger kan mangle. Tak for din tålmodighed!
+          </h1>
+          </div>
       <div className="absolute inset-0 bg-black opacity-40" />
       {/* Text Content */}
       <div className="relative z-10 flex items-center justify-center h-full flex-col text-center p-6">

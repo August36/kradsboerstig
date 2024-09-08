@@ -6,26 +6,26 @@ const images = [
   {
     src: "/posters/thumbnail_1 Badman Plakat.jpg",
     title: "Badman",
-    price: "Tilføj",
-    size: "Tilføj",
+    price: "Spørg efter pris",
+    size: "-",
   },
   {
     src: "/posters/thumbnail_2 Drengene fra Tramonti Plakat.jpg",
     title: "Drengene fra Tramonti",
-    price: "Tilføj",
-    size: "Tilføj",
+    price: "Spørg efter pris",
+    size: "-",
   },
   {
     src: "/posters/thumbnail_3 Hunde plakat.jpg",
     title: "Hunde",
-    price: "Tilføj",
-    size: "Tilføj",
+    price: "Spørg efter pris",
+    size: "-",
   },
   {
     src: "/posters/thumbnail_4 Medusa plakat.jpg",
     title: "Medusa",
-    price: "Tilføj",
-    size: "Tilføj",
+    price: "Spørg efter pris",
+    size: "-",
   },
  
 ];
