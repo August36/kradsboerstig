@@ -26,7 +26,7 @@ const Navbar = () => {
   const navLinks = [
     { to: "/about", label: "Om mig" },
     { to: "/paintings", label: "Malerier" },
-    { to: "/exhibitions", label: "Udstillinger" },
+    { to: "/exhibitions", label: "Galleri" },
     { to: "/posters", label: "Plakater" },
     { to: "/contact", label: "Kontakt" },
   ];

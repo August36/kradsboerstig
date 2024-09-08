@@ -7,13 +7,13 @@ const images = [
   {
     src: "realistic/Hane1.jpg",
     title: "Hane",
-    price: "1200",
+    price: "Spørg efter pris",
     size: "80x100 cm",
   },
   {
     src: "realistic/æbler_og_banan.jpg",
     title: "Æbler og banan",
-    price: "1200",
+    price: "Spørg efter pris",
     size: "80x100 cm",
   },
   // {
@@ -37,7 +37,7 @@ const images = [
   {
     src: "realistic/Vandbøffel-Kell-Jarner.webp",
     title: "Vandbøffel",
-    price: "1300",
+    price: "Spørg efter pris",
     size: "90x120 cm",
   },
   // {

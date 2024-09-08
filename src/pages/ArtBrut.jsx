@@ -7,20 +7,20 @@ const images = [
   {
     src: "art-brut/Fabulator.jpg",
     title: "Fabulator",
-    price: "599",
-    size: "50x70 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   {
     src: "art-brut/Boudoir-Kell-Jarner-2017.webp",
     title: "Boudoir",
-    price: "599",
-    size: "50x70 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   {
     src: "art-brut/Danse-macabre-Kell-Jarner-2017.webp",
     title: "Danse macabre",
-    price: "499",
-    size: "40x60 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   // {
   //   src: "art-brut/Frelser-scaled.webp",
@@ -31,20 +31,20 @@ const images = [
   {
     src: "art-brut/Fugl-og-fæ-Kell-Jarner-2019.webp",
     title: "Fugl og fæ",
-    price: "549",
-    size: "50x70 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   {
     src: "art-brut/Grumme-gerninger-pænt-tøj-Kell-Jarner-2018-1.webp",
     title: "Grumme gerninger, pænt tøj",
-    price: "499",
-    size: "40x60 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   {
     src: "art-brut/Håndværkere-Kell-Jarner-2018.webp",
     title: "Håndværkere",
-    price: "799",
-    size: "70x100 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   // {
   //   src: "art-brut/Kafisos-og-Liriope-Kell-Jarner-2018.webp",
@@ -55,14 +55,14 @@ const images = [
   {
     src: "art-brut/Kongen-og-kravlenisserne-Kell-Jarner-2019.webp",
     title: "Kongen og kravlenisserne",
-    price: "749",
-    size: "60x80 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   {
     src: "art-brut/Partybussen-og-bykongen-Kell-Jarner-2018.webp",
     title: "Partybussen og bykongen",
-    price: "899",
-    size: "70x100 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   // {
   //   src: "art-brut/Profeten-Kell-Jarner-2017.webp",

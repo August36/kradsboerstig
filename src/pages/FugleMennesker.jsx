@@ -7,19 +7,19 @@ const images = [
   {
     src: "/fuglemennesker/Vejrhaner.jpg",
     title: "Vejrhaner",
-    price: "900",
+    price: "Spørg efter pris",
     size: "70x90 cm",
   },
   {
     src: "/fuglemennesker/Hulahop.jpg",
     title: "Hulahop",
-    price: "900",
+    price: "Spørg efter pris",
     size: "70x90 cm",
   },
   {
     src: "/fuglemennesker/Oxymoron.jpg",
     title: "Oxymoron",
-    price: "900",
+    price: "Spørg efter pris",
     size: "70x90 cm",
   },
 ];

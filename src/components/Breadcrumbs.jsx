@@ -5,7 +5,7 @@ const Breadcrumbs = () => {
     <nav aria-label="breadcrumb" className='mb-2'>
       <ol className="list-reset flex">
         <li>
-          <Link to="/paintings" className="text-blue-500 hover:text-blue-700">&#47; Back to Paintings</Link>
+          <Link to="/paintings" className="text-blue-500 hover:text-blue-700">&#47; Tilbage til Malerier</Link>
         </li>
       </ol>
     </nav>

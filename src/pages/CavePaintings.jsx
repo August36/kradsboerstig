@@ -19,13 +19,13 @@ const images = [
   {
     src: "/cave-paintings/Hjortes-hjerner-Kell-Jarner.webp",
     title: "Hjortes hjerner",
-    price: "599",
-    size: "50x70 cm",
+    price: "Spørg efter pris",
+    size: "TILFØJ",
   },
   {
     src: "/cave-paintings/Kampen-på-ord-om-en-svævende-kvinde-Kell-Jarner.webp",
     title: "Kampen på ord om en svævende kvinde",
-    price: "899",
+    price: "Spørg efter pris",
     size: "70x100 cm",
   },
   // {
@@ -37,25 +37,25 @@ const images = [
   {
     src: "/cave-paintings/Skabelsen-af-en-pandababy-Kell-Jarner.webp",
     title: "Skabelsen af en pandababy",
-    price: "649",
+    price: "Spørg efter pris",
     size: "50x70 cm",
   },
   {
     src: "/cave-paintings/The-Trump-afterparty-Kell-Jarner.webp",
     title: "The Trump afterparty",
-    price: "799",
+    price: "Spørg efter pris",
     size: "60x80 cm",
   },
   {
     src: "/cave-paintings/Uskyld-Kell-Jarner.webp",
     title: "Uskyld",
-    price: "749",
+    price: "Spørg efter pris",
     size: "60x80 cm",
   },
   {
     src: "/cave-paintings/Varslet-Kell-Jarner.webp",
     title: "Varslet",
-    price: "699",
+    price: "Spørg efter pris",
     size: "60x80 cm",
   },
 ];
