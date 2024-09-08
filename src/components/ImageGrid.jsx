@@ -6,7 +6,7 @@ const ImageGrid = ({ images, onImageClick }) => {
       {images.map((image, index) => (
         <div
           key={index}
-          className="p-2 relative overflow-hidden bg-gray-300 rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 sm:hover:scale-105"
+          className="p-2 relative overflow-hidden bg-gray-300 rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 group sm:hover:scale-105"
           onClick={() => onImageClick(index)}
         >
           <img
@@ -14,8 +14,8 @@ const ImageGrid = ({ images, onImageClick }) => {
             alt={image.title}
             className="object-cover w-full h-48 md:h-56 lg:h-80 rounded-lg"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold opacity-0 hover:opacity-100 transition-opacity duration-300 sm:hover:opacity-100">
-            <p className="p-2 text-gray-300">Click to view</p>
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+            <p className="p-2 text-gray-300">Klik for at se</p>
           </div>
           <div className="mt-2 text-center">
             <p className="text-lg font-semibold">{image.title}</p>
