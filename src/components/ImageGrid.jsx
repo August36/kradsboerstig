@@ -15,7 +15,7 @@ const ImageGrid = ({ images, onImageClick }) => {
             className="object-cover w-full h-48 md:h-56 lg:h-80 rounded-lg"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold opacity-0 hover:opacity-100 transition-opacity duration-300">
-            <p className="p-2">Click to view</p>
+            <p className="p-2 text-gray-300">Click to view</p>
           </div>
           <div className="mt-2 text-center">
             <p className="text-lg font-semibold">{image.title}</p>

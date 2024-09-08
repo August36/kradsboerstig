@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import NewsArticle from "./components/NewsArticle";
@@ -22,6 +23,20 @@ import articleImg2 from "/morbid/Mord-i-Muxia-Kell-Jarner.webp";
 import Layout from "./components/Layout"; // Import Layout
 
 function App() {
+
+    // Add useEffect to load the Klaviyo script
+    useEffect(() => {
+      const script = document.createElement('script');
+      script.async = true;
+      script.type = 'text/javascript';
+      script.src = 'https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SPxJZ8';
+      document.body.appendChild(script);
+  
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []);
+
   const articles = [
     {
       image: articleImg1,
