@@ -23,13 +23,13 @@ import articleImg2 from "/morbid/Mord-i-Muxia-Kell-Jarner.webp";
 import Layout from "./components/Layout"; // Import Layout
 
 function App() {
-
-    // Add useEffect to load the Klaviyo script
+  // Add useEffect to load the Klaviyo script
   useEffect(() => {
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.async = true;
-    script.type = 'text/javascript';
-    script.src = 'https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SPxJZ8';
+    script.type = "text/javascript";
+    script.src =
+      "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SPxJZ8";
     document.body.appendChild(script);
 
     return () => {
@@ -54,12 +54,22 @@ function App() {
 
   return (
     <Router>
-      <Layout> {/* Wrap the whole app content with Layout */}
+      <Layout>
+        {" "}
+        {/* Wrap the whole app content with Layout */}
         <Routes>
           <Route
             path="/"
             element={
               <>
+              {/* Slet her fra - */}
+                <div className="flex justify-center bg-black	">
+                  <h1 className="text-green-400 text-2xl font-extrabold">
+                    Hjemmesiden er i øjeblikket under opdatering, så nogle
+                    oplysninger kan mangle. Tak for din tålmodighed!
+                  </h1>
+                </div>
+                {/* og hertil */}
                 <Helmet>
                   <title>Kell Jarner Art</title>
                   <meta
@@ -73,9 +83,7 @@ function App() {
                     Nyheder
                   </h1>
                   {/************************** INDKOMMENTER NewsArticle og NewsLetter når det skal bruge **************************/}
-                  <p>
-                    Der er p.t. ingen nyheder
-                  </p>
+                  <p>Der er p.t. ingen nyheder</p>
                   {/* {articles.map((article, index) => (
                     <NewsArticle key={index} {...article} />
                   ))} */}

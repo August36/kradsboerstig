@@ -1,5 +1,14 @@
 const About = () => {
   return (
+    <>
+                  {/* Slet her fra - */}
+                  <div className="flex justify-center bg-black	">
+                  <h1 className="text-green-400 text-2xl font-extrabold">
+                    Hjemmesiden er i øjeblikket under opdatering, så nogle
+                    oplysninger kan mangle. Tak for din tålmodighed!
+                  </h1>
+                </div>
+                {/* og hertil */}
     <div className="flex flex-col md:flex-row items-center justify-center md:items-start p-5 m-10 space-y-5 md:space-y-0 md:space-x-10">
       <img
         src="BW_Kell-Jarner-Kunst.jpg"
@@ -27,6 +36,7 @@ const About = () => {
         </ol>
       </div>
     </div>
+    </>
   );
 };
 

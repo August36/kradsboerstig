@@ -1,5 +1,14 @@
 const Exhibitions = () => {
   return (
+    <>
+                      {/* Slet her fra - */}
+                      <div className="flex justify-center bg-black	">
+                      <h1 className="text-green-400 text-2xl font-extrabold">
+                        Hjemmesiden er i øjeblikket under opdatering, så nogle
+                        oplysninger kan mangle. Tak for din tålmodighed!
+                      </h1>
+                    </div>
+                    {/* og hertil */}
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
               <header className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Galleri Krasbørstig</h1>
@@ -62,6 +71,7 @@ const Exhibitions = () => {
         </section>
       </div>
     </div>
+    </>
   );
 }
 

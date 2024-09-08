@@ -53,6 +53,14 @@ const Posters = () => {
 
   return (
     <>
+                          {/* Slet her fra - */}
+                          <div className="flex justify-center bg-black	">
+                      <h1 className="text-green-400 text-2xl font-extrabold">
+                        Hjemmesiden er i øjeblikket under opdatering, så nogle
+                        oplysninger kan mangle. Tak for din tålmodighed!
+                      </h1>
+                    </div>
+                    {/* og hertil */}
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-4">Plakater</h1>
         <p className="mb-8">
