@@ -1,81 +1,33 @@
 import { useState } from "react";
 import ImageGrid from "../components/ImageGrid";
-import Breadcrumbs from "../components/Breadcrumbs";
 import Modal from "../components/Modal"; // Import the Modal component
 
 const images = [
   {
-    src: "/portraits/Frida-portræt-Kell-Jarner.webp",
-    title: "Frida Portræt",
-    price: "800",
-    size: "50x70 cm",
+    src: "/posters/thumbnail_1 Badman Plakat.jpg",
+    title: "Badman",
+    price: "Tilføj",
+    size: "Tilføj",
   },
   {
-    src: "/realistic/Drengene-fra-Tremonti-Kell-Jarner.webp",
+    src: "/posters/thumbnail_2 Drengene fra Tramonti Plakat.jpg",
     title: "Drengene fra Tramonti",
-    price: "350 DKK + forsendelse",
-    size: "A2",
+    price: "Tilføj",
+    size: "Tilføj",
   },
   {
-    src: "/dogs/1-Hundehovedspring-Kell-Jarner.webp",
-    title: "Hundehovedspring",
-    price: "Pris: 350 DKK + forsendelse",
-    size: "A2",
+    src: "/posters/thumbnail_3 Hunde plakat.jpg",
+    title: "Hunde",
+    price: "Tilføj",
+    size: "Tilføj",
   },
   {
-    src: "/portraits/Jesper-Binzer-DBPM-Kell-Jarner-scaled.webp",
-    title: "Jesper Binzer",
-    price: "950",
-    size: "70x100 cm",
+    src: "/posters/thumbnail_4 Medusa plakat.jpg",
+    title: "Medusa",
+    price: "Tilføj",
+    size: "Tilføj",
   },
-  {
-    src: "/portraits/Lars-Løkke-portræt-Kell-Jarner.webp",
-    title: "Lars Løkke",
-    price: "850",
-    size: "50x70 cm",
-  },
-  {
-    src: "/portraits/Mads-Mikkelsen-portræt-Kell-Jarner.webp",
-    title: "Mads Mikkelsen",
-    price: "950",
-    size: "60x80 cm",
-  },
-  {
-    src: "/portraits/Mariann-Kell-Jarner-scaled.webp",
-    title: "Mariann",
-    price: "800",
-    size: "50x70 cm",
-  },
-  {
-    src: "/portraits/Max-Manneche-portræt-Kell-Jarner.webp",
-    title: "Max Manneche",
-    price: "900",
-    size: "60x80 cm",
-  },
-  {
-    src: "/portraits/Selvportræt-Kell-Jarner-scaled.webp",
-    title: "Selvportræt",
-    price: "1000",
-    size: "70x100 cm",
-  },
-  {
-    src: "/portraits/selvportræt1-Kell-Jarner.webp",
-    title: "Selvportræt 1",
-    price: "950",
-    size: "60x80 cm",
-  },
-  {
-    src: "/portraits/Sommer-og-Lars-portræt-Kell-Jarner.webp",
-    title: "Sommer og Lars",
-    price: "850",
-    size: "50x70 cm",
-  },
-  {
-    src: "/portraits/Vinnie-Bjerre-portræt-Kell-jarner.webp",
-    title: "Vinnie Bjerre",
-    price: "800",
-    size: "50x70 cm",
-  },
+ 
 ];
 
 const Posters = () => {

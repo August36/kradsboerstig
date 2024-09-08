@@ -25,17 +25,17 @@ import Layout from "./components/Layout"; // Import Layout
 function App() {
 
     // Add useEffect to load the Klaviyo script
-    useEffect(() => {
-      const script = document.createElement('script');
-      script.async = true;
-      script.type = 'text/javascript';
-      script.src = 'https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SPxJZ8';
-      document.body.appendChild(script);
-  
-      return () => {
-        document.body.removeChild(script);
-      };
-    }, []);
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.type = 'text/javascript';
+    script.src = 'https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SPxJZ8';
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const articles = [
     {
@@ -72,11 +72,15 @@ function App() {
                   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-8 text-center sm:text-left">
                     Nyheder
                   </h1>
-                  {articles.map((article, index) => (
+                  {/************************** INDKOMMENTER NewsArticle og NewsLetter når det skal bruge **************************/}
+                  <p>
+                    Der er p.t. ingen nyheder
+                  </p>
+                  {/* {articles.map((article, index) => (
                     <NewsArticle key={index} {...article} />
-                  ))}
+                  ))} */}
                 </div>
-                <NewsLetter />
+                {/* <NewsLetter /> */}
               </>
             }
           />

@@ -1,6 +1,8 @@
 const Contact = () => {
   return (
-    <div className="container mx-auto p-4">
+    <>
+    Siden er under ombygning
+    {/* <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Kontakt os</h1>
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
@@ -56,7 +58,8 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </div>
+    </div> */}
+    </>
   );
 };
 

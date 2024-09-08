@@ -38,10 +38,10 @@ const Footer = () => {
           <div className="flex flex-col items-start md:items-center ">
             <h3 className="text-xl font-semibold mb-2 text-white">Contact Us</h3>
             <p className="mb-2 text-white">
-              Phone: <a href="tel:+1234567890" className="hover:underline text-white">+45 30 31 90 91</a>
+              Tlf: <a href="tel:+1234567890" className="hover:underline text-white">+45 30 31 90 91</a>
             </p>
             <p className="text-white">
-              Email: <a href="mailto:info@example.com" className="hover:underline text-white">info@example.com</a>
+              Email: <a href="mailto:info@example.com" className="hover:underline text-white">kjarner@me.com</a>
             </p>
           </div>
         </div>
