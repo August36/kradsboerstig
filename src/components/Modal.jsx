@@ -5,7 +5,7 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-20"
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-100"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
