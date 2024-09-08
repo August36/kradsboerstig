@@ -96,54 +96,53 @@ const Navbar = () => {
         )}
       </button>
 
-      {/* Mobile Menu */}
-      <div
-        ref={menuRef}
-        className={`lg:hidden fixed top-0 left-0 w-full h-2/5 bg-gray-800 text-white transform ${
-          isOpen ? "translate-y-0" : "hidden"
-        } transition-transform duration-300 ease-in-out z-40 overflow-y-auto`} // Added overflow-y-auto
+{/* Mobile Menu */}
+<div
+  ref={menuRef}
+  className={`lg:hidden fixed top-0 left-0 w-full bg-gray-800 text-white transform ${
+    isOpen ? "translate-y-0" : "hidden"
+  } transition-transform duration-300 ease-in-out z-40`} // Removed overflow-y-auto
+>
+  {/* Mobile Menu Header */}
+  <div className="relative flex justify-end items-center p-4">
+    {/* Close Button */}
+    <button
+      onClick={toggleMenu}
+      className="text-white focus:outline-none mr-4"
+      aria-label="Close menu"
+    >
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Mobile Menu Header */}
-        <div className="relative flex justify-end items-center p-4">
-          {/* Close Button */}
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none mr-4"
-            aria-label="Close menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </div>
 
-        {/* Mobile Links */}
-        <div className="flex flex-col items-end space-y-4 mt-4 pr-6 pb-4">
-          {" "}
-          {/* Added pb-4 for padding-bottom */}
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="text-xl py-2 hover:bg-gray-700 text-right pr-4"
-              onClick={toggleMenu}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      </div>
+  {/* Mobile Links */}
+  <div className="flex flex-col items-end space-y-4 mt-4 pr-6 pb-4">
+    {navLinks.map((link) => (
+      <Link
+        key={link.to}
+        to={link.to}
+        className="text-xl py-2 hover:bg-gray-700 text-right pr-4"
+        onClick={toggleMenu}
+      >
+        {link.label}
+      </Link>
+    ))}
+  </div>
+</div>
+
     </nav>
   );
 };
