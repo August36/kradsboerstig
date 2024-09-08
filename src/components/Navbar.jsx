@@ -100,7 +100,7 @@ const Navbar = () => {
       <div
         ref={menuRef}
         className={`lg:hidden fixed top-0 left-0 w-full h-2/5 bg-gray-800 text-white transform ${
-          isOpen ? "translate-y-0" : "-translate-y-full"
+          isOpen ? "translate-y-0" : "hidden"
         } transition-transform duration-300 ease-in-out z-40`}
       >
         {/* Mobile Menu Header */}
