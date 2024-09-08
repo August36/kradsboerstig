@@ -11,10 +11,11 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <div className="relative flex items-center justify-center w-full h-full">
+      {/* Modal Content Wrapper */}
+      <div className="relative w-full h-full flex items-center justify-center">
         {/* Left Arrow */}
         <button
-          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white bg-gray-800 hover:bg-gray-700 rounded-full p-2 focus:outline-none z-[10000]"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-gray-800 hover:bg-gray-700 rounded-full p-2 focus:outline-none z-[10001]"
           onClick={(e) => {
             e.stopPropagation();
             onPrev();
@@ -37,7 +38,7 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
           />
           {/* Close Button */}
           <button
-            className="absolute top-2 right-2 text-white bg-gray-800 hover:bg-gray-700 rounded-full p-2 focus:outline-none z-[10000]"
+            className="absolute top-2 right-2 text-white bg-gray-800 hover:bg-gray-700 rounded-full p-2 focus:outline-none z-[10001]"
             onClick={onClose}
             aria-label="Close Modal"
           >
@@ -47,7 +48,7 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
 
         {/* Right Arrow */}
         <button
-          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white bg-gray-800 hover:bg-gray-700 rounded-full p-2 focus:outline-none z-[10000]"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-gray-800 hover:bg-gray-700 rounded-full p-2 focus:outline-none z-[10001]"
           onClick={(e) => {
             e.stopPropagation();
             onNext();
@@ -60,6 +61,8 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
     </div>
   );
 };
+
+
 
 
 Modal.propTypes = {
