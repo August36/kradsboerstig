@@ -28,7 +28,7 @@ const Navbar = () => {
     { to: "/paintings", label: "Malerier" },
     { to: "/exhibitions", label: "Galleri Krasbørstig" },
     { to: "/posters", label: "Plakater" },
-    { to: "/contact", label: "Kontakt" },
+    // { to: "/contact", label: "Kontakt" },
   ];
 
   return (
