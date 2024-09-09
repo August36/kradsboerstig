@@ -104,7 +104,14 @@ const Toon = () => {
       <div className="container mx-auto p-4">
         <Breadcrumbs />
         <h1 className="text-3xl font-bold mb-4">Toon art</h1>
-        <p className="mb-8">This is the toon art page.</p>
+        <p className="mb-8">
+          Tonart er en underafdeling af den narrative råkunst. Der er mange dyr,
+          og de er ofte søde, som i tegnefilm for børn, og så alligevel lidt
+          uhyggelige. Køb dem IKKE til børneværelset. Se fx Den blå hund og
+          menneskedyret, som øjensynligt foregår midt i en krig, hvor vores
+          helt, den blå hund, konfronterer et vanvittigt, angribende
+          menneskedyr, styret med tøjler af en dværg.
+        </p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
         {/* Modal Component */}

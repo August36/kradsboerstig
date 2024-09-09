@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Hero = ({ image }) => {
   return (
     <div
-      className="relative w-full h-screen bg-center bg-no-repeat bg-cover mb-20"  // Adjust mt-16 based on your navbar height
+      className="relative w-full h-screen bg-center bg-no-repeat bg-cover mb-20" // Adjust mt-16 based on your navbar height
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Overlay */}
@@ -11,7 +11,7 @@ const Hero = ({ image }) => {
       {/* Text Content */}
       <div className="relative z-10 flex items-center justify-center h-full flex-col text-center p-6">
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold drop-shadow-lg">
-          Kell Jarner
+          Krasbørstig kunst{" "}
         </h1>
         <h2 className="text-white text-xl sm:text-2xl md:text-3xl mt-4 drop-shadow-lg">
           Malerier af Kell Jarner

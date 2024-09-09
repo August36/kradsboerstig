@@ -18,7 +18,7 @@ const images = [
   },
   {
     src: "/men-in-black/muh_taler.JPG",
-    title: "Muh taler",
+    title: "Muhtaler",
     price: "Spørg efter pris",
     size: "-",
   },

@@ -62,7 +62,7 @@ function App() {
             path="/"
             element={
               <>
-              {/* Slet her fra - */}
+                {/* Slet her fra - */}
                 <div className="flex justify-center bg-black	">
                   <h1 className="text-green-400 text-2xl font-extrabold">
                     Hjemmesiden er i øjeblikket under opdatering, så nogle
