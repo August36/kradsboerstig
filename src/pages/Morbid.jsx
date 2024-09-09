@@ -28,6 +28,12 @@ const images = [
     price: "Spørg efter pris",
     size: "-",
   },
+  {
+    src: "/morbid/Medusa.jpeg",
+    title: "Medusa",
+    price: "Spørg efter pris",
+    size: "-",
+  },
   // {
   //   src: "/morbid/Herobar-3.24-Kell-Jarner.webp",
   //   title: "Herobar 3.24",
