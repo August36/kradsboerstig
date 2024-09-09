@@ -64,6 +64,14 @@ const images = [
     price: "Spørg efter pris",
     size: "-",
   },
+  {
+    src: "/morbid/Hvis–dit–højre-øje.jpg",
+    title: "Hvis dit højre øje bedrager dig",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+
+
   // {
   //   src: "/morbid/Syndesvinehund-Kell-Jarner.webp",
   //   title: "Syndesvinehund",
