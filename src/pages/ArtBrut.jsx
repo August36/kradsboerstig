@@ -101,6 +101,18 @@ const images = [
     size: "-",
   },
   {
+    src: "art-brut/Kafisos-og-Liriope-Kell-Jarner-2018.webp",
+    title: "Kafisos & Liriope",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "art-brut/Profeten-Kell-Jarner-2017.webp",
+    title: "Profeten",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
     src: "art-brut/råkunst2/Hands up.jpeg",
     title: "Hands up",
     price: "Spørg efter pris",
@@ -125,28 +137,22 @@ const images = [
     size: "-",
   },
   // {
-  //   src: "art-brut/Profeten-Kell-Jarner-2017.webp",
-  //   title: "Profeten",
-  //   price: "699",
-  //   size: "60x80 cm",
-  // },
-  // {
   //   src: "art-brut/Skytsengel.-Kell-Jarner-2018.webp",
   //   title: "Skytsengel",
-  //   price: "599",
-  //   size: "50x70 cm",
+  //   price: "Spørg efter pris",
+  //   size: "-",
   // },
   // {
-  //   src: "art-brut/Smugkig-Kell-Jarner-2017.webp",
+  //   src: "art-brut/råkunst2/Smugkig-Kell-Jarner-2017.webp",
   //   title: "Smugkig",
-  //   price: "499",
-  //   size: "40x60 cm",
+  //   price: "Spørg efter pris",
+  //   size: "-",
   // },
   // {
-  //   src: "art-brut/Sommer-og-Lars-Kell-Jarner-2018.webp",
-  //   title: "Sommer og Lars",
-  //   price: "799",
-  //   size: "70x100 cm",
+  //   src: "art-brut/råkunst2/Sommer-og-Lars-Kell-Jarner-2018.webp",
+  //   title: "Sommer & Lars",
+  //   price: "Spørg efter pris",
+  //   size: "-",
   // },
 ];
 
