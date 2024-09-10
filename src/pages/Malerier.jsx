@@ -34,7 +34,7 @@ const images = [
   },
 ];
 
-const Paintings = () => {
+const Malerier = () => {
   return (
     <>
       {/* Slet her fra - */}
@@ -80,4 +80,4 @@ const Paintings = () => {
   );
 };
 
-export default Paintings;
+export default Malerier;

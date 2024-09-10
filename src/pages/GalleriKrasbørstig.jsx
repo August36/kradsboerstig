@@ -1,4 +1,4 @@
-const Exhibitions = () => {
+const GalleriKrasbørstig = () => {
   return (
     <>
       {/* Midlertidig meddelelse */}
@@ -28,7 +28,7 @@ const Exhibitions = () => {
             className="w-80 h-80 object-cover rounded-lg shadow-lg"
           />
           <div className="w-full md:w-1/2 max-w-lg">
-            <p className="text-gray-700 text-lg leading-relaxed mb-10">
+            <p className="text-gray-700 text-lg leading-relaxed mb-6">
               Der findes kunstnere, som har øvet sig hele livet og skaber værker
               af høj kvalitet. Og alligevel er de aldrig slået igennem. Det
               skyldes som regel, at de ikke arbejder på markedsvilkår; de har
@@ -36,7 +36,7 @@ const Exhibitions = () => {
               Det, de har, er en impuls, som driver dem, en ‘daimon’ som prikker
               og kradser, og derfor bliver de ved.
             </p>
-            <p className="text-gray-700 text-lg leading-relaxed mb-10">
+            <p className="text-gray-700 text-lg leading-relaxed mb-6">
               Dét er ideen bag Galleri Krasbørstig. At finde og formidle de
               skjulte skatte af nutidskunst, som produceres af supertalenter,
               der maler lidt for skævt, råt, nørdet, barnligt, frækt eller
@@ -105,4 +105,4 @@ const Exhibitions = () => {
   );
 };
 
-export default Exhibitions;
+export default GalleriKrasbørstig;

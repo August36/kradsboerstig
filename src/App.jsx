@@ -5,7 +5,7 @@ import "./App.css";
 import Hero from "./components/Hero";
 import NewsArticle from "./components/NewsArticle";
 import About from "./pages/About";
-import Paintings from "./pages/Paintings";
+import Malerier from "./pages/Malerier";
 import Contact from "./pages/Contact";
 import Posters from "./pages/Posters";
 import HuleMalerier from "./pages/HuleMalerier";
@@ -14,7 +14,7 @@ import Morbid from "./pages/Morbid";
 import NarrativRåkunst from "./pages/NarrativRåkunst";
 import Realistic from "./pages/Realistic";
 import NewsLetter from "./components/NewsLetter";
-import Exhibitions from "./pages/Exhibitions";
+import GalleriKrasbørstig from "./pages/GalleriKrasbørstig";
 import MenInBlack from "./pages/MenInBlack";
 import FugleMennesker from "./pages/FugleMennesker";
 import heroImage from "/HuleMalerier/Den-skamfødte-Kell-Jarner.webp";
@@ -108,17 +108,14 @@ function App() {
             }
           />
           <Route
-            path="/paintings"
+            path="/Malerier"
             element={
               <>
                 <Helmet>
-                  <title>Paintings - Kell Jarner Art</title>
-                  <meta
-                    name="description"
-                    content="Explore our collection of paintings."
-                  />
+                  <title>Malerier - Kell Jarner Art</title>
+                  <meta name="description" content="Udforsk malerier" />
                 </Helmet>
-                <Paintings />
+                <Malerier />
               </>
             }
           />
@@ -153,17 +150,17 @@ function App() {
             }
           />
           <Route
-            path="/exhibitions"
+            path="/GalleriKrasbørstig"
             element={
               <>
                 <Helmet>
-                  <title>Exhibitions - Kell Jarner Art</title>
+                  <title>GalleriKrasbørstig - Kell Jarner Art</title>
                   <meta
                     name="description"
-                    content="Find out about our current and past exhibitions."
+                    content="Læs om galleriet Krasbørstig"
                   />
                 </Helmet>
-                <Exhibitions />
+                <GalleriKrasbørstig />
               </>
             }
           />
