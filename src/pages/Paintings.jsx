@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const images = [
   {
-    src: "/art-brut/Fabulator.jpg",
-    link: "/ArtBrut",
+    src: "/NarrativRåkunst/Fabulator.jpg",
+    link: "/NarrativRåkunst",
     text: "Narrativ råkunst",
   },
   {
@@ -17,8 +17,8 @@ const images = [
     text: "Men in black",
   },
   {
-    src: "/cave-paintings/Hjortes-hjerner-Kell-Jarner.webp",
-    link: "/CavePaintings",
+    src: "/HuleMalerier/Hjortes-hjerner-Kell-Jarner.webp",
+    link: "/HuleMalerier",
     text: "Hulemalerier",
   },
   {

@@ -5,158 +5,158 @@ import Modal from "../components/Modal"; // Import the Modal component
 
 const images = [
   {
-    src: "art-brut/Fabulator.jpg",
+    src: "NarrativRåkunst/Fabulator.jpg",
     title: "Fabulator",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Boudoir-Kell-Jarner-2017.webp",
+    src: "NarrativRåkunst/Boudoir-Kell-Jarner-2017.webp",
     title: "Boudoir",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Danse-macabre-Kell-Jarner-2017.webp",
+    src: "NarrativRåkunst/Danse-macabre-Kell-Jarner-2017.webp",
     title: "Danse macabre",
     price: "Spørg efter pris",
     size: "-",
   },
   // {
-  //   src: "art-brut/Frelser-scaled.webp",
+  //   src: "NarrativRåkunst/Frelser-scaled.webp",
   //   title: "Frelser",
   //   price: "699",
   //   size: "60x80 cm",
   // },
   {
-    src: "art-brut/Fugl-og-fæ-Kell-Jarner-2019.webp",
+    src: "NarrativRåkunst/Fugl-og-fæ-Kell-Jarner-2019.webp",
     title: "Fugl og fæ",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Grumme-gerninger-pænt-tøj-Kell-Jarner-2018-1.webp",
+    src: "NarrativRåkunst/Grumme-gerninger-pænt-tøj-Kell-Jarner-2018-1.webp",
     title: "Grumme gerninger, pænt tøj",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Håndværkere-Kell-Jarner-2018.webp",
+    src: "NarrativRåkunst/Håndværkere-Kell-Jarner-2018.webp",
     title: "Håndværkere",
     price: "Spørg efter pris",
     size: "-",
   },
   // {
-  //   src: "art-brut/Kafisos-og-Liriope-Kell-Jarner-2018.webp",
+  //   src: "NarrativRåkunst/Kafisos-og-Liriope-Kell-Jarner-2018.webp",
   //   title: "Kafisos og Liriope",
   //   price: "599",
   //   size: "50x70 cm",
   // },
   {
-    src: "art-brut/Kongen-og-kravlenisserne-Kell-Jarner-2019.webp",
+    src: "NarrativRåkunst/Kongen-og-kravlenisserne-Kell-Jarner-2019.webp",
     title: "Kongen og kravlenisserne",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Partybussen-og-bykongen-Kell-Jarner-2018.webp",
+    src: "NarrativRåkunst/Partybussen-og-bykongen-Kell-Jarner-2018.webp",
     title: "Partybussen og bykongen",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Disputs.jpeg",
+    src: "NarrativRåkunst/Disputs.jpeg",
     title: "Disputs",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Elefanten i rummet.jpeg",
+    src: "NarrativRåkunst/Elefanten i rummet.jpeg",
     title: "Elefanten i rummet",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Fisker.jpg",
+    src: "NarrativRåkunst/Fisker.jpg",
     title: "Fisker",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Fluernes herre Kell Jarner.png",
+    src: "NarrativRåkunst/Fluernes herre Kell Jarner.png",
     title: "Fluernes herre",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Frelser-scaled.webp",
+    src: "NarrativRåkunst/Frelser-scaled.webp",
     title: "Frelser",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Håndværkere-Kell-Jarner-2018.webp",
+    src: "NarrativRåkunst/Håndværkere-Kell-Jarner-2018.webp",
     title: "Håndværkere",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Kafisos-og-Liriope-Kell-Jarner-2018.webp",
+    src: "NarrativRåkunst/Kafisos-og-Liriope-Kell-Jarner-2018.webp",
     title: "Kafisos & Liriope",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/Profeten-Kell-Jarner-2017.webp",
+    src: "NarrativRåkunst/Profeten-Kell-Jarner-2017.webp",
     title: "Profeten",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/råkunst2/Hands up.jpeg",
+    src: "NarrativRåkunst/råkunst2/Hands up.jpeg",
     title: "Hands up",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/råkunst2/Jomfru til hest.jpeg",
+    src: "NarrativRåkunst/råkunst2/Jomfru til hest.jpeg",
     title: "Jomfru til hest",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/råkunst2/Olfert.JPG",
+    src: "NarrativRåkunst/råkunst2/Olfert.JPG",
     title: "Olfert",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "art-brut/råkunst2/Togkupe Kell Jarner 2019.png",
+    src: "NarrativRåkunst/råkunst2/Togkupe Kell Jarner 2019.png",
     title: "Togkupe",
     price: "Spørg efter pris",
     size: "-",
   },
   // {
-  //   src: "art-brut/Skytsengel.-Kell-Jarner-2018.webp",
+  //   src: "NarrativRåkunst/Skytsengel.-Kell-Jarner-2018.webp",
   //   title: "Skytsengel",
   //   price: "Spørg efter pris",
   //   size: "-",
   // },
   // {
-  //   src: "art-brut/råkunst2/Smugkig-Kell-Jarner-2017.webp",
+  //   src: "NarrativRåkunst/råkunst2/Smugkig-Kell-Jarner-2017.webp",
   //   title: "Smugkig",
   //   price: "Spørg efter pris",
   //   size: "-",
   // },
   // {
-  //   src: "art-brut/råkunst2/Sommer-og-Lars-Kell-Jarner-2018.webp",
+  //   src: "NarrativRåkunst/råkunst2/Sommer-og-Lars-Kell-Jarner-2018.webp",
   //   title: "Sommer & Lars",
   //   price: "Spørg efter pris",
   //   size: "-",
   // },
 ];
 
-const ArtBrut = () => {
+const NarrativRåkunst = () => {
   const [modalImageIndex, setModalImageIndex] = useState(null);
 
   const handleOpenModal = (index) => {
@@ -205,4 +205,4 @@ const ArtBrut = () => {
   );
 };
 
-export default ArtBrut;
+export default NarrativRåkunst;

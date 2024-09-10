@@ -8,17 +8,17 @@ import About from "./pages/About";
 import Paintings from "./pages/Paintings";
 import Contact from "./pages/Contact";
 import Posters from "./pages/Posters";
-import CavePaintings from "./pages/CavePaintings";
+import HuleMalerier from "./pages/HuleMalerier";
 import Toon from "./pages/Toon";
 import Morbid from "./pages/Morbid";
-import ArtBrut from "./pages/ArtBrut";
+import NarrativRåkunst from "./pages/NarrativRåkunst";
 import Realistic from "./pages/Realistic";
 import NewsLetter from "./components/NewsLetter";
 import Exhibitions from "./pages/Exhibitions";
 import MenInBlack from "./pages/MenInBlack";
 import FugleMennesker from "./pages/FugleMennesker";
-import heroImage from "/cave-paintings/Den-skamfødte-Kell-Jarner.webp";
-import articleImg1 from "/art-brut/Partybussen-og-bykongen-Kell-Jarner-2018.webp";
+import heroImage from "/HuleMalerier/Den-skamfødte-Kell-Jarner.webp";
+import articleImg1 from "/NarrativRåkunst/Partybussen-og-bykongen-Kell-Jarner-2018.webp";
 import articleImg2 from "/morbid/Mord-i-Muxia-Kell-Jarner.webp";
 import Layout from "./components/Layout"; // Import Layout
 
@@ -168,17 +168,14 @@ function App() {
             }
           />
           <Route
-            path="/cavepaintings"
+            path="/HuleMalerier"
             element={
               <>
                 <Helmet>
-                  <title>Cave Paintings - Kell Jarner Art</title>
-                  <meta
-                    name="description"
-                    content="Explore our collection of cave paintings."
-                  />
+                  <title>Hulemalerier- Kell Jarner Art</title>
+                  <meta name="description" content="hulemalerier" />
                 </Helmet>
-                <CavePaintings />
+                <HuleMalerier />
               </>
             }
           />
@@ -213,17 +210,14 @@ function App() {
             }
           />
           <Route
-            path="/artbrut"
+            path="/NarrativRåkunst"
             element={
               <>
                 <Helmet>
-                  <title>Art Brut - Kell Jarner Art</title>
-                  <meta
-                    name="description"
-                    content="Explore the Art Brut collection."
-                  />
+                  <title>Narrativ Råkunst - Kell Jarner Art</title>
+                  <meta name="description" content="NarrativRåkunst" />
                 </Helmet>
-                <ArtBrut />
+                <NarrativRåkunst />
               </>
             }
           />
