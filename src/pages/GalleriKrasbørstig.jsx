@@ -1,14 +1,6 @@
 const GalleriKrasbørstig = () => {
   return (
     <>
-      {/* Midlertidig meddelelse */}
-      <div className="flex justify-center bg-black py-4">
-        <h1 className="text-green-400 text-2xl font-extrabold text-center mx-4">
-          Hjemmesiden er i øjeblikket under opdatering, så nogle oplysninger kan
-          mangle. Tak for din tålmodighed!
-        </h1>
-      </div>
-
       {/* Hovedindhold */}
       <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">

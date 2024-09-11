@@ -1,56 +1,56 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
-import NewsArticle from "./components/NewsArticle";
-import About from "./pages/About";
+// import NewsArticle from "./components/NewsArticle";
+import OmMig from "./pages/OmMig";
 import Malerier from "./pages/Malerier";
-import Contact from "./pages/Contact";
-import Posters from "./pages/Posters";
+import Kontakt from "./pages/Kontakt";
+import Plakater from "./pages/Plakater";
 import HuleMalerier from "./pages/HuleMalerier";
 import Toon from "./pages/Toon";
 import Morbid from "./pages/Morbid";
 import NarrativRåkunst from "./pages/NarrativRåkunst";
-import Realistic from "./pages/Realistic";
-import NewsLetter from "./components/NewsLetter";
+import Realistisk from "./pages/Realistisk";
+// import NewsLetter from "./components/NewsLetter";
 import GalleriKrasbørstig from "./pages/GalleriKrasbørstig";
 import MenInBlack from "./pages/MenInBlack";
 import FugleMennesker from "./pages/FugleMennesker";
 import heroImage from "/HuleMalerier/Den-skamfødte-Kell-Jarner.webp";
-import articleImg1 from "/NarrativRåkunst/Partybussen-og-bykongen-Kell-Jarner-2018.webp";
-import articleImg2 from "/morbid/Mord-i-Muxia-Kell-Jarner.webp";
+// import articleImg1 from "/NarrativRåkunst/Partybussen-og-bykongen-Kell-Jarner-2018.webp";
+// import articleImg2 from "/morbid/Mord-i-Muxia-Kell-Jarner.webp";
 import Layout from "./components/Layout"; // Import Layout
 
 function App() {
   // Add useEffect to load the Klaviyo script
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.async = true;
-    script.type = "text/javascript";
-    script.src =
-      "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SPxJZ8";
-    document.body.appendChild(script);
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.async = true;
+  //   script.type = "text/javascript";
+  //   script.src =
+  //     "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SPxJZ8";
+  //   document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   };
+  // }, []);
 
-  const articles = [
-    {
-      image: articleImg1,
-      title: "Article 1",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      image: articleImg2,
-      title: "Article 2",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ];
+  // const articles = [
+  //   {
+  //     image: articleImg1,
+  //     title: "Article 1",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   },
+  //   {
+  //     image: articleImg2,
+  //     title: "Article 2",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   },
+  // ];
 
   return (
     <Router>
@@ -62,14 +62,6 @@ function App() {
             path="/"
             element={
               <>
-                {/* Slet her fra - */}
-                <div className="flex justify-center bg-black	">
-                  <h1 className="text-green-400 text-2xl font-extrabold">
-                    Hjemmesiden er i øjeblikket under opdatering, så nogle
-                    oplysninger kan mangle. Tak for din tålmodighed!
-                  </h1>
-                </div>
-                {/* og hertil */}
                 <Helmet>
                   <title>Kell Jarner Art</title>
                   <meta
@@ -93,17 +85,17 @@ function App() {
             }
           />
           <Route
-            path="/about"
+            path="/OmMig"
             element={
               <>
                 <Helmet>
-                  <title>About Us - Kell Jarner Art</title>
+                  <title>Om mig - Kell Jarner Art</title>
                   <meta
                     name="description"
-                    content="Learn more about Kell Jarner Art and our mission."
+                    content="Om mig"
                   />
                 </Helmet>
-                <About />
+                <OmMig />
               </>
             }
           />
@@ -120,32 +112,32 @@ function App() {
             }
           />
           <Route
-            path="/contact"
+            path="/Kontakt"
             element={
               <>
                 <Helmet>
-                  <title>Contact Us - Kell Jarner Art</title>
+                  <title>Kontakt os - Kell Jarner Art</title>
                   <meta
                     name="description"
-                    content="Get in touch with Kell Jarner Art for any inquiries."
+                    content="Kontakt side"
                   />
                 </Helmet>
-                <Contact />
+                <Kontakt />
               </>
             }
           />
           <Route
-            path="/posters"
+            path="/Plakater"
             element={
               <>
                 <Helmet>
-                  <title>Posters - Kell Jarner Art</title>
+                  <title>Plakater - Kell Jarner Art</title>
                   <meta
                     name="description"
-                    content="Discover our range of posters."
+                    content="Plakater til salg"
                   />
                 </Helmet>
-                <Posters />
+                <Plakater />
               </>
             }
           />
@@ -219,17 +211,17 @@ function App() {
             }
           />
           <Route
-            path="/realistic"
+            path="/Realistisk"
             element={
               <>
                 <Helmet>
-                  <title>Realistic - Kell Jarner Art</title>
+                  <title>Realistisk - Kell Jarner Art</title>
                   <meta
                     name="description"
-                    content="Discover realistic art pieces."
+                    content="Realistiske malerier"
                   />
                 </Helmet>
-                <Realistic />
+                <Realistisk />
               </>
             }
           />

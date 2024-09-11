@@ -24,11 +24,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { to: "/about", label: "Om mig" },
+    { to: "/OmMig", label: "Om mig" },
     { to: "/GalleriKrasbørstig", label: "Galleri Krasbørstig" },
     { to: "/Malerier", label: "Malerier" },
-    { to: "/posters", label: "Plakater" },
-    // { to: "/contact", label: "Kontakt" },
+    { to: "/Plakater", label: "Plakater" },
+    // { to: "/Kontakt", label: "Kontakt" },
   ];
 
   return (

@@ -4,50 +4,44 @@ import Modal from "../components/Modal"; // Import the Modal component
 
 const images = [
   {
-    src: "/posters/thumbnail_1 Badman Plakat.jpg",
+    src: "/Plakater/thumbnail_1 Badman Plakat.jpg",
     title: "Badman",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "/posters/thumbnail_2 Drengene fra Tramonti Plakat.jpg",
+    src: "/Plakater/thumbnail_2 Drengene fra Tramonti Plakat.jpg",
     title: "Drengene fra Tramonti",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "/posters/thumbnail_3 Hunde plakat.jpg",
+    src: "/Plakater/thumbnail_3 Hunde plakat.jpg",
     title: "Hunde",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "/posters/thumbnail_4 Medusa plakat.jpg",
+    src: "/Plakater/thumbnail_4 Medusa plakat.jpg",
     title: "Medusa",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "/posters/5-Vædder-Plakat.jpg",
+    src: "/Plakater/5-Vædder-Plakat.jpg",
     title: "Vædder",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "/posters/6_Ain_&_Kabel_Plakat.jpg",
+    src: "/Plakater/6_Ain_&_Kabel_Plakat.jpg",
     title: "Ain & Kabel",
     price: "Spørg efter pris",
     size: "-",
   },
-  // {
-  //   src: "/posters/test-plakat.png",
-  //   title: "Ain & Kabel",
-  //   price: "Spørg efter pris",
-  //   size: "-",
-  // },
 ];
 
-const Posters = () => {
+const Plakater = () => {
   const [modalImageIndex, setModalImageIndex] = useState(null);
 
   const handleOpenModal = (index) => {
@@ -70,14 +64,6 @@ const Posters = () => {
 
   return (
     <>
-      {/* Slet her fra - */}
-      <div className="flex justify-center bg-black	">
-        <h1 className="text-green-400 text-2xl font-extrabold">
-          Hjemmesiden er i øjeblikket under opdatering, så nogle oplysninger kan
-          mangle. Tak for din tålmodighed!
-        </h1>
-      </div>
-      {/* og hertil */}
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-4">Plakater</h1>
         <p className="mb-8">
@@ -101,4 +87,4 @@ const Posters = () => {
   );
 };
 
-export default Posters;
+export default Plakater;

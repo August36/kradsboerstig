@@ -5,50 +5,26 @@ import Modal from "../components/Modal"; // Import the Modal component
 
 const images = [
   {
-    src: "realistic/Hane1.jpg",
+    src: "Realistisk/Hane1.jpg",
     title: "Hane",
     price: "Spørg efter pris",
     size: "-",
   },
   {
-    src: "realistic/æbler_og_banan.jpg",
+    src: "Realistisk/æbler_og_banan.jpg",
     title: "Æbler og banan",
     price: "Spørg efter pris",
     size: "-",
   },
-  // {
-  //   src: "realistic/Den-blå-hund-Kell-Jarner.webp",
-  //   title: "Den Blå Hund",
-  //   price: "1200",
-  //   size: "80x100 cm",
-  // },
-  // {
-  //   src: "realistic/Drengene-fra-Tremonti-Kell-Jarner.webp",
-  //   title: "Drengene fra Tremonti",
-  //   price: "1100",
-  //   size: "70x90 cm",
-  // },
-  // {
-  //   src: "realistic/Fisk-Kell-Jarner.webp",
-  //   title: "Fisk",
-  //   price: "1000",
-  //   size: "60x80 cm",
-  // },
   {
-    src: "realistic/Vandbøffel-Kell-Jarner.webp",
+    src: "Realistisk/Vandbøffel-Kell-Jarner.webp",
     title: "Vandbøffel",
     price: "Spørg efter pris",
     size: "-",
   },
-  // {
-  //   src: "realistic/Victory-med-åbne-øjne-Kell-Jarner.webp",
-  //   title: "Victory med Åbne Øjne",
-  //   price: "1250",
-  //   size: "80x100 cm",
-  // },
 ];
 
-const Realistic = () => {
+const Realistisk = () => {
   const [modalImageIndex, setModalImageIndex] = useState(null);
 
   const handleOpenModal = (index) => {
@@ -97,4 +73,4 @@ const Realistic = () => {
   );
 };
 
-export default Realistic;
+export default Realistisk;
