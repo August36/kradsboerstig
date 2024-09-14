@@ -18,9 +18,15 @@ const images = [
   },
   {
     src: "/fuglemennesker/Oxymoron.jpg",
-    title: "Oxymoron",
-    price: "Spørg efter pris",
-    size: "-",
+    title: "Rygende helgenfugl I",
+    price: "12.000",
+    size: "Akryl på lærred - 70x116",
+  },
+  {
+    src: "/fuglemennesker/Krasbørstig fugl.jpg",
+    title: "Krasbørstig fugl",
+    price: "2.400",
+    size: "Akryl på papir 41x32 cm.",
   },
 ];
 
