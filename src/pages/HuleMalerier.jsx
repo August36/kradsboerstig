@@ -40,6 +40,12 @@ const images = [
     price: "Spørg efter pris",
     size: "-",
   },
+  {
+    src: "/HuleMalerier/Idyl med pige og hest.jpeg",
+    title: "Idyl med pige og hest",
+    price: "Spørg efter pris",
+    size: "-",
+  },
 ];
 
 const CavePaintings = () => {

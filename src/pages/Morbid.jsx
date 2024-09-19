@@ -4,18 +4,6 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import Modal from "../components/Modal"; // Import the Modal component
 
 const images = [
-  // {
-  //   src: '/morbid/Dansen-om-guldkalven-Kell-Jarner.webp',
-  //   title: 'Dansen om Guldkalven',
-  //   price: '699',
-  //   size: '70x100 cm'
-  // },
-  {
-    src: "/morbid/Helikopteren-ankommer-efter-middag-Kell-Jarner.webp",
-    title: "Helikopteren Ankommer Efter Middag",
-    price: "Spørg efter pris",
-    size: "-",
-  },
   {
     src: "/morbid/Tænkehatten.jpeg",
     title: "Tænkehatten",
@@ -28,39 +16,21 @@ const images = [
     price: "Spørg efter pris",
     size: "-",
   },
-  // {
-  //   src: "/morbid/Herobar-3.24-Kell-Jarner.webp",
-  //   title: "Herobar 3.24",
-  //   price: "699",
-  //   size: "60x80 cm",
-  // },
-  // {
-  //   src: "/morbid/Hullet-Kell-Jarner.webp",
-  //   title: "Hullet",
-  //   price: "599",
-  //   size: "50x70 cm",
-  // },
   {
-    src: "/morbid/Kamp-kat-og-klovne.webp",
-    title: "Kat og Klovne",
+    src: "/morbid/Katte og klovne.jpg",
+    title: "Kat og klovne",
     price: "Spørg efter pris",
     size: "-",
   },
-  // {
-  //   src: "/morbid/Mord-i-Muxia-Kell-Jarner.webp",
-  //   title: "Mord i Muxia",
-  //   price: "649",
-  //   size: "60x80 cm",
-  // },
   {
-    src: "/morbid/Olfert-Kell-Jarner.webp",
+    src: "/morbid/Olfert Kell Jarner.jpg",
     title: "Olfert",
     price: "Spørg efter pris",
     size: "-",
   },
   {
     src: "/morbid/Selvportræt-med-snublende-hunde-Kell-Jarner.webp",
-    title: "Selvportræt med Snublende Hunde",
+    title: "Selvportræt med snublende hunde",
     price: "Spørg efter pris",
     size: "-",
   },
@@ -70,13 +40,54 @@ const images = [
     price: "Spørg efter pris",
     size: "-",
   },
-
-  // {
-  //   src: "/morbid/Syndesvinehund-Kell-Jarner.webp",
-  //   title: "Syndesvinehund",
-  //   price: "699",
-  //   size: "60x80 cm",
-  // },
+  {
+    src: "/morbid/Bjørnehue.jpeg",
+    title: "Bjørnehue",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "/morbid/Ghoul.jpeg",
+    title: "Ghoul",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "/morbid/Markedskræfter.jpeg",
+    title: "Markedskræfter",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "/morbid/Maskefald bag hækken.jpeg",
+    title: "Maskefald bag hækken",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "/morbid/Middagen.JPG",
+    title: "Middagen",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "/morbid/Skyen.jpg",
+    title: "Skyen",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "/morbid/Skyerne.jpeg",
+    title: "Skyerne",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "/morbid/Spektable.jpeg",
+    title: "Spektable",
+    price: "Spørg efter pris",
+    size: "-",
+  },
 ];
 
 const Morbid = () => {
