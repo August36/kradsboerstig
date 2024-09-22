@@ -7,26 +7,26 @@ const images = [
   {
     src: "/morbid/Tænkehatten.jpeg",
     title: "Tænkehatten",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "46.000",
+    size: "Akryl på lærred 268x205 cm",
   },
   {
     src: "/morbid/Medusa.jpeg",
     title: "Medusa",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "6.500",
+    size: "Akryl på lærred 60x60 cm",
   },
   {
     src: "/morbid/Katte og klovne.jpg",
     title: "Kat og klovne",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "38.000",
+    size: "Akryl på lærred 200x160 cm",
   },
   {
     src: "/morbid/Olfert Kell Jarner.jpg",
     title: "Olfert",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "22.000",
+    size: "akryl på lærred, 160x160 cm",
   },
   {
     src: "/morbid/Selvportræt-med-snublende-hunde-Kell-Jarner.webp",
@@ -37,8 +37,8 @@ const images = [
   {
     src: "/morbid/Hvis-dit-højre-øje.jpg",
     title: "Hvis dit højre øje bedrager dig",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "2.200",
+    size: "Akryl på lærred, 20x20 cm",
   },
   {
     src: "/morbid/Bjørnehue.jpeg",
@@ -55,8 +55,8 @@ const images = [
   {
     src: "/morbid/Markedskræfter.jpeg",
     title: "Markedskræfter",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "2.200",
+    size: "Akryl på lærred, 20x20 cm",
   },
   {
     src: "/morbid/Maskefald bag hækken.jpeg",
@@ -73,20 +73,20 @@ const images = [
   {
     src: "/morbid/Skyen.jpg",
     title: "Skyen",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "16.000",
+    size: "Akryl på lærred 100x120 cm",
   },
   {
     src: "/morbid/Skyerne.jpeg",
     title: "Skyerne",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "16.000",
+    size: "Akryl på lærred 100x120 cm",
   },
   {
     src: "/morbid/Spektable.jpeg",
     title: "Spektable",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "12.000",
+    size: "Akryl på lærred, 38x120",
   },
 ];
 
