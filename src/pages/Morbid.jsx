@@ -84,9 +84,21 @@ const images = [
   },
   {
     src: "/morbid/Spektable.jpeg",
-    title: "Spektable",
+    title: "Spektakle",
     price: "12.000",
-    size: "Akryl på lærred, 38x120",
+    size: "Akryl på lærred, 120x38",
+  },
+  {
+    src: "/toon/Den-blå-hund-og-menneskedyret-Kell-Jarner-2017.webp",
+    title: "Den Blå Hund og Menneskedyret",
+    price: "Spørg efter pris",
+    size: "-",
+  },
+  {
+    src: "/toon/Se-hvad-jeg-har-lavet-Kell-Jarner-2017.webp",
+    title: "Se Hvad Jeg Har Lavet",
+    price: "Spørg efter pris",
+    size: "-",
   },
 ];
 

@@ -35,35 +35,16 @@ const images = [
     size: "Akryl på papir i ramme 32x41 cm",
   },
   {
-    src: "/NarrativRåkunst/Danse macabre Kell Jarner 2017.jpg",
-    title: "Danse Macabre",
-    price: "18.000",
-    size: "110x140 cm",
-  },
-
-  {
-    src: "/NarrativRåkunst/Disputs.jpeg",
-    title: "Disputs",
-    price: "3.200",
-    size: "Akryl på papir 42x29,7 cm.",
-  },
-  {
     src: "/NarrativRåkunst/Elefanten i rummet.jpeg",
     title: "Elefanten i rummet",
     price: "34.000",
     size: "Akryl på lærred 160x205 cm",
   },
   {
-    src: "/NarrativRåkunst/Fluernes herre Kell Jarner.png",
-    title: "Fluernes herre",
-    price: "6.200",
-    size: "Akryl på lærred, 55x71 cm",
-  },
-  {
-    src: "/NarrativRåkunst/Frelser-scaled.webp",
-    title: "Frelser",
-    price: "Spørg efter pris",
-    size: "-",
+    src: "/NarrativRåkunst/Danse macabre Kell Jarner 2017.jpg",
+    title: "Danse Macabre",
+    price: "18.000",
+    size: "110x140 cm",
   },
   {
     src: "/NarrativRåkunst/Fugl og fæ.jpg",
@@ -72,25 +53,10 @@ const images = [
     size: "Akryl på lærred 65x55 cm",
   },
   {
-    src: "/NarrativRåkunst/Grumme-gerninger-pænt-tøj-Kell-Jarner-2018-1.webp",
-    title: "Grumme gerninger, pænt tøj",
-    price: "4.800",
-    size: "Akryl på lærred, 56x67 cm",
-  },
-
-
-  {
     src: "/NarrativRåkunst/Håndværkere-Kell-Jarner-2018.webp",
     title: "Håndens arbejde",
     price: "16.000",
     size: "Akryl på lærred 100x120 cm",
-  },
-
-  {
-    src: "/NarrativRåkunst/Kain-og-Abel-Kell-Jarner-2018.webp",
-    title: "Kain og Abel",
-    price: "Spørg efter pris",
-    size: "-",
   },
   {
     src: "/NarrativRåkunst/Kongen-og-kravlenisserne-Kell-Jarner-2019.webp",
@@ -103,6 +69,26 @@ const images = [
     title: "Partybussen og bykongen",
     price: "20.000",
     size: "Akryl på lærred 200x115 cm",
+  },
+
+  {
+    src: "/NarrativRåkunst/Disputs.jpeg",
+    title: "Disputs",
+    price: "3.200",
+    size: "Akryl på papir 42x29,7 cm.",
+  },
+  {
+    src: "/NarrativRåkunst/Grumme-gerninger-pænt-tøj-Kell-Jarner-2018-1.webp",
+    title: "Grumme gerninger, pænt tøj",
+    price: "4.800",
+    size: "Akryl på lærred, 56x67 cm",
+  },
+
+  {
+    src: "/NarrativRåkunst/Fluernes herre Kell Jarner.png",
+    title: "Fluernes herre",
+    price: "6.200",
+    size: "Akryl på lærred, 55x71 cm",
   },
 ];
 

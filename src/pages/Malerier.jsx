@@ -7,11 +7,6 @@ const images = [
     text: "Narrativ råkunst",
   },
   {
-    src: "/toon/Den-blå-hund-og-menneskedyret-Kell-Jarner-2017.webp",
-    link: "/Toon",
-    text: "Toon art",
-  },
-  {
     src: "/men-in-black/diaspora.JPG",
     link: "/MenInBlack",
     text: "Men in black",
@@ -26,7 +21,6 @@ const images = [
     link: "/Morbid",
     text: "Macabre",
   },
-  { src: "/Realistisk/Hane1.jpg", link: "/Realistisk", text: "Realistisk" },
   {
     src: "/fuglemennesker/Vejrhaner.jpg",
     link: "/FugleMennesker",
@@ -43,7 +37,7 @@ const Malerier = () => {
           Her kan du se de malerier, jeg har til salg. Jeg har flere maleriske
           greb, så de er inddelt i forskellige rum, som du kan besøge nedenfor.{" "}
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((image, index) => (
             <Link
               to={image.link}

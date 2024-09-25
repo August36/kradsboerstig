@@ -6,38 +6,38 @@ const images = [
   {
     src: "/Plakater/thumbnail_1 Badman Plakat.jpg",
     title: "Badman",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "225 DKK inklusiv ramme 425",
+    size: "A2-format; 42x59,4 cm",
   },
   {
     src: "/Plakater/thumbnail_2 Drengene fra Tramonti Plakat.jpg",
     title: "Drengene fra Tramonti",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "225 DKK - inklusiv ramme 425",
+    size: "A2-format; 42x59,4 cm",
   },
   {
     src: "/Plakater/thumbnail_3 Hunde plakat.jpg",
     title: "Hunde",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "225 DKK - inklusiv ramme 425",
+    size: "A2-format; 42x59,4 cm",
   },
   {
     src: "/Plakater/thumbnail_4 Medusa plakat.jpg",
     title: "Medusa",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "225 DKK - inklusiv ramme 425",
+    size: "A2-format; 42x59,4 cm",
   },
   {
     src: "/Plakater/5-Vædder-Plakat.jpg",
     title: "Vædder",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "225 DKK - inklusiv ramme 425",
+    size: "A2-format; 42x59,4 cm",
   },
   {
     src: "/Plakater/6_Ain_&_Kabel_Plakat.jpg",
     title: "Ain & Kabel",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "225 DKK - inklusiv ramme 425",
+    size: "A2-format; 42x59,4 cm",
   },
 ];
 
@@ -66,10 +66,9 @@ const Plakater = () => {
     <>
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-4">Plakater</h1>
-        <p className="mb-8">
+        <p className="mb-2">
           Som et alternativ til mine originale malerier kan du købe en
-          kunstplakat. Plakaterne er signerede og nummereret fra 1-100. Jeg
-          laver ikke flere end 100 af hver.
+          kunstplakat. Du kan købe dem med og uden ramme i Galleri Krasbørstig. Hvis du bestiller dem med posten, modtager du dem sammenrullet i et rør
         </p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
