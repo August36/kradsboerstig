@@ -14,18 +14,10 @@ const OmMig = () => {
           natten, i ferier og i kælderen. Af profession er jeg retoriker, men
           maleriet kalder, og i 2022 gik jeg på deltid i min retorikvirksomhed
           og etablerede Galleri Krasbørstig på Frederiksberg. Her maler jeg i
-          baglokalet og holder jævnlige udstillinger, ofte sammen med andre
+          baglokalet og holder jævnligt udstillinger, ofte sammen med andre
           kunstnere.
         </p>
-        <p className="text-base leading-relaxed">
-          Du er altid velkommen til at kigge ind i Galleri Krasbørstig,
-          Smallegade 52b, st.tv. Åbningstiderne er:
-        </p>
-        <ol className="list-disc list-inside text-base leading-relaxed">
-          <li>Torsdag kl. 12-18</li>
-          <li>Fredag kl. 17-19</li>
-          <li>Lørdag kl. 12-16</li>
-        </ol>
+        
       </div>
     </div>
     </>

@@ -5,16 +5,16 @@ import Modal from "../components/Modal"; // Import the Modal component
 
 const images = [
   {
-    src: "/NarrativRåkunst/Bademesteren.jpeg",
-    title: "Bademesteren",
-    price: "18.000",
-    size: "Akryl på lærred, 130x100 cm",
+    src: "/NarrativRåkunst/Jomfru til hest.jpeg",
+    title: "Jomfru til hest",
+    price: "16.000",
+    size: "Akryl på lærred 100x120 cm",
   },
   {
-    src: "/NarrativRåkunst/Danse macabre Kell Jarner 2017.jpg",
-    title: "Danse Macabre",
-    price: "18.000",
-    size: "110x140 cm",
+    src: "/NarrativRåkunst/Hands up.jpeg",
+    title: "Hands up! I",
+    price: "16.000",
+    size: "Akryl på lærred 100x120 cm",
   },
   {
     src: "/NarrativRåkunst/Destroyer of worlds.jpeg",
@@ -22,6 +22,25 @@ const images = [
     price: "16.000.",
     size: "Akryl på lærred 100x120 cm",
   },
+  {
+    src: "/NarrativRåkunst/Bademesteren.jpeg",
+    title: "Bademesteren",
+    price: "18.000",
+    size: "Akryl på lærred, 130x100 cm",
+  },
+  {
+    src: "/NarrativRåkunst/Fabulator.jpg",
+    title: "Hands up! II (tidl. Fabulator)",
+    price: "3.200",
+    size: "Akryl på papir i ramme 32x41 cm",
+  },
+  {
+    src: "/NarrativRåkunst/Danse macabre Kell Jarner 2017.jpg",
+    title: "Danse Macabre",
+    price: "18.000",
+    size: "110x140 cm",
+  },
+
   {
     src: "/NarrativRåkunst/Disputs.jpeg",
     title: "Disputs",
@@ -58,30 +77,15 @@ const images = [
     price: "4.800",
     size: "Akryl på lærred, 56x67 cm",
   },
-  {
-    src: "/NarrativRåkunst/Hands up.jpeg",
-    title: "Hands up! I",
-    price: "16.000",
-    size: "Akryl på lærred 100x120 cm",
-  },
-  {
-    src: "/NarrativRåkunst/Fabulator.jpg",
-    title: "Hands up! II (tidl. Fabulator)",
-    price: "3.200",
-    size: "Akryl på papir i ramme 32x41 cm",
-  },
+
+
   {
     src: "/NarrativRåkunst/Håndværkere-Kell-Jarner-2018.webp",
     title: "Håndens arbejde",
     price: "16.000",
     size: "Akryl på lærred 100x120 cm",
   },
-  {
-    src: "/NarrativRåkunst/Jomfru til hest.jpeg",
-    title: "Jomfru til hest",
-    price: "16.000",
-    size: "Akryl på lærred 100x120 cm",
-  },
+
   {
     src: "/NarrativRåkunst/Kain-og-Abel-Kell-Jarner-2018.webp",
     title: "Kain og Abel",
