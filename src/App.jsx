@@ -68,17 +68,6 @@ function App() {
                   />
                 </Helmet>
                 <Hero image={heroImage} />
-                <div className="w-full max-w-5xl mx-auto mb-10">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-8 text-center sm:text-left">
-                    Nyheder
-                  </h1>
-                  {/************************** INDKOMMENTER NewsArticle og NewsLetter når det skal bruge **************************/}
-                  <p>Der er p.t. ingen nyheder</p>
-                  {/* {articles.map((article, index) => (
-                    <NewsArticle key={index} {...article} />
-                  ))} */}
-                </div>
-                {/* <NewsLetter /> */}
               </>
             }
           />

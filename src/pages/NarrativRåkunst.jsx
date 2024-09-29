@@ -14,13 +14,13 @@ const images = [
     src: "/NarrativRåkunst/Hands up.jpeg",
     title: "Hands up! I",
     price: "16.000",
-    size: "Akryl på lærred 100x120 cm",
+    size: "Akryl på lærred 120x100 cm",
   },
   {
     src: "/NarrativRåkunst/Destroyer of worlds.jpeg",
     title: "Verdensødelægger",
     price: "16.000.",
-    size: "Akryl på lærred 100x120 cm",
+    size: "Akryl på lærred 120x100 cm",
   },
   {
     src: "/NarrativRåkunst/Bademesteren.jpeg",
@@ -30,7 +30,7 @@ const images = [
   },
   {
     src: "/NarrativRåkunst/Fabulator.jpg",
-    title: "Hands up! II (tidl. Fabulator)",
+    title: "Hands up! II",
     price: "3.200",
     size: "Akryl på papir i ramme 32x41 cm",
   },
@@ -38,7 +38,7 @@ const images = [
     src: "/NarrativRåkunst/Elefanten i rummet.jpeg",
     title: "Elefanten i rummet",
     price: "34.000",
-    size: "Akryl på lærred 160x205 cm",
+    size: "Akryl på lærred 205x160 cm",
   },
   {
     src: "/NarrativRåkunst/Danse macabre Kell Jarner 2017.jpg",
@@ -50,7 +50,7 @@ const images = [
     src: "/NarrativRåkunst/Fugl og fæ.jpg",
     title: "Fugl og fæ",
     price: "6.000",
-    size: "Akryl på lærred 65x55 cm",
+    size: "Akryl på lærred 55x65 cm",
   },
   {
     src: "/NarrativRåkunst/Håndværkere-Kell-Jarner-2018.webp",
@@ -75,7 +75,7 @@ const images = [
     src: "/NarrativRåkunst/Disputs.jpeg",
     title: "Disputs",
     price: "3.200",
-    size: "Akryl på papir 42x29,7 cm.",
+    size: "Akryl på papir 42x29,7 cm",
   },
   {
     src: "/NarrativRåkunst/Grumme-gerninger-pænt-tøj-Kell-Jarner-2018-1.webp",

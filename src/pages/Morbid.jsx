@@ -8,7 +8,7 @@ const images = [
     src: "/morbid/Tænkehatten.jpeg",
     title: "Tænkehatten",
     price: "46.000",
-    size: "Akryl på lærred 268x205 cm",
+    size: "Akryl på lærred 205x268 cm",
   },
   {
     src: "/morbid/Medusa.jpeg",
@@ -31,8 +31,8 @@ const images = [
   {
     src: "/morbid/Selvportræt-med-snublende-hunde-Kell-Jarner.webp",
     title: "Selvportræt med snublende hunde",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "38.000",
+    size: "Akryl på lærred, 200x170 cm",
   },
   {
     src: "/morbid/Hvis-dit-højre-øje.jpg",
@@ -42,33 +42,34 @@ const images = [
   },
   {
     src: "/morbid/Bjørnehue.jpeg",
-    title: "Bjørnehue",
-    price: "Spørg efter pris",
-    size: "-",
+    title: "Pige med bjørnehue",
+    price: "6.000",
+    size: "45x60 cm",
   },
   {
     src: "/morbid/Ghoul.jpeg",
     title: "Ghoul",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "6.000",
+    size: "Akryl på lærred 45x60 cm",
+  },
+  {
+    src: "/morbid/Maskefald bag hækken.jpeg",
+    title: "Maskefald",
+    price: "6.000",
+    size: "Akryl på lærred 45x60 cm",
   },
   {
     src: "/morbid/Markedskræfter.jpeg",
     title: "Markedskræfter",
-    price: "2.200",
-    size: "Akryl på lærred, 20x20 cm",
+    price: "15.000",
+    size: "Akryl på lærred, 115x100 cm",
   },
-  {
-    src: "/morbid/Maskefald bag hækken.jpeg",
-    title: "Maskefald bag hækken",
-    price: "Spørg efter pris",
-    size: "-",
-  },
+
   {
     src: "/morbid/Middagen.JPG",
     title: "Middagen",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "38.000",
+    size: "Akryl på lærred 170x200 cm",
   },
   {
     src: "/morbid/Skyen.jpg",
@@ -86,19 +87,19 @@ const images = [
     src: "/morbid/Spektable.jpeg",
     title: "Spektakle",
     price: "12.000",
-    size: "Akryl på lærred, 120x38",
+    size: "Akryl på lærred 120x38",
   },
   {
     src: "/toon/Den-blå-hund-og-menneskedyret-Kell-Jarner-2017.webp",
     title: "Den Blå Hund og Menneskedyret",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "12.000",
+    size: "Akryl på lærred 150x50 cm",
   },
   {
     src: "/toon/Se-hvad-jeg-har-lavet-Kell-Jarner-2017.webp",
     title: "Se Hvad Jeg Har Lavet",
-    price: "Spørg efter pris",
-    size: "-",
+    price: "12.000",
+    size: "Akryl på lærred 150x50 cm",
   },
 ];
 
