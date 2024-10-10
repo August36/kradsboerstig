@@ -9,10 +9,8 @@ import Malerier from "./pages/Malerier";
 import Kontakt from "./pages/Kontakt";
 import Plakater from "./pages/Plakater";
 import HuleMalerier from "./pages/HuleMalerier";
-import Toon from "./pages/Toon";
 import Morbid from "./pages/Morbid";
 import NarrativRåkunst from "./pages/NarrativRåkunst";
-import Realistisk from "./pages/Realistisk";
 // import NewsLetter from "./components/NewsLetter";
 import GalleriKrasbørstig from "./pages/GalleriKrasbørstig";
 import MenInBlack from "./pages/MenInBlack";
@@ -70,17 +68,6 @@ function App() {
                   />
                 </Helmet>
                 <Hero image={heroImage} />
-                <div className="w-full max-w-5xl mx-auto mb-10">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-8 text-center sm:text-left">
-                    Nyheder
-                  </h1>
-                  {/************************** INDKOMMENTER NewsArticle og NewsLetter når det skal bruge **************************/}
-                  <p>Der er p.t. ingen nyheder</p>
-                  {/* {articles.map((article, index) => (
-                    <NewsArticle key={index} {...article} />
-                  ))} */}
-                </div>
-                {/* <NewsLetter /> */}
               </>
             }
           />
@@ -160,21 +147,6 @@ function App() {
             }
           />
           <Route
-            path="/toon"
-            element={
-              <>
-                <Helmet>
-                  <title>Toon - Kell Jarner Art</title>
-                  <meta
-                    name="description"
-                    content="Check out our Toon art collection."
-                  />
-                </Helmet>
-                <Toon />
-              </>
-            }
-          />
-          <Route
             path="/morbid"
             element={
               <>
@@ -198,19 +170,6 @@ function App() {
                   <meta name="description" content="NarrativRåkunst" />
                 </Helmet>
                 <NarrativRåkunst />
-              </>
-            }
-          />
-          <Route
-            path="/Realistisk"
-            element={
-              <>
-                <Helmet>
-                  <title>Realistisk - Kell Jarner Art</title>
-                  <meta name="description" content="Realistiske malerier" />
-                  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-                </Helmet>
-                <Realistisk />
               </>
             }
           />

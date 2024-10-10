@@ -2,7 +2,7 @@ const GalleriKrasbørstig = () => {
   return (
     <>
       {/* Hovedindhold */}
-      <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 custom:flex custom:flex-col custom:justify-center custom:items-center">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
             Galleri Krasbørstig
@@ -13,20 +13,33 @@ const GalleriKrasbørstig = () => {
           </p>
         </header>
 
-        <div className="flex flex-col md:flex-row items-start justify-center gap-8 mb-12">
-          <img
-            src="./Krasboerstig-facade.jpg"
-            alt="Billede af galleri Krasbørstigs facade"
-            className="w-80 h-80 object-cover rounded-lg shadow-lg"
-          />
+        <div className="flex flex-col flex-1 md:flex-row items-start justify-center gap-8 mb-12 custom:flex custom:flex-col custom:justify-center custom:items-center">
+          <div>
+            <img
+              src="./Krasboerstig-gade.jpeg"
+              alt="Billede af Galleri Krasbørstigs facade"
+              className="w-100 h-80 object-cover rounded-lg shadow-lg mb-5 custom:flex custom:flex-col custom:justify-center custom:items-center"
+            />
+            <p className="mb-5">Smallegade 52B, st.tv., 2000 Frederiksberg</p>
+            <p className="text-base leading-relaxed">
+              Du er altid velkommen til at kigge ind i <br /> Galleri
+              Krasbørstig Åbningstiderne er:
+            </p>
+            <ol className="list-disc list-inside text-base leading-relaxed custom:mt-5">
+              <li>Torsdag kl. 12-18</li>
+              <li>Fredag kl. 17-19</li>
+              <li>Lørdag kl. 12-16</li>
+            </ol>
+          </div>
+
           <div className="w-full md:w-1/2 max-w-lg">
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
               Der findes kunstnere, som har øvet sig hele livet og skaber værker
               af høj kvalitet. Og alligevel er de aldrig slået igennem. Det
               skyldes som regel, at de ikke arbejder på markedsvilkår; de har
               ikke et brand eller en mission, de tænker ikke i målgrupper osv.
-              Det, de har, er en impuls, som driver dem, en ‘daimon’ som prikker
-              og kradser, og derfor bliver de ved.
+              Det, de har, er en drift, som prikker og kradser, og derfor bliver
+              de ved.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
               Dét er ideen bag Galleri Krasbørstig. At finde og formidle de
@@ -35,17 +48,6 @@ const GalleriKrasbørstig = () => {
               filosofisk til de fleste dagligstuer.
             </p>
           </div>
-        </div>
-
-        <div className="px-4 md:px-16 mb-12">
-          <p className="text-gray-700 text-lg leading-relaxed">
-            Kom forbi, hvis du søger en oplevelse eller kunst til dit hjem, din
-            virksomhed eller din kunstforening. Du er også velkommen, hvis du er
-            mere til det dekorative end det krasbørstige. Efter min mening kan
-            det godt forenes; et maleri behøver ikke være pænt for at være flot.
-            Men du skal nok forvente at retorikeren kommer op i mig og slår et
-            slag for kunst der kan mere end at behage. Fx skabe samtaler.
-          </p>
         </div>
 
         <div className="max-w-7xl mx-auto px-4">

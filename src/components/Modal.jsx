@@ -33,7 +33,7 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
           <img
             src={images[modalImageIndex].src}
             alt={images[modalImageIndex].title}
-            className="max-w-full max-h-full object-contain xs:max-w-[90vw] xs:max-h-[90vh] sm:max-w-[80vw] sm:max-h-[80vh] md:max-w-[70vw] md:max-h-[70vh] lg:max-w-[60vw] lg:max-h-[60vh]"
+            className="max-w-full max-h-full object-contain xs:max-w-[90vw] xs:max-h-[90vh] sm:max-w-[80vw] sm:max-h-[80vh] md:max-w-[70vw] md:max-h-[70vh] lg:max-w-[80vw] lg:max-h-[80vh]"
             onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking the image
           />
           {/* Close Button */}

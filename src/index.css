@@ -40,6 +40,14 @@ img {
   height: auto;
 }
 
+/* Custom classes */
+@media (min-width: 1024px) {
+  .custom-padding {
+    padding-left: 400px;
+    padding-right: 400px;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
