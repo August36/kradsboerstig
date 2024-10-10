@@ -90,10 +90,7 @@ function App() {
               <>
                 <Helmet>
                   <title>Om mig - Kell Jarner Art</title>
-                  <meta
-                    name="description"
-                    content="Om mig"
-                  />
+                  <meta name="description" content="Om mig" />
                 </Helmet>
                 <OmMig />
               </>
@@ -117,10 +114,7 @@ function App() {
               <>
                 <Helmet>
                   <title>Kontakt os - Kell Jarner Art</title>
-                  <meta
-                    name="description"
-                    content="Kontakt side"
-                  />
+                  <meta name="description" content="Kontakt side" />
                 </Helmet>
                 <Kontakt />
               </>
@@ -132,10 +126,7 @@ function App() {
               <>
                 <Helmet>
                   <title>Plakater - Kell Jarner Art</title>
-                  <meta
-                    name="description"
-                    content="Plakater til salg"
-                  />
+                  <meta name="description" content="Plakater til salg" />
                 </Helmet>
                 <Plakater />
               </>
@@ -216,10 +207,8 @@ function App() {
               <>
                 <Helmet>
                   <title>Realistisk - Kell Jarner Art</title>
-                  <meta
-                    name="description"
-                    content="Realistiske malerier"
-                  />
+                  <meta name="description" content="Realistiske malerier" />
+                  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
                 </Helmet>
                 <Realistisk />
               </>

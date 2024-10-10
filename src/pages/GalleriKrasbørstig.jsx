@@ -15,8 +15,8 @@ const GalleriKrasbørstig = () => {
 
         <div className="flex flex-col md:flex-row items-start justify-center gap-8 mb-12">
           <img
-            src="./krasboerstig-placeholder.jpg"
-            alt="Profilbillede"
+            src="./Krasboerstig-facade.jpg"
+            alt="Billede af galleri Krasbørstigs facade"
             className="w-80 h-80 object-cover rounded-lg shadow-lg"
           />
           <div className="w-full md:w-1/2 max-w-lg">

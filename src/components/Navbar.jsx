@@ -32,7 +32,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-800 p-4 z-50 flex items-center justify-between">
+    <nav className="w-full bg-gray-800 p-4 z-50 flex items-center justify-between">
       {/* Home Logo */}
       <div className="text-white z-50">
         <Link to="/" className="text-white hover:text-gray-300">
