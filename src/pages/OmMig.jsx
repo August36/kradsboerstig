@@ -8,7 +8,7 @@ const OmMig = () => {
           className="w-80 h-30"
         />
         <div className="flex-1 max-w-3xl space-y-5 md:text-left">
-          <h1 className="text-xl font-bold">Om mig</h1>
+          <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Om mig</h1>
           <p className="text-base leading-relaxed">
             Mit navn er Kell Jarner Rasmussen. Jeg har altid malet, i mange år
             om natten, i ferier og i kælderen. Af profession er jeg retoriker,
@@ -38,12 +38,11 @@ const OmMig = () => {
 
           <p>
             Som stor dreng malede jeg detaljerede surrealistiske billeder, men
-            de blev aldrig færdige. En
-            dag malede jeg et lille abstrakt billede. Det føltes som at lukke
-            farverne ud af deres fængsel! Jeg eksperimenterede videre, og snart
-            var jeg abstrakt kunstmaler. Folk sagde, at mine billeder var
-            flotte. De VAR flotte. Og sådan malede jeg i mange år. Jeg begyndte
-            også at sælge dem.
+            de blev aldrig færdige. En dag malede jeg et lille abstrakt billede.
+            Det føltes som at lukke farverne ud af deres fængsel! Jeg
+            eksperimenterede videre, og snart var jeg abstrakt kunstmaler. Folk
+            sagde, at mine billeder var flotte. De VAR flotte. Og sådan malede
+            jeg i mange år. Jeg begyndte også at sælge dem.
           </p>
 
           <p>
@@ -56,7 +55,6 @@ const OmMig = () => {
             malede.
           </p>
 
-
           <p>
             Ørlingerne er crazy som en tegneserie for børn. Det abstrakte er der
             stadig; der er komposition, farveharmoni, stedvis grov tekstur, hvor
@@ -66,12 +64,12 @@ const OmMig = () => {
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center md:items-start p-5 m-10 space-y-5 md:space-y-0 md:space-x-10">
-        <img
-          src="Ørlingerne-2014-Kell-Jarner.webp"
-          alt="Maleriet Ørlingerne"
-          className="w-80 h-30"
-        />
-        </div>
+            <img
+              src="Ørlingerne-2014-Kell-Jarner.webp"
+              alt="Maleriet Ørlingerne"
+              className="w-80 h-30"
+            />
+          </div>
 
           <p>
             Lige siden er figurerne myldret frem på lærredet. En tossefisk og en
@@ -83,10 +81,9 @@ const OmMig = () => {
           </p>
 
           <p>
-            Folk siger ikke, de er flotte. De ER ikke flotte. Men
-            folk kommer ofte med udbrud og taler om det, de ser. “Se den gamle
-            nonne. Er det netstrømper under kjortlen? Hun har en økse i hånden!
-            Ååh nej, da!”
+            Folk siger ikke, de er flotte. De ER ikke flotte. Men folk kommer
+            ofte med udbrud og taler om det, de ser. “Se den gamle nonne. Er det
+            netstrømper under kjortlen? Hun har en økse i hånden! Ååh nej, da!”
           </p>
 
           <p>

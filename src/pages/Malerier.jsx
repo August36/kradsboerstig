@@ -32,10 +32,11 @@ const Malerier = () => {
   return (
     <>
       <div className="container mx-auto p-4 mb-10">
-        <h1 className="text-3xl font-bold mb-4">Malerier</h1>
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Malerier</h1>
         <p className="mb-8">
           Her kan du se de malerier, jeg har til salg. Jeg har flere maleriske
-          greb og serier, så de er inddelt i forskellige rum, som du kan besøge nedenfor.{" "}
+          greb og serier, så de er inddelt i forskellige rum, som du kan besøge
+          nedenfor.{" "}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((image, index) => (

@@ -65,10 +65,12 @@ const Plakater = () => {
   return (
     <>
       <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Plakater</h1>
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Plakater</h1>
         <p className="mb-2">
           Som et alternativ til mine originale malerier kan du købe en
-          kunstplakat. Du kan købe dem med og uden ramme i Galleri Krasbørstig. Hvis du bestiller dem med posten, modtager du dem sammenrullet i et rør
+          kunstplakat. Du kan købe dem med og uden ramme i Galleri Krasbørstig.
+          Hvis du bestiller dem med posten, modtager du dem sammenrullet i et
+          rør
         </p>
         <ImageGrid images={images} onImageClick={handleOpenModal} />
 
