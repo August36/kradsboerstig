@@ -56,94 +56,67 @@ const GalleriKrasbørstig = () => {
             <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
               Udstillinger
             </h1>
-            <p className="text-lg text-gray-600">Info kommer snart</p>
           </header>
 
           {/* Placeholder for Exhibitions */}
           <section className="bg-white shadow-md rounded-lg p-8">
-            <h2 className="text-2xl font-bold mb-6">Kommende Udstillinger</h2>
-            <div className="flex items-start">
-              {/* Billedcontainer */}
-              <div className="w-1/3 flex justify-center">
-                <img
-                  src="/mennesket-i-naturen-udstilling.jpg"
-                  alt="Udstillingsforhåndsvisning"
-                  className="object-cover rounded-lg shadow-md"
-                />
+            <section className="bg-white shadow-md rounded-lg p-8 max-w-7xl mx-auto">
+              <h2 className="text-2xl font-bold mb-8 md:mb-12">
+                Kommende Udstillinger
+              </h2>
+              <div className="flex flex-col lg:flex-row items-start justify-center md:items-center lg:items-start xl:items-start gap-8 mb-12">
+                {/* Billedcontainer */}
+                <div className="w-full md:w-2/3 lg:w-1/2 xl:w-2/5 flex justify-center items-start pb-8 lg:pb-0 lg:pr-8">
+                  <img
+                    src="/mennesket-i-naturen-udstilling.jpg"
+                    alt="Udstillingsforhåndsvisning"
+                    className="object-cover rounded-lg shadow-md w-full sm:w-3/4 lg:w-full"
+                  />
+                </div>
+                {/* Tekstcontainer */}
+                <div className="w-full lg:w-1/2 xl:w-3/5 pl-0 lg:pl-4">
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    Mennesket i naturen - naturen i mennesket
+                  </h3>
+                  <p className="text-gray-600 font-semibold mt-2 mb-6">
+                    Udstilling: Rene Steen Sørensen 2. - 22. november
+                    Fernisering lørdag den 2. november kl. 14-18 Gratis entré,
+                    øl, vin, vand og snacks
+                  </p>
+                  <p className="mb-4">
+                    Det første, du vil bemærke om Rene er, at han udfører sine
+                    værker med en sjælden håndværksmæssig finesse. Han tegner,
+                    enten med farveblyant eller filtpen. Tegningerne med
+                    farveblyant udnytter papirets grove struktur og er meget
+                    dekorative - dem skal du bare se! Pennetegningerne er mere
+                    fabulerende og kalder på fortolkning. Dem ser du ikke bare,
+                    du går tur i dem.
+                  </p>
+                  <p className="mb-4">
+                    Turen fører gennem romantiske naturpanoramaer af en slående
+                    skønhed. Symbolladede scenarier bygget af elementer som
+                    pelset dyrehale, sneglehuse, blade, skov, skaktern og ...
+                    malstrømme. Ofte er malstrømmen hovedmotivet, som de andre
+                    elementer indgår i, et roterende kaos, altid bundet op i en
+                    stram komposition, som skaber ro. Til tider en foruroligende
+                    ro.
+                  </p>
+                  <p className="mb-4">
+                    Der er et menneske i naturen eller på vej ind i den. Eller
+                    naturen vokser ud af mennesket, eller mennesket er selv
+                    sammensat af natur. En reference ligger lige for: Casper
+                    David Friedrichs maleri af en vandrer, der står på en klippe
+                    med ryggen til og betragter et oprørt hav.
+                  </p>
+                  <p className="mb-4">
+                    Det er svært at fatte, at alt dette kommer fra en enkelt
+                    filtpen.
+                  </p>
+                  <p className="mb-4">Husk at sætte X i kalenderen.</p>
+                  <p className="mb-8">/Kell Jarner</p>
+                </div>
               </div>
-              {/* Tekstcontainer */}
-              <div className="w-2/3 pl-4">
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Mennesket i naturen - naturen i mennesket
-                </h3>
-                <p className="text-gray-600 mt-2 mb-6">
-                  Der findes kunstnere, som skaber v&#230;rker af
-                  &#229;ndedr&#230;tsuds&#230;ttende kvalitet, som n&#230;sten
-                  ingen ser. M&#229;ske er de for r&#229;, farlige eller
-                  n&#248;rdede til de kommercielle kunsthaller, m&#229;ske er
-                  kunstnerne bare for d&#229;rlige til at s&#230;lge sig selv.
-                  Disse ufundne kunstskatte er jeg skaml&#248;st p&#229; jagt
-                  efter, s&#229; jeg kan udstille dem i Smallegades perle,
-                  Galleri Krasb&#248;rstig. Det er et held, at Bredgade ikke har
-                  &#248;je for dem, for de har ofte mere kraft og kreativitet
-                  end de kendte kunstneres v&#230;rker, som er underlagt kravet
-                  om salgbarhed. Jeg har fundet &#233;n. Hans navn &#8211; det
-                  er en forbrydelse, at det ikke er graveret i messing og
-                  h&#230;ngt op p&#229; SMK! &#8211; er Rene Steen
-                  S&#248;rensen. Jeg fandt ham p&#229; Instagram og faldt i
-                  svime. Siden faldt vi i snak, og forunderligt nok viste det
-                  sig, at han boede et stenkast fra Galleri Krasb&#248;rstig.
-                  Jeg bes&#248;gte ham og s&#229; v&#230;rkerne &#39;live&#39;,
-                  hvilket n&#230;sten tog vejret fra mig. Rene har befundet sig
-                  i et produktionsvanvid i mange &#229;r. Han har opn&#229;et en
-                  h&#229;ndv&#230;rksm&#230;ssig finesse, som er sj&#230;lden
-                  blandt nulevende kunstnere. Han maler ikke, han tegner, enten
-                  med pen eller med farveblyanter, og nu kommer det
-                  n&#248;rdede: Altid p&#229; den samme slags papir i det samme
-                  format og siden sat i samme (ege)tr&#230;sramme (60x80 cm).
-                  Pennetegningerne laver han altid med den samme slags pen.
-                  &quot;Den dag, den g&#229;r ud af produktion, s&#229; er jeg
-                  virkelig p&#229; den&quot;, siger han. Tegningerne med
-                  farveblyant udnytter papirets grove struktur og er meget
-                  dekorative. Pennetegningerne er mere fabulerende og kalder
-                  p&#229; fortolkning. Der er noget fraktalt over dem. Enhederne
-                  er prikker, korte streger, l&#230;ngere streger og streger,
-                  der er tegnet to gange og derfor m&#248;rkere og tykkere. Ud
-                  af disse enheder fabulerer han fantastiske scenarier bygget af
-                  grundelementer som pelset dyrehale, sneglehuse, blade, skov,
-                  skaktern og ... malstr&#248;mme. Ofte er malstr&#248;mmen
-                  hovedmotivet, som de andre elementer indg&#229;r i, et
-                  roterende kaos, omend altid bundet op i en stram komposition,
-                  som skaber ro. Til tider en foruroligende ro. Billederne
-                  fremst&#229;r som det, de kredser om og henter elementer fra:
-                  Natur. I flere v&#230;rker er der et menneske, som er i
-                  naturen eller p&#229; vej ind i den. I andre vokser naturen ud
-                  af mennesket eller mennesket er sammensat af naturelementer.
-                  Der er en reference, som ligger lige for: Casper David
-                  Friedrichs vandrer, der st&#229;r p&#229; en klippe med ryggen
-                  til og betragter et opr&#248;rt hav. I S&#248;rensens billeder
-                  er mennesket forbundet med naturen og selv natur. Som
-                  betragter bevidner du romantiske panoramaer af en sl&#229;ende
-                  sk&#248;nhed. Utopiske og tankev&#230;kkende scenarier, som
-                  &#248;jet har sv&#230;rt ved at fatte kommer fra en enkelt
-                  filtpen.
-                </p>
-              </div>
-            </div>
-            {/* Eksempel på flere udstillinger */}
-            <div className="border-t border-gray-200 pt-4 flex items-start space-x-4">
-              <img
-                src="toon/Natdyr.jpg"
-                alt="Udstillingsforhåndsvisning"
-                className="w-32 h-32 object-cover rounded-lg shadow-md"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Udstillingens Titel
-                </h3>
-                <p className="text-gray-600 mt-2">Info kommer snart</p>
-              </div>
-            </div>
+            </section>
           </section>
         </div>
       </div>
