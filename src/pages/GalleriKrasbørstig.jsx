@@ -59,9 +59,6 @@ const GalleriKrasbørstig = () => {
           </header>
 
           <section className="bg-white shadow-md rounded-lg p-2 sm:p-8 md:p-8 w-full">
-            <h2 className="text-2xl font-bold mb-8 md:mb-12">
-              Kommende Udstillinger
-            </h2>
             <div className="flex flex-col lg:flex-row items-start justify-center md:items-center lg:items-start xl:items-start gap-8 mb-12">
               {/* Billedcontainer */}
               <div className="w-full md:w-2/3 lg:w-1/2 xl:w-2/5 flex justify-center items-start pb-8 lg:pb-0 lg:pr-8">
