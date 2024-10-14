@@ -59,7 +59,6 @@ const GalleriKrasbørstig = () => {
           </header>
 
           {/* Placeholder for Exhibitions */}
-          <section className="bg-white shadow-md rounded-lg p-8">
             <section className="bg-white shadow-md rounded-lg p-8 max-w-7xl mx-auto">
               <h2 className="text-2xl font-bold mb-8 md:mb-12">
                 Kommende Udstillinger
@@ -117,7 +116,7 @@ const GalleriKrasbørstig = () => {
                 </div>
               </div>
             </section>
-          </section>
+        
         </div>
       </div>
     </>
