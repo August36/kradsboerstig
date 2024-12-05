@@ -13,8 +13,6 @@ const Hero = () => {
           loading="lazy"
         />
       </picture>
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-30"></div>
     </div>
   );
 };
