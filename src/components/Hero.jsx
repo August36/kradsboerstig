@@ -1,4 +1,4 @@
-// import NewsLetter from "./NewsLetter";
+import NewsLetter from "./NewsLetter";
 
 const Hero = () => {
   return (
@@ -18,7 +18,7 @@ const Hero = () => {
         </picture>
       </div>
 
-      {/* <NewsLetter /> */}
+      <NewsLetter />
     </>
   );
 };
