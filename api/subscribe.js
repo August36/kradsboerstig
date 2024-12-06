@@ -5,8 +5,9 @@ export default async function handler(req, res) {
     const { email } = req.body;
 
     try {
-      const apiKey = 'din-hardcoded-api-key'; // Skift denne ud med din Klaviyo API-nøgle
-      const listId = 'dit-hardcoded-list-id'; // Skift denne ud med dit liste-ID
+     
+ const apiKey = process.env.KLAVIYO_API_KEY; // Hent API-nøgle fra miljøvariabler
+ const listId = process.env.KLAVIYO_LIST_ID; // Hent Liste-ID fra miljøvariabler
 
       if (!apiKey || !listId) {
         return res.status(500).json({ message: 'API-nøgle eller Liste-ID mangler.' });
