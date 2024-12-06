@@ -11,44 +11,15 @@ import Plakater from "./pages/Plakater";
 import HuleMalerier from "./pages/HuleMalerier";
 import Morbid from "./pages/Morbid";
 import NarrativRåkunst from "./pages/NarrativRåkunst";
-// import NewsLetter from "./components/NewsLetter";
 import GalleriKrasbørstig from "./pages/GalleriKrasbørstig";
 import MenInBlack from "./pages/MenInBlack";
 import FugleMennesker from "./pages/FugleMennesker";
 import heroImage from "/HuleMalerier/Den-skamfødte-Kell-Jarner.webp";
-// import articleImg1 from "/NarrativRåkunst/Partybussen-og-bykongen-Kell-Jarner-2018.webp";
-// import articleImg2 from "/morbid/Mord-i-Muxia-Kell-Jarner.webp";
 import Layout from "./components/Layout"; // Import Layout
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
-  // Add useEffect to load the Klaviyo script
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.async = true;
-  //   script.type = "text/javascript";
-  //   script.src =
-  //     "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SPxJZ8";
-  //   document.body.appendChild(script);
 
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
-
-  // const articles = [
-  //   {
-  //     image: articleImg1,
-  //     title: "Article 1",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   },
-  //   {
-  //     image: articleImg2,
-  //     title: "Article 2",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   },
-  // ];
 
   return (
     <Router>
@@ -203,6 +174,7 @@ function App() {
               </>
             }
           />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </Layout>
     </Router>
