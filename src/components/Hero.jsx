@@ -17,8 +17,6 @@ const Hero = () => {
           />
         </picture>
       </div>
-
-      {/* <NewsLetter /> */}
     </>
   );
 };
