@@ -2,9 +2,9 @@ const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-6 w-full">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
           {/* Social Media Links */}
-          <div className="mb-4 md:mb-0 flex flex-col items-start md:items-center">
+          <div className="flex flex-col items-start">
             <h3 className="text-xl font-semibold mb-2 text-white">Følg mig</h3>
             <div className="flex space-x-4">
               <a
@@ -34,17 +34,26 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Klaviyo Form */}
           <div className="klaviyo-form-XrCucz"></div>
 
-
           {/* Contact Information */}
-          <div className="flex flex-col items-start md:items-center ">
+          <div className="flex flex-col items-start">
             <h3 className="text-xl font-semibold mb-2 text-white">Kontakt</h3>
             <p className="mb-2 text-white">
-              Tlf: <a href="tel:+1234567890" className="hover:underline text-white">+45 30 31 90 91</a>
+              Tlf:{" "}
+              <a href="tel:+1234567890" className="hover:underline text-white">
+                +45 30 31 90 91
+              </a>
             </p>
             <p className="text-white">
-              Email: <a href="mailto:info@example.com" className="hover:underline text-white">kjarner@me.com</a>
+              Email:{" "}
+              <a
+                href="mailto:info@example.com"
+                className="hover:underline text-white"
+              >
+                kjarner@me.com
+              </a>
             </p>
           </div>
         </div>
