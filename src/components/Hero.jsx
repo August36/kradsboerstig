@@ -17,8 +17,6 @@ const Hero = () => {
           />
         </picture>
       </div>
-
-      <div className="klaviyo-form-XrCucz"></div>
     </>
   );
 };

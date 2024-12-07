@@ -34,6 +34,9 @@ const Footer = () => {
             </div>
           </div>
 
+          <div className="klaviyo-form-XrCucz"></div>
+
+
           {/* Contact Information */}
           <div className="flex flex-col items-start md:items-center ">
             <h3 className="text-xl font-semibold mb-2 text-white">Kontakt</h3>
