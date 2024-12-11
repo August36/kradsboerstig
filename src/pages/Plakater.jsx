@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, query, orderBy } from "firebase/firestore"; // Tilføjet query og orderBy
 import { db } from "../firebase-config"; // Firestore-konfiguration
 import ImageGrid from "../components/ImageGrid";
 import Modal from "../components/Modal";
@@ -13,9 +13,10 @@ const Plakater = () => {
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
-        // Hent artworks fra Firestore
+        // Hent artworks fra Firestore og sortér efter `order`
         const artworksCollection = collection(db, "rooms", "Plakater", "artworks");
-        const artworksSnapshot = await getDocs(artworksCollection);
+        const artworksQuery = query(artworksCollection, orderBy("order"));
+        const artworksSnapshot = await getDocs(artworksQuery);
         const artworksData = artworksSnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
