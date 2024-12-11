@@ -1,55 +1,61 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase-config"; // Firestore-konfiguration
 import ImageGrid from "../components/ImageGrid";
+import Modal from "../components/Modal";
 import Breadcrumbs from "../components/Breadcrumbs";
-import Modal from "../components/Modal"; // Import the Modal component
 
-const images = [
-  {
-    src: "/HuleMalerier/Hjortes-hjerner-Kell-Jarner.webp",
-    title: "Hjortes hjerner",
-    price: "10.500",
-    size: "Akryl på lærred 78x96 cm",
-  },
-  {
-    src: "/HuleMalerier/Kampen-på-ord-om-en-svævende-kvinde-Kell-Jarner.webp",
-    title: "Kampen på ord om en svævende kvinde",
-    price: "10.200",
-    size: "Akryl på lærred 100x69 cm",
-  },
-  {
-    src: "/HuleMalerier/Skabelsen-af-en-pandababy-Kell-Jarner.webp",
-    title: "Skabelsen af en pandababy",
-    price: "10.500",
-    size: "70x102 cm",
-  },
-  {
-    src: "/HuleMalerier/The-Trump-afterparty-Kell-Jarner.webp",
-    title: "The Trump afterparty",
-    price: "10.000",
-    size: "Akryl på lærred 100x60 cm",
-  },
-  {
-    src: "/HuleMalerier/Uskyld-Kell-Jarner.webp",
-    title: "Uskyld",
-    price: "22.000",
-    size: "Akryl på lærred 125x200 cm",
-  },
-  {
-    src: "/HuleMalerier/Varslet-Kell-Jarner.webp",
-    title: "Varslet",
-    price: "32.000",
-    size: "Akryl på lærred 200x150 cm",
-  },
-  {
-    src: "/HuleMalerier/Idyl med pige og hest.jpeg",
-    title: "Idyl med pige og hest",
-    price: "36.000",
-    size: "Akryl på lærred 200x160 cm",
-  },
-];
-
-const CavePaintings = () => {
+const HuleMalerier = () => {
+  const [artworks, setArtworks] = useState([]);
+  const [roomInfo, setRoomInfo] = useState({ title: "", description: "" });
+  const [loading, setLoading] = useState(true);
   const [modalImageIndex, setModalImageIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchArtworks = async () => {
+      try {
+        // Hent artworks fra Firestore
+        const artworksCollection = collection(db, "rooms", "HuleMalerier", "artworks");
+        const artworksSnapshot = await getDocs(artworksCollection);
+        const artworksData = artworksSnapshot.docs
+          .map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }))
+          .sort((a, b) => a.order - b.order); // Sorter efter 'order'
+        setArtworks(artworksData);
+      } catch (error) {
+        console.error("Error fetching artworks:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const fetchRoomInfo = async () => {
+      try {
+        // Hent ruminformation (titel og beskrivelse) fra Firestore
+        const roomDoc = doc(db, "rooms", "HuleMalerier");
+        const roomSnapshot = await getDoc(roomDoc);
+        if (roomSnapshot.exists()) {
+          setRoomInfo(roomSnapshot.data());
+        }
+      } catch (error) {
+        console.error("Error fetching room info:", error);
+      }
+    };
+
+    fetchArtworks();
+    fetchRoomInfo();
+  }, []);
+
+  if (loading) {
+    // Returnér en blank side under loading
+    return null;
+  }
+
+  if (artworks.length === 0) {
+    return <p>Der er ingen værker tilgængelige i dette rum.</p>;
+  }
 
   const handleOpenModal = (index) => {
     setModalImageIndex(index);
@@ -60,43 +66,30 @@ const CavePaintings = () => {
   };
 
   const handlePrevImage = () => {
-    setModalImageIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
+    setModalImageIndex((prevIndex) => (prevIndex - 1 + artworks.length) % artworks.length);
   };
 
   const handleNextImage = () => {
-    setModalImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setModalImageIndex((prevIndex) => (prevIndex + 1) % artworks.length);
   };
 
   return (
-    <>
-      <div className="container mx-auto p-4">
-        <Breadcrumbs />
-        <h1 className="text-3xl font-bold mb-4">Hulemalerier</h1>
-        <p className="mb-8">
-          Igen en serie, som har fortællingen som omdrejningspunkt. På en
-          baggrund, der kan minde om hvid klippesten, folder scenarier sig ud:
-          Videnskabsmænd diskuterer med et (umælende) dyr om en svævende kvinde.
-          En pandababy bliver skabt, øjensynligt af en kvinde med lang hals,
-          slør og mange bryster. En maskeret nonne med hofteholdere skal til at
-          sætte øksen i en høne med menneskehovede, mens alle kigger den anden
-          vej på Trump og Putin, Og meget andet. Crazy stuff.
-        </p>
-        <ImageGrid images={images} onImageClick={handleOpenModal} />
+    <div className="container mx-auto p-4">
+      <Breadcrumbs />
+      <h1 className="text-3xl font-bold mb-4">{roomInfo.title || "Hulemalerier"}</h1>
+      <p className="mb-8">{roomInfo.description || "Dette er en serie hulemalerier..."}</p>
+      <ImageGrid images={artworks} onImageClick={handleOpenModal} />
 
-        {/* Modal Component */}
-        <Modal
-          isOpen={modalImageIndex !== null}
-          images={images}
-          modalImageIndex={modalImageIndex}
-          onClose={handleCloseModal}
-          onPrev={handlePrevImage}
-          onNext={handleNextImage}
-        />
-      </div>
-    </>
+      <Modal
+        isOpen={modalImageIndex !== null}
+        images={artworks}
+        modalImageIndex={modalImageIndex}
+        onClose={handleCloseModal}
+        onPrev={handlePrevImage}
+        onNext={handleNextImage}
+      />
+    </div>
   );
 };
 
-export default CavePaintings;
+export default HuleMalerier;

@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 
 const ImageGrid = ({ images, onImageClick }) => {
+  // Sorter billeder baseret på `order`-feltet
+  const sortedImages = [...images].sort((a, b) => a.order - b.order);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6 md:p-12">
-      {images.map((image, index) => (
+      {sortedImages.map((image, index) => (
         <div
           key={index}
           className="relative overflow-hidden bg-gray-100 pb-2 shadow-lg cursor-pointer transform transition-all duration-300 group sm:hover:scale-105 sm:hover:shadow-xl"
@@ -11,7 +14,7 @@ const ImageGrid = ({ images, onImageClick }) => {
         >
           <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96">
             <img
-              src={image.src}
+              src={image.imageURL} // Opdateret til imageURL
               alt={image.title}
               className="object-cover w-full h-full absolute inset-0"
             />
@@ -34,10 +37,11 @@ const ImageGrid = ({ images, onImageClick }) => {
 ImageGrid.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
-      src: PropTypes.string.isRequired,
+      imageURL: PropTypes.string.isRequired, // Opdateret til imageURL
       title: PropTypes.string.isRequired,
       price: PropTypes.string.isRequired,
-      size: PropTypes.string.isRequired
+      size: PropTypes.string.isRequired,
+      order: PropTypes.number.isRequired, // Order-feltet
     })
   ).isRequired,
   onImageClick: PropTypes.func.isRequired

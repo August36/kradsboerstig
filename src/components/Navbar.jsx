@@ -38,7 +38,7 @@ const Navbar = () => {
         <Link to="/" className="text-white hover:text-gray-300">
           <img
             className="w-52 h-20"
-            src="Underskrift-logo_white.png"
+            src="/Underskrift-logo_white.png"
             alt="Signature"
           />
         </Link>

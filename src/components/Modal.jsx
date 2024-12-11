@@ -27,14 +27,14 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999]"
-      onClick={onClose} // Click on the background closes the modal
+      onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
       <div
         className="relative flex items-center justify-center group"
-        onClick={(e) => e.stopPropagation()} // Prevents modal from closing when clicking inside
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Container for image and buttons */}
         <div className="relative max-w-[90vw] max-h-[90vh] w-[800px] h-[600px] bg-black flex items-center justify-center rounded-lg">
@@ -69,7 +69,7 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
 
           {/* Image */}
           <img
-            src={images[modalImageIndex].src}
+            src={images[modalImageIndex].imageURL} // Opdateret til imageURL
             alt={images[modalImageIndex].title}
             className="w-full h-full object-contain rounded-lg"
           />
@@ -120,15 +120,6 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
               />
             </svg>
           </button>
-
-          {/* Left hover zone */}
-          <div className="absolute left-0 top-0 h-full w-[20%] z-[10000] group-hover:cursor-pointer" />
-
-          {/* Right hover zone */}
-          <div className="absolute right-0 top-0 h-full w-[20%] z-[10000] group-hover:cursor-pointer" />
-
-          {/* Top hover zone */}
-          <div className="absolute top-0 left-0 h-[20%] w-full z-[10000] group-hover:cursor-pointer" />
         </div>
       </div>
     </div>
@@ -139,7 +130,7 @@ Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   images: PropTypes.arrayOf(
     PropTypes.shape({
-      src: PropTypes.string.isRequired,
+      imageURL: PropTypes.string.isRequired, // Opdateret til imageURL
       title: PropTypes.string.isRequired,
     })
   ).isRequired,

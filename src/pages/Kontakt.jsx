@@ -7,7 +7,7 @@ const Kontakt = () => {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/2">
             <img
-              src="/toon/Udåden-Kell-Jarner-2016.webp"
+              src="/Fuglemennesker/Udåden-Kell-Jarner-2016.webp"
               alt="Placeholder"
               className="w-full h-auto rounded-lg shadow-lg"
             />

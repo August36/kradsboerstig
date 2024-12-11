@@ -1,48 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase-config"; // Firestore-konfiguration
 import ImageGrid from "../components/ImageGrid";
-import Modal from "../components/Modal"; // Import the Modal component
-
-const images = [
-  {
-    src: "/Plakater/thumbnail_1 Badman Plakat.jpg",
-    title: "Badman",
-    price: "225 DKK inklusiv ramme 425",
-    size: "A2-format; 42x59,4 cm",
-  },
-  {
-    src: "/Plakater/thumbnail_2 Drengene fra Tramonti Plakat.jpg",
-    title: "Drengene fra Tramonti",
-    price: "225 DKK - inklusiv ramme 425",
-    size: "A2-format; 42x59,4 cm",
-  },
-  {
-    src: "/Plakater/thumbnail_3 Hunde plakat.jpg",
-    title: "Hunde",
-    price: "225 DKK - inklusiv ramme 425",
-    size: "A2-format; 42x59,4 cm",
-  },
-  {
-    src: "/Plakater/thumbnail_4 Medusa plakat.jpg",
-    title: "Medusa",
-    price: "225 DKK - inklusiv ramme 425",
-    size: "A2-format; 42x59,4 cm",
-  },
-  {
-    src: "/Plakater/5-Vædder-Plakat.jpg",
-    title: "Vædder",
-    price: "225 DKK - inklusiv ramme 425",
-    size: "A2-format; 42x59,4 cm",
-  },
-  {
-    src: "/Plakater/6_Ain_&_Kabel_Plakat.jpg",
-    title: "Ain & Kabel",
-    price: "225 DKK - inklusiv ramme 425",
-    size: "A2-format; 42x59,4 cm",
-  },
-];
+import Modal from "../components/Modal";
 
 const Plakater = () => {
+  const [artworks, setArtworks] = useState([]);
+  const [roomInfo, setRoomInfo] = useState({ title: "", description: "" });
+  const [loading, setLoading] = useState(true);
   const [modalImageIndex, setModalImageIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchArtworks = async () => {
+      try {
+        // Hent artworks fra Firestore
+        const artworksCollection = collection(db, "rooms", "Plakater", "artworks");
+        const artworksSnapshot = await getDocs(artworksCollection);
+        const artworksData = artworksSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setArtworks(artworksData);
+      } catch (error) {
+        console.error("Error fetching artworks:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const fetchRoomInfo = async () => {
+      try {
+        // Hent ruminformation (titel og beskrivelse) fra Firestore
+        const roomDoc = doc(db, "rooms", "Plakater");
+        const roomSnapshot = await getDoc(roomDoc);
+        if (roomSnapshot.exists()) {
+          setRoomInfo(roomSnapshot.data());
+        }
+      } catch (error) {
+        console.error("Error fetching room info:", error);
+      }
+    };
+
+    fetchArtworks();
+    fetchRoomInfo();
+  }, []);
+
+  if (loading) {
+    // Returnér en blank side under loading
+    return null;
+  }
+
+  if (artworks.length === 0) {
+    return <p>Der er ingen plakater tilgængelige lige nu.</p>;
+  }
 
   const handleOpenModal = (index) => {
     setModalImageIndex(index);
@@ -54,37 +64,32 @@ const Plakater = () => {
 
   const handlePrevImage = () => {
     setModalImageIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+      (prevIndex) => (prevIndex - 1 + artworks.length) % artworks.length
     );
   };
 
   const handleNextImage = () => {
-    setModalImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setModalImageIndex((prevIndex) => (prevIndex + 1) % artworks.length);
   };
 
   return (
-    <>
-      <div className="container mx-auto p-4">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Plakater</h1>
-        <p className="mb-2">
-          Som et alternativ til mine originale malerier kan du købe en
-          kunstplakat. Du kan købe dem med og uden ramme i Galleri Krasbørstig.
-          Hvis du bestiller dem med posten, modtager du dem sammenrullet i et
-          rør
-        </p>
-        <ImageGrid images={images} onImageClick={handleOpenModal} />
+    <div className="container mx-auto p-4">
+      <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
+        {roomInfo.title || "Plakater"}
+      </h1>
+      <p className="mb-2">{roomInfo.description || "Køb dine kunstplakater her!"}</p>
+      <ImageGrid images={artworks} onImageClick={handleOpenModal} />
 
-        {/* Modal Component */}
-        <Modal
-          isOpen={modalImageIndex !== null}
-          images={images}
-          modalImageIndex={modalImageIndex}
-          onClose={handleCloseModal}
-          onPrev={handlePrevImage}
-          onNext={handleNextImage}
-        />
-      </div>
-    </>
+      {/* Modal Component */}
+      <Modal
+        isOpen={modalImageIndex !== null}
+        images={artworks}
+        modalImageIndex={modalImageIndex}
+        onClose={handleCloseModal}
+        onPrev={handlePrevImage}
+        onNext={handleNextImage}
+      />
+    </div>
   );
 };
 

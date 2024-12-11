@@ -1,32 +1,31 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
-// import { useEffect } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
-// import NewsArticle from "./components/NewsArticle";
 import OmMig from "./pages/OmMig";
 import Malerier from "./pages/Malerier";
 import Kontakt from "./pages/Kontakt";
 import Plakater from "./pages/Plakater";
 import HuleMalerier from "./pages/HuleMalerier";
-import Morbid from "./pages/Morbid";
-import NarrativRåkunst from "./pages/NarrativRåkunst";
+import Macabre from "./pages/Macabre";
+import NarrativRaakunst from "./pages/NarrativRaakunst";
 import GalleriKrasbørstig from "./pages/GalleriKrasbørstig";
 import MenInBlack from "./pages/MenInBlack";
 import FugleMennesker from "./pages/FugleMennesker";
 import heroImage from "/HuleMalerier/Den-skamfødte-Kell-Jarner.webp";
-import Layout from "./components/Layout"; // Import Layout
+import Layout from "./components/Layout";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Admin from "./pages/Admin";
+import AdminDashboard from "./pages/AdminDashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-
-
   return (
     <Router>
       <Layout>
-        {" "}
-        {/* Wrap the whole app content with Layout */}
+        {/* Appens routing */}
         <Routes>
+          {/* Offentlige sider */}
           <Route
             path="/"
             element={
@@ -118,29 +117,29 @@ function App() {
             }
           />
           <Route
-            path="/morbid"
+            path="/Macabre"
             element={
               <>
                 <Helmet>
-                  <title>Morbid - Kell Jarner Art</title>
+                  <title>Macabre - Kell Jarner Art</title>
                   <meta
                     name="description"
-                    content="View our Morbid art collection."
+                    content="View our Macabre art collection."
                   />
                 </Helmet>
-                <Morbid />
+                <Macabre />
               </>
             }
           />
           <Route
-            path="/NarrativRåkunst"
+            path="/NarrativRaakunst"
             element={
               <>
                 <Helmet>
                   <title>Narrativ Råkunst - Kell Jarner Art</title>
-                  <meta name="description" content="NarrativRåkunst" />
+                  <meta name="description" content="NarrativRaakunst" />
                 </Helmet>
-                <NarrativRåkunst />
+                <NarrativRaakunst />
               </>
             }
           />
@@ -174,6 +173,20 @@ function App() {
               </>
             }
           />
+
+          {/* Admin Login */}
+        <Route path="/admin" element={<Admin />} />
+
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+
+          {/* Privacy Policy */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </Layout>

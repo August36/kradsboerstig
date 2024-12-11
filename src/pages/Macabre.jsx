@@ -5,7 +5,7 @@ import ImageGrid from "../components/ImageGrid";
 import Modal from "../components/Modal";
 import Breadcrumbs from "../components/Breadcrumbs";
 
-const MenInBlack = () => {
+const Macabre = () => {
   const [artworks, setArtworks] = useState([]);
   const [roomInfo, setRoomInfo] = useState({ title: "", description: "" });
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ const MenInBlack = () => {
     const fetchArtworks = async () => {
       try {
         // Hent artworks fra Firestore
-        const artworksCollection = collection(db, "rooms", "MenInBlack", "artworks");
+        const artworksCollection = collection(db, "rooms", "Macabre", "artworks");
         const artworksSnapshot = await getDocs(artworksCollection);
         const artworksData = artworksSnapshot.docs
           .map((doc) => ({
@@ -34,7 +34,7 @@ const MenInBlack = () => {
     const fetchRoomInfo = async () => {
       try {
         // Hent ruminformation (titel og beskrivelse) fra Firestore
-        const roomDoc = doc(db, "rooms", "MenInBlack");
+        const roomDoc = doc(db, "rooms", "Macabre");
         const roomSnapshot = await getDoc(roomDoc);
         if (roomSnapshot.exists()) {
           setRoomInfo(roomSnapshot.data());
@@ -76,8 +76,8 @@ const MenInBlack = () => {
   return (
     <div className="container mx-auto p-4">
       <Breadcrumbs />
-      <h1 className="text-3xl font-bold mb-4">{roomInfo.title || "Men in Black"}</h1>
-      <p className="mb-8">{roomInfo.description || "I denne serie udforskes det sorte udtryk..."}</p>
+      <h1 className="text-3xl font-bold mb-4">{roomInfo.title || "Macabre"}</h1>
+      <p className="mb-8">{roomInfo.description || "Dette er en serie makabre malerier..."}</p>
       <ImageGrid images={artworks} onImageClick={handleOpenModal} />
 
       <Modal
@@ -92,4 +92,4 @@ const MenInBlack = () => {
   );
 };
 
-export default MenInBlack;
+export default Macabre;

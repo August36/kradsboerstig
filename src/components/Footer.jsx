@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-6 w-full">
+    <footer className="bg-gray-800 text-white py-6 w-full mt-auto">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
           {/* Social Media Links */}
@@ -49,7 +49,7 @@ const Footer = () => {
             <p className="text-white">
               Email:{" "}
               <a
-                href="mailto:info@example.com"
+                href="mailto:kjarner@me.com"
                 className="hover:underline text-white"
               >
                 kjarner@me.com
