@@ -1,6 +1,6 @@
 const OmMig = () => {
   return (
-    <div className="min-h-screen py-8 px-4 sm:px-2 md:px-6 lg:px-8 flex flex-col items-center bg-gray-100">
+    <div className="min-h-screen py-8 px-4 sm:px-2 md:px-6 lg:px-8 flex flex-col items-center">
       <div className="w-full max-w-5xl">
         <header className="text-left mb-6">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-2">Om mig</h1>
