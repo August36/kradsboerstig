@@ -18,7 +18,7 @@ const Hero = () => {
               media="(min-width: 640px)"
             />
             <img
-              src="/HeroImgs/Hero-mobile.png"
+              src="/HeroImgs/png/Hero-mobile.png"
               alt="Hero"
               className="w-full h-full object-cover"
               loading="lazy"
