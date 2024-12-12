@@ -55,25 +55,23 @@ const Malerier = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {rooms.map((room, index) => (
           <Link
-            to={room.path}
-            key={index}
-            className="relative overflow-hidden bg-gray-200 rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 group"
-          >
-            {/* Static Text for All Screens */}
-            <div className="absolute inset-0 bg-black bg-opacity-60 text-white text-xl font-bold flex items-center justify-center p-2 z-10">
+          to={room.path}
+          key={index}
+          className="relative overflow-hidden bg-gray-200 rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 group"
+        >
+          {/* Static Overlay with Text */}
+          <div className="absolute inset-0 bg-black bg-opacity-60 text-white text-xl font-bold flex items-center justify-center p-2 z-10 transition-all duration-300 group-hover:opacity-0">
+            <span className="transition-transform duration-300 group-hover:scale-125">
               {room.title}
-            </div>
-            {/* Image */}
-            <img
-              src={room.imageURL}
-              alt={`Gallery image ${index + 1}`}
-              className="w-full h-80 object-cover rounded-lg shadow-md transition-transform transform group-hover:scale-105"
-            />
-            {/* Overlay Text for Hover */}
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-              {room.title}
-            </div>
-          </Link>
+            </span>
+          </div>
+          {/* Image */}
+          <img
+            src={room.imageURL}
+            alt={`Gallery image ${index + 1}`}
+            className="w-full h-80 object-cover rounded-lg shadow-md transition-transform transform group-hover:scale-105"
+          />
+        </Link>
         ))}
       </div>
     </div>

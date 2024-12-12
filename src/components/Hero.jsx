@@ -27,7 +27,7 @@ const Hero = () => {
 
           {/* Over lay and text */}
           <div className="absolute top-0 left-0 w-full h-full bg-black/10 flex items-center justify-center">
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide text-center px-4">
+            <h1 className="text-white text-5xl sm:text-6xl md:text-6xl lg:text-6xl font-bold uppercase tracking-wide text-center px-4">
               Kell Jarner
             </h1>
           </div>
