@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import {
-  uploadImage
-} from "../firebase-config"; // Importer billedupload-funktionen
+import { uploadImage } from "../firebase-config"; // Importer billedupload-funktionen
 import {
   addImageMetadata,
   fetchArtworks,
   deleteArtwork,
-  updateImageMetadata
+  updateImageMetadata,
 } from "../utils/firestoreUtils"; // Importer funktionerne
 
 const AdminDashboard = () => {
@@ -31,7 +29,7 @@ const AdminDashboard = () => {
         setLoading(false);
       }
     };
-  
+
     loadArtworks();
   }, [selectedRoom]);
 
@@ -49,10 +47,19 @@ const AdminDashboard = () => {
         price: updatedFields.price || "0",
         size: updatedFields.size || "Unknown",
         order: updatedFields.order || 0,
-        imageURL: imageUrl
+        imageURL: imageUrl,
       };
-      await addImageMetadata(selectedRoom, metadata.title, metadata.price, metadata.size, metadata.order, metadata.imageURL);
+      await addImageMetadata(
+        selectedRoom,
+        metadata.title,
+        metadata.price,
+        metadata.size,
+        metadata.order,
+        metadata.imageURL
+      );
       alert("Billede og metadata uploadet.");
+      setUpdatedFields({});
+      setImageFile(null);
     } catch (error) {
       console.error("Error uploading image:", error);
     } finally {
@@ -64,7 +71,9 @@ const AdminDashboard = () => {
     if (window.confirm("Er du sikker på, at du vil slette dette billede?")) {
       try {
         await deleteArtwork(selectedRoom, artworkId);
-        setArtworks((prev) => prev.filter((artwork) => artwork.id !== artworkId));
+        setArtworks((prev) =>
+          prev.filter((artwork) => artwork.id !== artworkId)
+        );
         alert("Billedet er blevet slettet.");
       } catch (error) {
         console.error("Fejl ved sletning af billede:", error);
@@ -82,7 +91,9 @@ const AdminDashboard = () => {
       await updateImageMetadata(selectedRoom, editingArtwork.id, updatedFields);
       setArtworks((prev) =>
         prev.map((artwork) =>
-          artwork.id === editingArtwork.id ? { ...artwork, ...updatedFields } : artwork
+          artwork.id === editingArtwork.id
+            ? { ...artwork, ...updatedFields }
+            : artwork
         )
       );
       alert("Metadata opdateret.");
@@ -99,81 +110,117 @@ const AdminDashboard = () => {
   return (
     <>
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Admin Dashboard</h1>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Admin dashboard
+        </h2>
+        <p>Velkommen til dit dashboard!</p>
+        <p className="mb-6">
+          {" "}
+          Her har du mulighed for at uploade nye billeder og metadata, samt
+          redigere og slette i de eksisterende.
+        </p>
+        {/* Fælles rumvælger */}
+        <div className="mb-6">
+          <label
+            htmlFor="room-select"
+            className="block text-lg font-medium text-gray-700 mb-1"
+          >
+            Vælg det rum du vil arbejde med:
+          </label>
+          <select
+            id="room-select"
+            onChange={(e) => setSelectedRoom(e.target.value)}
+            value={selectedRoom}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="" disabled>
+              Vælg et rum
+            </option>
+            <option value="HuleMalerier">Hulemalerier</option>
+            <option value="Fuglemennesker">Fuglemennesker</option>
+            <option value="NarrativRaakunst">Narrativ råkunst</option>
+            <option value="Macabre">Macabre</option>
+            <option value="MenInBlack">Men in black</option>
+            <option value="Plakater">Plakater</option>
+          </select>
+        </div>
+      </div>
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Upload billeder
+        </h2>
 
-        <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-gray-800">Upload Billede og Metadata</h2>
+        {/* Upload Billede og Metadata */}
 
-          <div className="space-y-4">
-            <input
-              type="text"
-              placeholder="Titel"
-              value={updatedFields.title || ""}
-              onChange={(e) => setUpdatedFields((prev) => ({ ...prev, title: e.target.value }))}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              placeholder="Størrelse"
-              value={updatedFields.size || ""}
-              onChange={(e) => setUpdatedFields((prev) => ({ ...prev, size: e.target.value }))}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              placeholder="Pris"
-              value={updatedFields.price || ""}
-              onChange={(e) => setUpdatedFields((prev) => ({ ...prev, price: e.target.value }))}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="number"
-              placeholder="Rækkefølge (order)"
-              value={updatedFields.order || ""}
-              onChange={(e) => setUpdatedFields((prev) => ({ ...prev, order: parseInt(e.target.value) }))}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="file"
-              onChange={(e) => setImageFile(e.target.files[0])}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <select
-              onChange={(e) => setSelectedRoom(e.target.value)}
-              value={selectedRoom}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="" disabled>
-                Vælg et rum
-              </option>
-              <option value="HuleMalerier">Hulemalerier</option>
-              <option value="Fuglemennesker">Fuglemennesker</option>
-              <option value="NarrativRaakunst">Narrativ råkunst</option>
-              <option value="Macabre">Macabre</option>
-              <option value="MenInBlack">Men in black</option>
-              <option value="Plakater">Plakater</option>
-            </select>
-          </div>
+        <div className="space-y-4 mb-5">
+          <input
+            type="text"
+            placeholder="Titel"
+            value={updatedFields.title || ""}
+            onChange={(e) =>
+              setUpdatedFields((prev) => ({ ...prev, title: e.target.value }))
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="text"
+            placeholder="Størrelse"
+            value={updatedFields.size || ""}
+            onChange={(e) =>
+              setUpdatedFields((prev) => ({ ...prev, size: e.target.value }))
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="text"
+            placeholder="Pris"
+            value={updatedFields.price || ""}
+            onChange={(e) =>
+              setUpdatedFields((prev) => ({ ...prev, price: e.target.value }))
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="number"
+            placeholder="Rækkefølge (order)"
+            value={updatedFields.order || ""}
+            onChange={(e) =>
+              setUpdatedFields((prev) => ({
+                ...prev,
+                order: parseInt(e.target.value),
+              }))
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="file"
+            onChange={(e) => setImageFile(e.target.files[0])}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
-          <div className="flex justify-end">
-            <button
-              onClick={handleImageUpload}
-              disabled={loading} // Deaktiver knappen under upload
-              className={`bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition duration-300 ${
-                loading ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-            >
-              {loading ? "Uploader..." : "Upload Billede og Metadata"}
-            </button>
-          </div>
+        <div className="flex justify-end">
+          <button
+            onClick={handleImageUpload}
+            disabled={loading} // Deaktiver knappen under upload
+            className={`bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition duration-300 ${
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+          >
+            {loading ? "Uploader..." : "Upload Billede og Metadata"}
+          </button>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Administrer billeder</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+          Administrer billeder
+        </h1>
 
         <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-gray-800">Slet eller opdater data</h2>
+          <h2 className="text-xl font-semibold text-gray-800">
+            Slet eller opdater data
+          </h2>
 
           {loading ? (
             <p>Indlæser billeder...</p>
@@ -222,28 +269,48 @@ const AdminDashboard = () => {
                   type="text"
                   placeholder="Titel"
                   value={updatedFields.title || ""}
-                  onChange={(e) => setUpdatedFields((prev) => ({ ...prev, title: e.target.value }))}
+                  onChange={(e) =>
+                    setUpdatedFields((prev) => ({
+                      ...prev,
+                      title: e.target.value,
+                    }))
+                  }
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                   type="text"
                   placeholder="Størrelse"
                   value={updatedFields.size || ""}
-                  onChange={(e) => setUpdatedFields((prev) => ({ ...prev, size: e.target.value }))}
+                  onChange={(e) =>
+                    setUpdatedFields((prev) => ({
+                      ...prev,
+                      size: e.target.value,
+                    }))
+                  }
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                   type="text"
                   placeholder="Pris"
                   value={updatedFields.price || ""}
-                  onChange={(e) => setUpdatedFields((prev) => ({ ...prev, price: e.target.value }))}
+                  onChange={(e) =>
+                    setUpdatedFields((prev) => ({
+                      ...prev,
+                      price: e.target.value,
+                    }))
+                  }
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                   type="number"
                   placeholder="Rækkefølge (order)"
                   value={updatedFields.order || ""}
-                  onChange={(e) => setUpdatedFields((prev) => ({ ...prev, order: parseInt(e.target.value) }))}
+                  onChange={(e) =>
+                    setUpdatedFields((prev) => ({
+                      ...prev,
+                      order: parseInt(e.target.value),
+                    }))
+                  }
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
