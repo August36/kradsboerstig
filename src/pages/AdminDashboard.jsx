@@ -212,12 +212,12 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
           Administrer billeder
         </h1>
 
-        <div className="space-y-6">
+        <div className="space-y-6 ">
           <h2 className="text-xl font-semibold text-gray-800">
             Slet eller opdater data
           </h2>
