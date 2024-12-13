@@ -1,108 +1,136 @@
-import { useState } from "react";
-import { uploadImage } from "../firebase-config"; // Importer billedupload-funktionen
-import { addImageMetadata } from "../utils/firestoreUtils"; // Importer funktionen til at gemme metadata
+import { useState, useEffect } from "react";
+import {
+  uploadImage
+} from "../firebase-config"; // Importer billedupload-funktionen
+import {
+  addImageMetadata,
+  fetchArtworks,
+  deleteArtwork,
+  updateImageMetadata
+} from "../utils/firestoreUtils"; // Importer funktionerne
 
 const AdminDashboard = () => {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [size, setSize] = useState("");
-  const [room, setRoom] = useState(""); // F.eks. "HuleMalerier"
-  const [order, setOrder] = useState(""); // Ny state til rækkefølge
-  const [imageFile, setImageFile] = useState(null); // Til at gemme billedefil
-  const [loading, setLoading] = useState(false); // Til at indikere upload-status
+  const [artworks, setArtworks] = useState([]);
+  const [selectedRoom, setSelectedRoom] = useState("HuleMalerier"); // Standardrum
+  const [editingArtwork, setEditingArtwork] = useState(null); // Artwork der redigeres
+  const [updatedFields, setUpdatedFields] = useState({}); // Felter til opdatering
+  const [loading, setLoading] = useState(false);
+  const [imageFile, setImageFile] = useState(null); // Til billedupload
 
-  // Funktion til validering af input
-  const validateInput = () => {
-    const errors = [];
-    if (!title.trim()) errors.push("Titel er påkrævet.");
-    if (!price.trim() || isNaN(price) || parseFloat(price) <= 0)
-      errors.push("Pris skal være et gyldigt tal større end 0.");
-    if (!size.trim()) errors.push("Størrelse er påkrævet.");
-    if (!room.trim()) errors.push("Du skal vælge et rum.");
-    if (!order.trim() || isNaN(order))
-      errors.push("Rækkefølge skal være et gyldigt tal.");
-    if (!imageFile) errors.push("Du skal uploade et billede.");
+  useEffect(() => {
+    const loadArtworks = async () => {
+      try {
+        setLoading(true);
+        const data = await fetchArtworks(selectedRoom);
+        // Sorter billeder efter 'order'
+        const sortedArtworks = data.sort((a, b) => a.order - b.order);
+        setArtworks(sortedArtworks);
+      } catch (error) {
+        console.error("Error loading artworks:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    loadArtworks();
+  }, [selectedRoom]);
 
-    return errors;
-  };
-
-  // Funktion til at håndtere billedupload og metadata
   const handleImageUpload = async () => {
-    const errors = validateInput();
-    if (errors.length > 0) {
-      alert(errors.join("\n")); // Vis fejl i en alert (du kan tilføje bedre visning senere)
+    if (!imageFile) {
+      alert("Du skal vælge en fil, før du uploader.");
       return;
     }
 
-    setLoading(true); // Start loading
-
     try {
-      const uploadedImageUrl = await uploadImage(imageFile, room);
-      if (uploadedImageUrl) {
-        await addImageMetadata(
-          room,
-          title,
-          price,
-          size,
-          order,
-          uploadedImageUrl
-        );
-        alert("Billede og metadata er blevet uploadet!");
-        // Nulstil felterne efter succes
-        setTitle("");
-        setPrice("");
-        setSize("");
-        setRoom("");
-        setOrder("");
-        setImageFile(null);
-      }
+      setLoading(true);
+      const imageUrl = await uploadImage(imageFile, selectedRoom);
+      const metadata = {
+        title: updatedFields.title || "Untitled",
+        price: updatedFields.price || "0",
+        size: updatedFields.size || "Unknown",
+        order: updatedFields.order || 0,
+        imageURL: imageUrl
+      };
+      await addImageMetadata(selectedRoom, metadata.title, metadata.price, metadata.size, metadata.order, metadata.imageURL);
+      alert("Billede og metadata uploadet.");
     } catch (error) {
-      console.error("Fejl under upload:", error);
-      alert("Der opstod en fejl under upload. Prøv igen.");
+      console.error("Error uploading image:", error);
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false);
     }
+  };
+
+  const handleDelete = async (artworkId) => {
+    if (window.confirm("Er du sikker på, at du vil slette dette billede?")) {
+      try {
+        await deleteArtwork(selectedRoom, artworkId);
+        setArtworks((prev) => prev.filter((artwork) => artwork.id !== artworkId));
+        alert("Billedet er blevet slettet.");
+      } catch (error) {
+        console.error("Fejl ved sletning af billede:", error);
+      }
+    }
+  };
+
+  const handleEdit = (artwork) => {
+    setEditingArtwork(artwork);
+    setUpdatedFields({ ...artwork }); // Forudfyld felterne med eksisterende data
+  };
+
+  const handleUpdate = async () => {
+    try {
+      await updateImageMetadata(selectedRoom, editingArtwork.id, updatedFields);
+      setArtworks((prev) =>
+        prev.map((artwork) =>
+          artwork.id === editingArtwork.id ? { ...artwork, ...updatedFields } : artwork
+        )
+      );
+      alert("Metadata opdateret.");
+      setEditingArtwork(null);
+    } catch (error) {
+      console.error("Fejl ved opdatering af metadata:", error);
+    }
+  };
+
+  const handleCloseEditModal = () => {
+    setEditingArtwork(null);
   };
 
   return (
     <>
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">
-          Admin Dashboard
-        </h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">Admin Dashboard</h1>
 
         <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-gray-800">
-            Upload Billede og Metadata
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-800">Upload Billede og Metadata</h2>
 
           <div className="space-y-4">
             <input
               type="text"
               placeholder="Titel"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={updatedFields.title || ""}
+              onChange={(e) => setUpdatedFields((prev) => ({ ...prev, title: e.target.value }))}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="text"
               placeholder="Størrelse"
-              value={size}
-              onChange={(e) => setSize(e.target.value)}
+              value={updatedFields.size || ""}
+              onChange={(e) => setUpdatedFields((prev) => ({ ...prev, size: e.target.value }))}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="text"
               placeholder="Pris"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              value={updatedFields.price || ""}
+              onChange={(e) => setUpdatedFields((prev) => ({ ...prev, price: e.target.value }))}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="number"
               placeholder="Rækkefølge (order)"
-              value={order}
-              onChange={(e) => setOrder(e.target.value)}
+              value={updatedFields.order || ""}
+              onChange={(e) => setUpdatedFields((prev) => ({ ...prev, order: parseInt(e.target.value) }))}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
@@ -111,8 +139,8 @@ const AdminDashboard = () => {
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <select
-              onChange={(e) => setRoom(e.target.value)}
-              value={room}
+              onChange={(e) => setSelectedRoom(e.target.value)}
+              value={selectedRoom}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="" disabled>
@@ -141,25 +169,102 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">
-          Administrer billeder
-        </h1>
+      <div className="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">Administrer billeder</h1>
 
         <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-gray-800">
-            Slet eller opdater data
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-800">Slet eller opdater data</h2>
 
-          <div className="space-y-4">
-            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Narrativ råkunst</div>
-            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Macabre</div>
-            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Men in black</div>
-            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Hulemalerier</div>
-            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Fuglemennesker</div>
-            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Plakater</div>
-          </div>
+          {loading ? (
+            <p>Indlæser billeder...</p>
+          ) : artworks.length === 0 ? (
+            <p>Der er ingen billeder i dette rum.</p>
+          ) : (
+            <div className="space-y-4">
+              {artworks.map((artwork) => (
+                <div
+                  key={artwork.id}
+                  className="border-2 p-4 flex justify-between items-center rounded-lg"
+                >
+                  <div>
+                    <p className="font-bold">{artwork.title}</p>
+                    <p>Størrelse: {artwork.size}</p>
+                    <p>Pris: {artwork.price} DKK</p>
+                    <p>Rækkefølge: {artwork.order}</p>
+                  </div>
+                  <div className="space-x-2">
+                    <button
+                      onClick={() => handleEdit(artwork)}
+                      className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600"
+                    >
+                      Rediger
+                    </button>
+                    <button
+                      onClick={() => handleDelete(artwork.id)}
+                      className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                    >
+                      Slet
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
+
+        {editingArtwork && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+              <h2 className="text-xl font-semibold mb-4">Rediger Metadata</h2>
+
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Titel"
+                  value={updatedFields.title || ""}
+                  onChange={(e) => setUpdatedFields((prev) => ({ ...prev, title: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="text"
+                  placeholder="Størrelse"
+                  value={updatedFields.size || ""}
+                  onChange={(e) => setUpdatedFields((prev) => ({ ...prev, size: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="text"
+                  placeholder="Pris"
+                  value={updatedFields.price || ""}
+                  onChange={(e) => setUpdatedFields((prev) => ({ ...prev, price: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="number"
+                  placeholder="Rækkefølge (order)"
+                  value={updatedFields.order || ""}
+                  onChange={(e) => setUpdatedFields((prev) => ({ ...prev, order: parseInt(e.target.value) }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div className="flex justify-end mt-4 space-x-2">
+                <button
+                  onClick={handleCloseEditModal}
+                  className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+                >
+                  Annuller
+                </button>
+                <button
+                  onClick={handleUpdate}
+                  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+                >
+                  Gem Ændringer
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
