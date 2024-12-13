@@ -1,9 +1,8 @@
 import ImageGrid from "../components/ImageGrid";
 import Modal from "../components/Modal";
-import { useEffect, useState } from "react";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase-config";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { useEffect, useState } from "react";
+import { fetchRoomInfo, fetchArtworks } from "../utils/firestoreUtils";
 
 const Fuglemennesker = () => {
   const [artworks, setArtworks] = useState([]);
@@ -12,43 +11,28 @@ const Fuglemennesker = () => {
   const [modalImageIndex, setModalImageIndex] = useState(null);
 
   useEffect(() => {
-    const fetchArtworks = async () => {
+    const fetchData = async () => {
       try {
-        const artworksCollection = collection(db, "rooms", "Fuglemennesker", "artworks");
-        const artworksSnapshot = await getDocs(artworksCollection);
-        const artworksData = artworksSnapshot.docs
-          .map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }))
-          .sort((a, b) => a.order - b.order); // Sorter efter 'order'
-        setArtworks(artworksData);
+        const roomData = await fetchRoomInfo("Fuglemennesker");
+        const artworksData = await fetchArtworks("Fuglemennesker");
+        
+        // Sorter artworks efter order
+        const sortedArtworks = artworksData.sort((a, b) => a.order - b.order);
+
+        setRoomInfo(roomData || { title: "Fuglemennesker", description: "" });
+        setArtworks(sortedArtworks);
       } catch (error) {
-        console.error("Error fetching artworks:", error);
+        console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    const fetchRoomInfo = async () => {
-      try {
-        const roomDoc = doc(db, "rooms", "Fuglemennesker");
-        const roomSnapshot = await getDoc(roomDoc);
-        if (roomSnapshot.exists()) {
-          setRoomInfo(roomSnapshot.data());
-        }
-      } catch (error) {
-        console.error("Error fetching room info:", error);
-      }
-    };
-
-    fetchArtworks();
-    fetchRoomInfo();
+    fetchData();
   }, []);
 
   if (loading) {
-    // Returnér en blank side under loading
-    return null;
+    return <p>Indlæser...</p>;
   }
 
   if (artworks.length === 0) {
@@ -64,18 +48,20 @@ const Fuglemennesker = () => {
   };
 
   const handlePrevImage = () => {
+    console.log("Navigating to previous image");
     setModalImageIndex((prevIndex) => (prevIndex - 1 + artworks.length) % artworks.length);
   };
 
   const handleNextImage = () => {
+    console.log("Navigating to next image");
     setModalImageIndex((prevIndex) => (prevIndex + 1) % artworks.length);
   };
 
   return (
     <div className="container mx-auto p-4">
       <Breadcrumbs />
-      <h1 className="text-3xl font-bold mb-4">{roomInfo.title || "Fuglemennesker"}</h1>
-      <p className="mb-8">{roomInfo.description || "Dette er en serie portrætter af mennesker med næb og vinger..."}</p>
+      <h1 className="text-3xl font-bold mb-4">{roomInfo.title}</h1>
+      <p className="mb-8">{roomInfo.description}</p>
       <ImageGrid images={artworks} onImageClick={handleOpenModal} />
 
       <Modal

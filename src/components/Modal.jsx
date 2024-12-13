@@ -69,8 +69,8 @@ const Modal = ({ isOpen, images, modalImageIndex, onClose, onPrev, onNext }) => 
 
           {/* Image */}
           <img
-            src={images[modalImageIndex].imageURL} // Opdateret til imageURL
-            alt={images[modalImageIndex].title}
+            src={images[modalImageIndex]?.imageURL} // Safe navigation for undefined image
+            alt={images[modalImageIndex]?.title || "Billede"}
             className="w-full h-full object-contain rounded-lg"
           />
 
@@ -130,7 +130,7 @@ Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   images: PropTypes.arrayOf(
     PropTypes.shape({
-      imageURL: PropTypes.string.isRequired, // Opdateret til imageURL
+      imageURL: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
     })
   ).isRequired,

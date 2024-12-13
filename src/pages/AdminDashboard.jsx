@@ -19,7 +19,8 @@ const AdminDashboard = () => {
       errors.push("Pris skal være et gyldigt tal større end 0.");
     if (!size.trim()) errors.push("Størrelse er påkrævet.");
     if (!room.trim()) errors.push("Du skal vælge et rum.");
-    if (!order.trim() || isNaN(order)) errors.push("Rækkefølge skal være et gyldigt tal.");
+    if (!order.trim() || isNaN(order))
+      errors.push("Rækkefølge skal være et gyldigt tal.");
     if (!imageFile) errors.push("Du skal uploade et billede.");
 
     return errors;
@@ -38,7 +39,14 @@ const AdminDashboard = () => {
     try {
       const uploadedImageUrl = await uploadImage(imageFile, room);
       if (uploadedImageUrl) {
-        await addImageMetadata(room, title, price, size, order, uploadedImageUrl);
+        await addImageMetadata(
+          room,
+          title,
+          price,
+          size,
+          order,
+          uploadedImageUrl
+        );
         alert("Billede og metadata er blevet uploadet!");
         // Nulstil felterne efter succes
         setTitle("");
@@ -57,79 +65,103 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Admin Dashboard</h1>
+    <>
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+          Admin Dashboard
+        </h1>
 
+        <div className="space-y-6">
+          <h2 className="text-xl font-semibold text-gray-800">
+            Upload Billede og Metadata
+          </h2>
 
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-gray-800">
-          Upload Billede og Metadata
-        </h2>
+          <div className="space-y-4">
+            <input
+              type="text"
+              placeholder="Titel"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="Størrelse"
+              value={size}
+              onChange={(e) => setSize(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="Pris"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="number"
+              placeholder="Rækkefølge (order)"
+              value={order}
+              onChange={(e) => setOrder(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="file"
+              onChange={(e) => setImageFile(e.target.files[0])}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <select
+              onChange={(e) => setRoom(e.target.value)}
+              value={room}
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="" disabled>
+                Vælg et rum
+              </option>
+              <option value="HuleMalerier">Hulemalerier</option>
+              <option value="Fuglemennesker">Fuglemennesker</option>
+              <option value="NarrativRaakunst">Narrativ råkunst</option>
+              <option value="Macabre">Macabre</option>
+              <option value="MenInBlack">Men in black</option>
+              <option value="Plakater">Plakater</option>
+            </select>
+          </div>
 
-        <div className="space-y-4">
-          <input
-            type="text"
-            placeholder="Titel"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="text"
-            placeholder="Størrelse"
-            value={size}
-            onChange={(e) => setSize(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="text"
-            placeholder="Pris"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="number"
-            placeholder="Rækkefølge (order)"
-            value={order}
-            onChange={(e) => setOrder(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="file"
-            onChange={(e) => setImageFile(e.target.files[0])}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <select
-            onChange={(e) => setRoom(e.target.value)}
-            value={room}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="" disabled>
-              Vælg et rum
-            </option>
-            <option value="HuleMalerier">Hulemalerier</option>
-            <option value="Fuglemennesker">Fuglemennesker</option>
-            <option value="NarrativRaakunst">Narrativ råkunst</option>
-            <option value="Macabre">Macabre</option>
-            <option value="MenInBlack">Men in black</option>
-            <option value="Plakater">Plakater</option>
-          </select>
-        </div>
-
-        <div className="flex justify-end">
-          <button
-            onClick={handleImageUpload}
-            disabled={loading} // Deaktiver knappen under upload
-            className={`bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition duration-300 ${
-              loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-          >
-            {loading ? "Uploader..." : "Upload Billede og Metadata"}
-          </button>
+          <div className="flex justify-end">
+            <button
+              onClick={handleImageUpload}
+              disabled={loading} // Deaktiver knappen under upload
+              className={`bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition duration-300 ${
+                loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+            >
+              {loading ? "Uploader..." : "Upload Billede og Metadata"}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+          Administrer billeder
+        </h1>
+
+        <div className="space-y-6">
+          <h2 className="text-xl font-semibold text-gray-800">
+            Slet eller opdater data
+          </h2>
+
+          <div className="space-y-4">
+            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Narrativ råkunst</div>
+            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Macabre</div>
+            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Men in black</div>
+            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Hulemalerier</div>
+            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Fuglemennesker</div>
+            <div className="border-2 h-16 flex items-center	pl-2 cursor-pointer text-xl">Plakater</div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

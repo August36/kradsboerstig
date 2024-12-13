@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase-config"; // Firestore-konfiguration
+import { fetchRoomInfo, fetchArtworks } from "../utils/firestoreUtils"; // Importer funktionerne
 import ImageGrid from "../components/ImageGrid";
 import Modal from "../components/Modal";
 import Breadcrumbs from "../components/Breadcrumbs";
@@ -12,50 +11,29 @@ const NarrativRaakunst = () => {
   const [modalImageIndex, setModalImageIndex] = useState(null);
 
   useEffect(() => {
-    const fetchArtworks = async () => {
+    const fetchData = async () => {
       try {
-        // Hent artworks fra Firestore
-        const artworksCollection = collection(
-          db,
-          "rooms",
-          "NarrativRaakunst",
-          "artworks"
-        );
-        const artworksSnapshot = await getDocs(artworksCollection);
-        const artworksData = artworksSnapshot.docs
-          .map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }))
-          .sort((a, b) => a.order - b.order); // Sorter efter 'order'
-        setArtworks(artworksData);
+        // Brug fetchRoomInfo og fetchArtworks fra firestoreUtils
+        const roomData = await fetchRoomInfo("NarrativRaakunst");
+        const artworksData = await fetchArtworks("NarrativRaakunst");
+
+        // Sorter artworks efter `order` og opdater state
+        const sortedArtworks = artworksData.sort((a, b) => a.order - b.order);
+
+        setRoomInfo(roomData || { title: "Narrativ råkunst", description: "" });
+        setArtworks(sortedArtworks);
       } catch (error) {
-        console.error("Error fetching artworks:", error);
+        console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    const fetchRoomInfo = async () => {
-      try {
-        // Hent ruminformation (titel og beskrivelse) fra Firestore
-        const roomDoc = doc(db, "rooms", "NarrativRaakunst");
-        const roomSnapshot = await getDoc(roomDoc);
-        if (roomSnapshot.exists()) {
-          setRoomInfo(roomSnapshot.data());
-        }
-      } catch (error) {
-        console.error("Error fetching room info:", error);
-      }
-    };
-
-    fetchArtworks();
-    fetchRoomInfo();
+    fetchData();
   }, []);
 
   if (loading) {
-    // Returnér en blank side under loading
-    return null;
+    return <p>Indlæser...</p>;
   }
 
   if (artworks.length === 0) {
@@ -71,9 +49,7 @@ const NarrativRaakunst = () => {
   };
 
   const handlePrevImage = () => {
-    setModalImageIndex(
-      (prevIndex) => (prevIndex - 1 + artworks.length) % artworks.length
-    );
+    setModalImageIndex((prevIndex) => (prevIndex - 1 + artworks.length) % artworks.length);
   };
 
   const handleNextImage = () => {
@@ -83,12 +59,8 @@ const NarrativRaakunst = () => {
   return (
     <div className="container mx-auto p-4">
       <Breadcrumbs />
-      <h1 className="text-3xl font-bold mb-4">
-        {roomInfo.title || "Narrativ råkunst"}
-      </h1>
-      <p className="mb-8">
-        {roomInfo.description || "Råkunst, også kaldet ‘art brut’..."}
-      </p>
+      <h1 className="text-3xl font-bold mb-4">{roomInfo.title}</h1>
+      <p className="mb-8">{roomInfo.description}</p>
       <ImageGrid images={artworks} onImageClick={handleOpenModal} />
 
       <Modal

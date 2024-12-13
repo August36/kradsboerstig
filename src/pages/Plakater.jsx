@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, doc, getDoc, query, orderBy } from "firebase/firestore"; // Tilføjet query og orderBy
-import { db } from "../firebase-config"; // Firestore-konfiguration
+import { fetchRoomInfo, fetchArtworks } from "../utils/firestoreUtils"; // Importer funktionerne fra firestoreUtils
 import ImageGrid from "../components/ImageGrid";
 import Modal from "../components/Modal";
 
@@ -11,44 +10,29 @@ const Plakater = () => {
   const [modalImageIndex, setModalImageIndex] = useState(null);
 
   useEffect(() => {
-    const fetchArtworks = async () => {
+    const fetchData = async () => {
       try {
-        // Hent artworks fra Firestore og sortér efter `order`
-        const artworksCollection = collection(db, "rooms", "Plakater", "artworks");
-        const artworksQuery = query(artworksCollection, orderBy("order"));
-        const artworksSnapshot = await getDocs(artworksQuery);
-        const artworksData = artworksSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setArtworks(artworksData);
+        // Brug fetchRoomInfo og fetchArtworks fra firestoreUtils
+        const roomData = await fetchRoomInfo("Plakater");
+        const artworksData = await fetchArtworks("Plakater");
+
+        // Sorter artworks efter `order` og opdater state
+        const sortedArtworks = artworksData.sort((a, b) => a.order - b.order);
+
+        setRoomInfo(roomData || { title: "Plakater", description: "" });
+        setArtworks(sortedArtworks);
       } catch (error) {
-        console.error("Error fetching artworks:", error);
+        console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    const fetchRoomInfo = async () => {
-      try {
-        // Hent ruminformation (titel og beskrivelse) fra Firestore
-        const roomDoc = doc(db, "rooms", "Plakater");
-        const roomSnapshot = await getDoc(roomDoc);
-        if (roomSnapshot.exists()) {
-          setRoomInfo(roomSnapshot.data());
-        }
-      } catch (error) {
-        console.error("Error fetching room info:", error);
-      }
-    };
-
-    fetchArtworks();
-    fetchRoomInfo();
+    fetchData();
   }, []);
 
   if (loading) {
-    // Returnér en blank side under loading
-    return null;
+    return <p>Indlæser...</p>;
   }
 
   if (artworks.length === 0) {
@@ -64,9 +48,7 @@ const Plakater = () => {
   };
 
   const handlePrevImage = () => {
-    setModalImageIndex(
-      (prevIndex) => (prevIndex - 1 + artworks.length) % artworks.length
-    );
+    setModalImageIndex((prevIndex) => (prevIndex - 1 + artworks.length) % artworks.length);
   };
 
   const handleNextImage = () => {
@@ -75,9 +57,7 @@ const Plakater = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
-        {roomInfo.title || "Plakater"}
-      </h1>
+      <h1 className="text-4xl font-extrabold text-gray-900 mb-4">{roomInfo.title}</h1>
       <p className="mb-2">{roomInfo.description || "Køb dine kunstplakater her!"}</p>
       <ImageGrid images={artworks} onImageClick={handleOpenModal} />
 
