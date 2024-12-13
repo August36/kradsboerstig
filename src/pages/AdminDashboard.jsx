@@ -110,10 +110,10 @@ const AdminDashboard = () => {
   return (
     <>
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">
           Admin dashboard
-        </h2>
-        <p>Velkommen til dit dashboard!</p>
+        </h1>
+        <p className="font-bold font text-xl">Velkommen til dit dashboard!</p>
         <p className="mb-6">
           {" "}
           Her har du mulighed for at uploade nye billeder og metadata, samt
@@ -248,7 +248,7 @@ const AdminDashboard = () => {
                     </button>
                     <button
                       onClick={() => handleDelete(artwork.id)}
-                      className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                      className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 sm: mt-1"
                     >
                       Slet
                     </button>
