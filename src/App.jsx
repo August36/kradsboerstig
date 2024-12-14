@@ -12,7 +12,6 @@ import NarrativRaakunst from "./pages/NarrativRaakunst";
 import GalleriKrasbørstig from "./pages/GalleriKrasbørstig";
 import MenInBlack from "./pages/MenInBlack";
 import FugleMennesker from "./pages/FugleMennesker";
-import heroImage from "/HuleMalerier/Den-skamfødte-Kell-Jarner.webp";
 import Layout from "./components/Layout";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Admin from "./pages/Admin";
@@ -37,7 +36,7 @@ function App() {
                     content="Welcome to the homepage of Kell Jarner Art."
                   />
                 </Helmet>
-                <Hero image={heroImage} />
+                <Hero />
               </>
             }
           />
@@ -175,16 +174,16 @@ function App() {
           />
 
           {/* Admin Login */}
-        <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
 
-        <Route
-          path="/admin/dashboard"
-          element={
-            <ProtectedRoute>
-              <AdminDashboard />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Privacy Policy */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
