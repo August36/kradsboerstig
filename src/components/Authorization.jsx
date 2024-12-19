@@ -14,7 +14,7 @@ const Auth = () => {
       setLoading(true);
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("Successfully signed in!", userCredential.user);
-      navigate("/admin/dashboard"); // Navigér til dashboard
+      navigate("/admin/dashboard"); 
     } catch (err) {
       console.error("Login failed:", err.message);
       alert("Login failed: " + err.message);
@@ -24,7 +24,7 @@ const Auth = () => {
   };
 
   const checkLogIn = () => {
-    console.log("Current User:", auth.currentUser); // Debugging af login-status
+    console.log("Current User:", auth.currentUser); 
   };
 
   return (

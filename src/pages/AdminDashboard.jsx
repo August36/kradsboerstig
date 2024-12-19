@@ -20,7 +20,7 @@ const AdminDashboard = () => {
       try {
         setLoading(true);
         const data = await fetchArtworks(selectedRoom);
-        // Sorter billeder efter 'order'
+        // Sorter billeder efter order
         const sortedArtworks = data.sort((a, b) => a.order - b.order);
         setArtworks(sortedArtworks);
       } catch (error) {
@@ -207,7 +207,7 @@ const AdminDashboard = () => {
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
-            {loading ? "Uploader..." : "Upload Billede og Metadata"}
+            {loading ? "Uploader..." : "Upload billede og metadata"}
           </button>
         </div>
       </div>
