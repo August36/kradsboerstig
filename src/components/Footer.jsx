@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
 
           {/* Klaviyo Form */}
-          <div className="klaviyo-form-XrCucz"></div>
+          {/* <div className="klaviyo-form-XrCucz"></div> */}
 
           {/* Contact Information */}
           <div className="flex flex-col items-start">
