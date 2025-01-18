@@ -2,19 +2,19 @@
 const PrivacyPolicy = () => {
   return (
     <div className="max-w-3xl mb-20 mt-20 mx-auto p-4 bg-white shadow-lg rounded-lg">
-      <h1 className="text-3xl font-semibold text-center mb-6">Privatlivspolitik</h1>
+      <h1 className="text-3xl font-semibold text-left mb-6">Privatlivspolitik</h1>
       <p className="mb-4">
-        Hos [Dit Firma Navn] værdsætter vi dit privatliv. Denne privatlivspolitik forklarer, hvordan vi indsamler, bruger og beskytter dine personlige oplysninger, når du besøger vores hjemmeside og bruger vores tjenester.
+        Denne privatlivspolitik forklarer, hvordan vi indsamler, bruger og beskytter dine personlige oplysninger, når du besøger vores hjemmeside og bruger vores tjenester.
       </p>
 
       <h2 className="text-2xl font-semibold mt-4 mb-2">1. Oplysninger Vi Indsamler</h2>
       <p className="mb-4">
-        Vi indsamler personlige oplysninger, som du giver os, når du tilmelder dig vores nyhedsbrev, f.eks. dit navn og din e-mailadresse. Vi indsamler også data om dine interaktioner med vores hjemmeside ved hjælp af cookies og analyseværktøjer.
+        Vi indsamler de  personlige oplysninger, som du giver os, når du tilmelder dig vores nyhedsbrev, dva. dit navn og din e-mailadresse. Vi indsamler også data om dine klik på vores hjemmeside ved hjælp af cookies og analyseværktøjer.
       </p>
 
       <h2 className="text-2xl font-semibold mt-4 mb-2">2. Hvordan Vi Bruger Dine Oplysninger</h2>
       <p className="mb-4">
-        Vi bruger de indsamlede oplysninger til at sende dig markedsføringskommunikation, nyhedsbreve og opdateringer. Vi kan også bruge disse data til at forbedre brugeroplevelsen og personalisere indhold på vores hjemmeside.
+        Vi bruger de indsamlede oplysninger til at sende dig nyhedsbreve. Vi kan også bruge disse data til at forbedre brugeroplevelsen og personalisere indhold på vores hjemmeside.
       </p>
 
       <h2 className="text-2xl font-semibold mt-4 mb-2">3. Databeskyttelse</h2>

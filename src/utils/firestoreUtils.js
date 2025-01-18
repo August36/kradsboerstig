@@ -63,3 +63,21 @@ export const updateImageMetadata = async (roomName, artworkId, updatedData) => {
   }
 };
 
+export const saveContactMessage = async (email, messageType, comment, title) => {
+  try {
+    const contactRef = collection(db, "contactMessages"); // Samling
+    const newMessage = {
+      email,
+      messageType,
+      comment,
+      title,
+      createdAt: new Date().toISOString(),
+    };
+    await addDoc(contactRef, newMessage);
+    console.log("Kontaktbesked gemt:", newMessage);
+  } catch (error) {
+    console.error("Fejl ved gemning af kontaktbesked:", error);
+    throw error;
+  }
+};
+

@@ -46,3 +46,4 @@ export const uploadImage = async (file, room) => {
     throw error; // Sørg for at kaste fejlen videre
   }
 };
+
