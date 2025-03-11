@@ -81,3 +81,58 @@ export const saveContactMessage = async (email, messageType, comment, title) => 
   }
 };
 
+// Udstillinger
+
+// Tilføj en ny udstilling
+export const addExhibition = async (title, description, startDate, endDate, artistName, extraInfo, imageUrl) => {
+  try {
+    const exhibitionsRef = collection(db, "exhibitions");
+    const newExhibition = {
+      title,
+      description,
+      startDate,
+      endDate,
+      artistName,
+      extraInfo,
+      imageURL: imageUrl,
+    };
+    await addDoc(exhibitionsRef, newExhibition);
+    console.log("Udstilling tilføjet:", newExhibition);
+  } catch (error) {
+    console.error("Fejl ved tilføjelse af udstilling:", error);
+  }
+};
+
+// Hent alle udstillinger
+export const fetchExhibitions = async () => {
+  try {
+    const exhibitionsCollection = collection(db, "exhibitions");
+    const exhibitionsSnapshot = await getDocs(exhibitionsCollection);
+    return exhibitionsSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  } catch (error) {
+    console.error("Fejl ved hentning af udstillinger:", error);
+    return [];
+  }
+};
+
+// Opdater en udstilling
+export const updateExhibition = async (exhibitionId, updatedData) => {
+  try {
+    const exhibitionDoc = doc(db, "exhibitions", exhibitionId);
+    await updateDoc(exhibitionDoc, updatedData);
+    console.log("Udstilling opdateret:", updatedData);
+  } catch (error) {
+    console.error("Fejl ved opdatering af udstilling:", error);
+  }
+};
+
+// Slet en udstilling
+export const deleteExhibition = async (exhibitionId) => {
+  try {
+    const exhibitionDoc = doc(db, "exhibitions", exhibitionId);
+    await deleteDoc(exhibitionDoc);
+    console.log("Udstilling slettet:", exhibitionId);
+  } catch (error) {
+    console.error("Fejl ved sletning af udstilling:", error);
+  }
+};

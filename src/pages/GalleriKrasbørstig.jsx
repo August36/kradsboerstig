@@ -1,4 +1,4 @@
-import Exhibitions from "../components/Exhibitions";
+import ExhibitionsContainer from "../components/ExhibitionsContainer";
 
 const GalleriKrasbørstig = () => {
   return (
@@ -54,8 +54,8 @@ const GalleriKrasbørstig = () => {
           </div>
         </div>
 
-        <Exhibitions />
-      </div>
+        <ExhibitionsContainer heading="Udstillinger" />
+        </div>
     </>
   );
 };

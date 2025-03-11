@@ -5,6 +5,9 @@ import {
   fetchArtworks,
   deleteArtwork,
   updateImageMetadata,
+  fetchExhibitions,
+  addExhibition,
+  deleteExhibition,
 } from "../utils/firestoreUtils"; // Importer funktionerne
 
 const AdminDashboard = () => {
@@ -14,6 +17,31 @@ const AdminDashboard = () => {
   const [updatedFields, setUpdatedFields] = useState({}); // Felter til opdatering
   const [loading, setLoading] = useState(false);
   const [imageFile, setImageFile] = useState(null); // Til billedupload
+  const [exhibitions, setExhibitions] = useState([]);
+  const [newExhibition, setNewExhibition] = useState({
+    title: "",
+    description: "",
+    startDate: "",
+    endDate: "",
+    artistName: "",
+    extraInfo: "",
+  });
+  const [exhibitionImage, setExhibitionImage] = useState(null);
+
+  useEffect(() => {
+    const loadExhibitions = async () => {
+      try {
+        const data = await fetchExhibitions();
+        console.log("Hentede udstillinger fra Firestore:", data); // Debug
+        setExhibitions(data);
+      } catch (error) {
+        console.error("Fejl ved hentning af udstillinger:", error);
+      }
+    };
+  
+    loadExhibitions();
+  }, []);
+  
 
   useEffect(() => {
     const loadArtworks = async () => {
@@ -103,19 +131,72 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleExhibitionUpload = async () => {
+    if (!exhibitionImage) {
+      alert("Vælg en fil før upload.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const imageUrl = await uploadImage(exhibitionImage, "exhibitions"); // Upload billede til exhibitions-mappen
+      await addExhibition(
+        newExhibition.title,
+        newExhibition.description,
+        newExhibition.startDate,
+        newExhibition.endDate,
+        newExhibition.artistName,
+        newExhibition.extraInfo,
+        imageUrl
+      );
+      alert("Udstilling uploadet.");
+      setNewExhibition({
+        title: "",
+        description: "",
+        startDate: "",
+        endDate: "",
+        artistName: "",
+        extraInfo: "",
+      });
+      setExhibitionImage(null);
+    } catch (error) {
+      console.error("Fejl ved upload:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  //Delete exhibition
+  const handleDeleteExhibition = async (exhibitionId) => {
+    if (window.confirm("Er du sikker på, at du vil slette denne udstilling?")) {
+      try {
+        await deleteExhibition(exhibitionId);
+        setExhibitions((prev) =>
+          prev.filter((exhibition) => exhibition.id !== exhibitionId)
+        );
+        alert("Udstillingen er blevet slettet.");
+      } catch (error) {
+        console.error("Fejl ved sletning af udstilling:", error);
+      }
+    }
+  };
+  
+
   const handleCloseEditModal = () => {
     setEditingArtwork(null);
   };
 
   return (
     <>
+      {/* Admin dashboard + rumvælger */}
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">
           Admin dashboard
         </h1>
-        <p className="font-bold font text-xl">Velkommen til dit dashboard!</p>
+        <p className="font-bold text-xl">
+          Velkommen til dit dashboard!
+        </p>
         <p className="mb-6">
-          {" "}
           Her har du mulighed for at uploade nye billeder og metadata, samt
           redigere og slette i de eksisterende.
         </p>
@@ -145,13 +226,12 @@ const AdminDashboard = () => {
           </select>
         </div>
       </div>
+  
+      {/* Upload nye billeder */}
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
           Upload billeder
         </h2>
-
-        {/* Upload Billede og Metadata */}
-
         <div className="space-y-4 mb-5">
           <input
             type="text"
@@ -198,7 +278,7 @@ const AdminDashboard = () => {
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-
+  
         <div className="flex justify-end">
           <button
             onClick={handleImageUpload}
@@ -211,17 +291,16 @@ const AdminDashboard = () => {
           </button>
         </div>
       </div>
-
+  
+      {/* Administrer billeder */}
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
           Administrer billeder
         </h1>
-
-        <div className="space-y-6 ">
+        <div className="space-y-6">
           <h2 className="text-xl font-semibold text-gray-800">
             Slet eller opdater data
           </h2>
-
           {loading ? (
             <p>Indlæser billeder...</p>
           ) : artworks.length === 0 ? (
@@ -258,83 +337,193 @@ const AdminDashboard = () => {
             </div>
           )}
         </div>
+      </div>
+  
+      {/* Eksisterende Udstillinger */}
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+    Eksisterende Udstillinger
+  </h2>
+  {exhibitions.length === 0 ? (
+    <p>Ingen udstillinger fundet.</p>
+  ) : (
+    exhibitions.map((exhibition) => (
+      <div key={exhibition.id} className="border-2 p-4 rounded-lg mb-4 flex justify-between items-center">
+        <div>
+          <h3 className="text-xl font-semibold">{exhibition.title}</h3>
+          <p>{exhibition.description}</p>
+          <p><strong>Periode:</strong> {exhibition.startDate} - {exhibition.endDate}</p>
+          <p><strong>Kunstner:</strong> {exhibition.artistName}</p>
+        </div>
+        <button
+          onClick={() => handleDeleteExhibition(exhibition.id)}
+          className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+        >
+          Slet
+        </button>
+      </div>
+    ))
+  )}
+</div>
 
-        {editingArtwork && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
-              <h2 className="text-xl font-semibold mb-4">Rediger Metadata</h2>
-
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Titel"
-                  value={updatedFields.title || ""}
-                  onChange={(e) =>
-                    setUpdatedFields((prev) => ({
-                      ...prev,
-                      title: e.target.value,
-                    }))
-                  }
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Størrelse"
-                  value={updatedFields.size || ""}
-                  onChange={(e) =>
-                    setUpdatedFields((prev) => ({
-                      ...prev,
-                      size: e.target.value,
-                    }))
-                  }
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Pris"
-                  value={updatedFields.price || ""}
-                  onChange={(e) =>
-                    setUpdatedFields((prev) => ({
-                      ...prev,
-                      price: e.target.value,
-                    }))
-                  }
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <input
-                  type="number"
-                  placeholder="Rækkefølge (order)"
-                  value={updatedFields.order || ""}
-                  onChange={(e) =>
-                    setUpdatedFields((prev) => ({
-                      ...prev,
-                      order: parseInt(e.target.value),
-                    }))
-                  }
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <div className="flex justify-end mt-4 space-x-2">
-                <button
-                  onClick={handleCloseEditModal}
-                  className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
-                >
-                  Annuller
-                </button>
-                <button
-                  onClick={handleUpdate}
-                  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
-                >
-                  Gem Ændringer
-                </button>
-              </div>
+  
+      {/* Tilføj ny udstilling */}
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-10">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Tilføj ny udstilling
+        </h2>
+        <div className="space-y-4">
+          <input
+            type="text"
+            placeholder="Titel"
+            value={newExhibition.title}
+            onChange={(e) =>
+              setNewExhibition({
+                ...newExhibition,
+                title: e.target.value,
+              })
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg"
+          />
+          <textarea
+            placeholder="Beskrivelse"
+            value={newExhibition.description}
+            onChange={(e) =>
+              setNewExhibition({
+                ...newExhibition,
+                description: e.target.value,
+              })
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg"
+          />
+          <input
+            type="date"
+            placeholder="Startdato"
+            value={newExhibition.startDate}
+            onChange={(e) =>
+              setNewExhibition({
+                ...newExhibition,
+                startDate: e.target.value,
+              })
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg"
+          />
+          <input
+            type="date"
+            placeholder="Slutdato"
+            value={newExhibition.endDate}
+            onChange={(e) =>
+              setNewExhibition({
+                ...newExhibition,
+                endDate: e.target.value,
+              })
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg"
+          />
+          <input
+            type="text"
+            placeholder="Kunstner"
+            value={newExhibition.artistName}
+            onChange={(e) =>
+              setNewExhibition({
+                ...newExhibition,
+                artistName: e.target.value,
+              })
+            }
+            className="w-full p-3 border border-gray-300 rounded-lg"
+          />
+          <input
+            type="file"
+            onChange={(e) => setExhibitionImage(e.target.files[0])}
+            className="w-full p-3 border border-gray-300 rounded-lg"
+          />
+        </div>
+        <button
+          onClick={handleExhibitionUpload}
+          disabled={loading}
+          className="bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 mt-4"
+        >
+          {loading ? "Uploader..." : "Upload Udstilling"}
+        </button>
+      </div>
+  
+      {/* Modal til redigering af eksisterende billede */}
+      {editingArtwork && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+            <h2 className="text-xl font-semibold mb-4">Rediger Metadata</h2>
+  
+            <div className="space-y-4">
+              <input
+                type="text"
+                placeholder="Titel"
+                value={updatedFields.title || ""}
+                onChange={(e) =>
+                  setUpdatedFields((prev) => ({
+                    ...prev,
+                    title: e.target.value,
+                  }))
+                }
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                placeholder="Størrelse"
+                value={updatedFields.size || ""}
+                onChange={(e) =>
+                  setUpdatedFields((prev) => ({
+                    ...prev,
+                    size: e.target.value,
+                  }))
+                }
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                placeholder="Pris"
+                value={updatedFields.price || ""}
+                onChange={(e) =>
+                  setUpdatedFields((prev) => ({
+                    ...prev,
+                    price: e.target.value,
+                  }))
+                }
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="number"
+                placeholder="Rækkefølge (order)"
+                value={updatedFields.order || ""}
+                onChange={(e) =>
+                  setUpdatedFields((prev) => ({
+                    ...prev,
+                    order: parseInt(e.target.value),
+                  }))
+                }
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+  
+            <div className="flex justify-end mt-4 space-x-2">
+              <button
+                onClick={handleCloseEditModal}
+                className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+              >
+                Annuller
+              </button>
+              <button
+                onClick={handleUpdate}
+                className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+              >
+                Gem Ændringer
+              </button>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
+  
 };
 
 export default AdminDashboard;

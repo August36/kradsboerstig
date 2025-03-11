@@ -17,6 +17,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Admin from "./pages/Admin";
 import AdminDashboard from "./pages/AdminDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ExhibitionsContainer from "./components/ExhibitionsContainer";
 
 function App() {
   return (
@@ -37,7 +38,9 @@ function App() {
                   />
                 </Helmet>
                 <Hero />
-              </>
+                <ExhibitionsContainer limit={1} heading="Seneste Udstilling" />
+
+                </>
             }
           />
           <Route

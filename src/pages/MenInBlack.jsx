@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchRoomInfo, fetchArtworks } from "../utils/firestoreUtils"; // Importer funktionerne
+import { fetchRoomInfo, fetchArtworks } from "../utils/firestoreUtils";
 import ImageGrid from "../components/ImageGrid";
 import Modal from "../components/Modal";
 import Breadcrumbs from "../components/Breadcrumbs";
@@ -13,11 +13,9 @@ const MenInBlack = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Brug fetchRoomInfo og fetchArtworks fra firestoreUtils
         const roomData = await fetchRoomInfo("MenInBlack");
         const artworksData = await fetchArtworks("MenInBlack");
 
-        // Sorter artworks efter `order` og opdater state
         const sortedArtworks = artworksData.sort((a, b) => a.order - b.order);
 
         setRoomInfo(roomData || { title: "Men in Black", description: "" });
@@ -33,7 +31,13 @@ const MenInBlack = () => {
   }, []);
 
   if (loading) {
-    return <p>Indlæser...</p>;
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        {/* Spinner */}
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-gray-900 rounded-full animate-spin"></div>
+        <p className="mt-4 text-gray-600">Indlæser...</p>
+      </div>
+    );
   }
 
   if (artworks.length === 0) {
@@ -59,8 +63,20 @@ const MenInBlack = () => {
   return (
     <div className="container mx-auto p-4">
       <Breadcrumbs />
-      <h1 className="text-3xl font-bold mb-4">{roomInfo.title}</h1>
-      <p className="mb-8">{roomInfo.description}</p>
+
+      {/* Skeleton loader for titel og beskrivelse */}
+      {loading ? (
+        <div>
+          <div className="w-48 h-8 bg-gray-300 rounded animate-pulse mb-4"></div>
+          <div className="w-full h-4 bg-gray-300 rounded animate-pulse"></div>
+        </div>
+      ) : (
+        <>
+          <h1 className="text-3xl font-bold mb-4">{roomInfo.title}</h1>
+          <p className="mb-8">{roomInfo.description}</p>
+        </>
+      )}
+
       <ImageGrid images={artworks} onImageClick={handleOpenModal} />
 
       <Modal
