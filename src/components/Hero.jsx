@@ -25,11 +25,11 @@ const Hero = () => {
           </picture>
 
           {/* Overlay and Text */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black/10 flex items-center justify-center">
+          {/* <div className="absolute top-0 left-0 w-full h-full bg-black/10 flex items-center justify-center">
             <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wide text-center px-4">
               Kell Jarner
             </h1>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
