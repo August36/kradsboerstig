@@ -3,7 +3,7 @@ const Hero = () => {
     <>
       <div className="relative w-full lg:mb-10 lg:mt-10 flex justify-center">
         <div className="relative lg:w-[920px] lg:h-auto xl:w-[920px] xl:h-auto">
-          <picture className="block relative w-full h-full">
+          <picture className="block relative w-full h-full shadow-xl rounded-lg">
             <source
               srcSet="/HeroImgs/Hero-desktop.png"
               media="(min-width: 1024px)"
