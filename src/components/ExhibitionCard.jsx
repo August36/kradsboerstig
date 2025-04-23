@@ -10,16 +10,19 @@ const ExhibitionCard = ({ exhibition }) => {
     artistName,
   } = exhibition;
 
-  // Formater dato til dansk format
-  const formatDate = (dateString) => {
-    if (!dateString) return "Ukendt dato";
-    const date = new Date(dateString);
-    return date.toLocaleDateString("da-DK", {
+  // Helper to format ISO date strings to Danish locale (dd-MM-yyyy)
+  const formatDate = (iso) => {
+    if (!iso) return null;
+    const date = new Date(iso);
+    return new Intl.DateTimeFormat("da-DK", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
-    });
+    }).format(date);
   };
+
+  const formattedStart = formatDate(startDate);
+  const formattedEnd = formatDate(endDate);
 
   return (
     <div className="w-full p-4 bg-white shadow rounded">
@@ -33,15 +36,16 @@ const ExhibitionCard = ({ exhibition }) => {
 
       <h2 className="text-xl font-bold mb-2">{title}</h2>
 
-      {artistName && <p className="text-gray-600 mb-1">Af: {artistName}</p>}
 
       {description && <p className="text-gray-700 mb-2">{description}</p>}
 
-      {(startDate || endDate) && (
+      {(formattedStart || formattedEnd) && (
         <p className="text-sm text-gray-500">
-          {formatDate(startDate)} - {formatDate(endDate)}
+          {formattedStart || ""} - {formattedEnd || ""}
         </p>
       )}
+      
+      {artistName && <p className="text-gray-600 mb-1">Kunstner: {artistName}</p>}
     </div>
   );
 };
