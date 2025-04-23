@@ -25,7 +25,7 @@ const ExhibitionCard = ({ exhibition }) => {
   const formattedEnd = formatDate(endDate);
 
   return (
-    <div className="w-full h-full max-h-64 p-4 bg-white shadow rounded">
+    <div className="w-full p-4 bg-white shadow rounded">
       {imageURL && (
         <img
           src={imageURL}
