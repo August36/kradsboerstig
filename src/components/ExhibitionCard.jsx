@@ -10,6 +10,17 @@ const ExhibitionCard = ({ exhibition }) => {
     artistName,
   } = exhibition;
 
+  // Formater dato til dansk format
+  const formatDate = (dateString) => {
+    if (!dateString) return "Ukendt dato";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("da-DK", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  };
+
   return (
     <div className="w-full p-4 bg-white shadow rounded">
       {imageURL && (
@@ -28,7 +39,7 @@ const ExhibitionCard = ({ exhibition }) => {
 
       {(startDate || endDate) && (
         <p className="text-sm text-gray-500">
-          {startDate || "Ukendt start"} - {endDate || "Ukendt slut"}
+          {formatDate(startDate)} - {formatDate(endDate)}
         </p>
       )}
     </div>
