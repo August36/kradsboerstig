@@ -385,7 +385,7 @@ const AdminDashboard = () => {
             }
             className="w-full p-3 border border-gray-300 rounded-lg"
           />
-          <textarea
+          {/* <textarea
             placeholder="Beskrivelse"
             value={newExhibition.description}
             onChange={(e) =>
@@ -429,9 +429,9 @@ const AdminDashboard = () => {
                 ...newExhibition,
                 artistName: e.target.value,
               })
-            }
-            className="w-full p-3 border border-gray-300 rounded-lg"
-          />
+            } */}
+            {/* className="w-full p-3 border border-gray-300 rounded-lg"
+          /> */}
           <input
             type="file"
             onChange={(e) => setExhibitionImage(e.target.files[0])}
