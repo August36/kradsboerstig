@@ -38,7 +38,7 @@ function App() {
                   />
                 </Helmet>
                 <Hero />
-                <ExhibitionsContainer limit={1} heading="Seneste Udstilling" />
+                <ExhibitionsContainer limit={1}/>
 
                 </>
             }
