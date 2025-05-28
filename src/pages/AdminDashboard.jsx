@@ -61,39 +61,51 @@ const AdminDashboard = () => {
     loadArtworks();
   }, [selectedRoom]);
 
-  const handleImageUpload = async () => {
-    if (!imageFile) {
-      alert("Du skal vælge en fil, før du uploader.");
-      return;
-    }
+const handleImageUpload = async () => {
+  if (!imageFile) {
+    alert("Du skal vælge en fil, før du uploader.");
+    return;
+  }
 
-    try {
-      setLoading(true);
-      const imageUrl = await uploadImage(imageFile, selectedRoom);
-      const metadata = {
-        title: updatedFields.title || "Untitled",
-        price: updatedFields.price || "0",
-        size: updatedFields.size || "Unknown",
-        order: updatedFields.order || 0,
-        imageURL: imageUrl,
-      };
-      await addImageMetadata(
-        selectedRoom,
-        metadata.title,
-        metadata.price,
-        metadata.size,
-        metadata.order,
-        metadata.imageURL
-      );
-      alert("Billede og metadata uploadet.");
-      setUpdatedFields({});
-      setImageFile(null);
-    } catch (error) {
-      console.error("Error uploading image:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const validImageTypes = ["image/jpeg", "image/png", "image/webp"];
+  if (!validImageTypes.includes(imageFile.type)) {
+    alert("Kun JPG, PNG og WEBP billedfiler er tilladt.");
+    return;
+  }
+
+  if (imageFile.size > 5 * 1024 * 1024) {
+    alert("Billedet må maks være 5 MB.");
+    return;
+  }
+
+  try {
+    setLoading(true);
+    const imageUrl = await uploadImage(imageFile, selectedRoom);
+    const metadata = {
+      title: updatedFields.title || "Untitled",
+      price: updatedFields.price || "0",
+      size: updatedFields.size || "Unknown",
+      order: updatedFields.order || 0,
+      imageURL: imageUrl,
+    };
+    await addImageMetadata(
+      selectedRoom,
+      metadata.title,
+      metadata.price,
+      metadata.size,
+      metadata.order,
+      metadata.imageURL
+    );
+    alert("Billede og metadata uploadet.");
+    setUpdatedFields({});
+    setImageFile(null);
+  } catch (error) {
+    console.error("Error uploading image:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const handleDelete = async (artworkId) => {
     if (window.confirm("Er du sikker på, at du vil slette dette billede?")) {
