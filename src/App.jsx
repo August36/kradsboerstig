@@ -12,6 +12,7 @@ import NarrativRaakunst from "./pages/NarrativRaakunst";
 import GalleriKrasbørstig from "./pages/GalleriKrasbørstig";
 import MenInBlack from "./pages/MenInBlack";
 import FugleMennesker from "./pages/FugleMennesker";
+import Skønhed from "./pages/Skønhed";
 import Layout from "./components/Layout";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Admin from "./pages/Admin";
@@ -172,6 +173,21 @@ function App() {
                   />
                 </Helmet>
                 <FugleMennesker />
+              </>
+            }
+          />
+          <Route
+            path="/Skønhed"
+            element={
+              <>
+                <Helmet>
+                  <title>Skønhed - Kell Jarner Art</title>
+                  <meta
+                    name="description"
+                    content="Skønhed"
+                  />
+                </Helmet>
+                <Skønhed />
               </>
             }
           />
